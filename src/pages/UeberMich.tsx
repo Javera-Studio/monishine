@@ -1,103 +1,223 @@
 import SiteLayout from "@/components/SiteLayout";
-import PageHero from "@/components/PageHero";
-import portrait from "@/assets/michaela.jpg";
-import studio from "@/assets/studio.jpg";
-import studio2 from "@/assets/studio2.jpg";
-import studio3 from "@/assets/studio3.jpg";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import moniImg from "@/assets/moni.jpeg";
+import salon1Img from "@/assets/salon1.png";
+import salon2Img from "@/assets/salon2.jpeg";
+import salon3Img from "@/assets/salon3.jpeg";
+
+const badges = [
+  "Brows & Lashes Specialist",
+  "5 Jahre Top Rated",
+  "Zertifizierte Beauty Expertin",
+  "Lash Extension Schulungen",
+];
 
 const UeberMich = () => (
   <SiteLayout>
-    <PageHero
-      eyebrow="Über Michaela"
-      title={
-        <>
-          Hautgesundheit ist für mich{" "}
-          <span className="italic text-primary">persönlich.</span>
-        </>
-      }
-      intro="Mein Name ist Michaela Kornherr. Seit vielen Jahren begleite ich Menschen in Wien auf dem Weg zu einer Haut, in der sie sich wohlfühlen."
-    />
 
-    <section className="py-20">
-      <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <div className="lg:col-span-5">
-          <div className="aspect-[4/5] overflow-hidden shadow-soft">
-            <img
-              src={portrait}
-              alt="Michaela Kornherr — Hautexpertin in Wien"
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-          </div>
+    {/* ══════════════════════════════════════════
+        Section 1 — Warum Monishine
+    ══════════════════════════════════════════ */}
+    <section className="py-24 md:py-32 bg-background">
+      <div className="container-editorial">
+
+        {/* Page header */}
+        <div className="mb-14 md:mb-18 reveal">
+          <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
+            Warum Monishine
+          </p>
+          <h1
+            className="text-foreground leading-[1.05] max-w-3xl"
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: "clamp(2.5rem, 4.5vw, 4.5rem)",
+              fontWeight: 300,
+            }}
+          >
+            Beauty sollte sich nicht perfekt anfühlen —
+            <em className="italic"> sondern persönlich.</em>
+          </h1>
         </div>
 
-      <div className="lg:col-span-7 space-y-6 text-foreground/85 leading-relaxed">
-  <p>
-    Hautgesundheit ist für mich mehr als nur Pflege — sie bedeutet Wohlbefinden, Selbstvertrauen und sich in der eigenen Haut wieder wohlzufühlen. Deshalb nehme ich mir bewusst Zeit für jede Person, jede Haut und jede individuelle Geschichte dahinter.
-  </p>
+        {/* Split: portrait left, text right */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-  <p>
-    Als Kosmetikerin und Hautcoach begleite ich Jugendliche und Erwachsene bei Akne, Problemhaut, Pigmentflecken und den Bedürfnissen reifer Haut. Jede Behandlung beginnt bei mir mit einer fundierten Hautanalyse, ehrlicher Beratung und einem persönlichen Gespräch — denn keine Haut ist wie die andere.
-  </p>
-
-  <p>
-    Mein Ziel ist es nicht, Haut nur kurzfristig zu verbessern, sondern sie langfristig zu verstehen, zu stärken und nachhaltig zu begleiten. Deshalb erhältst du bei Monishine nicht nur eine Behandlung, sondern auch individuell abgestimmte Pflegeempfehlungen für Zuhause.
-  </p>
-
-  <p>
-    Eine besondere Leidenschaft von mir ist außerdem das Pigmentieren von Augenbrauen und präzises Microblading. Natürlich wirkende Ergebnisse, harmonische Formen und typgerechte Beratung stehen dabei immer im Mittelpunkt — für ein Ergebnis, das deine natürliche Schönheit unterstreicht.
-  </p>
-
-  <p>
-    Kontinuierliche Weiterbildung ist mir besonders wichtig. Ich bilde mich regelmäßig in moderner Hautanalyse, Wirkstofftherapie und neuen Behandlungstechniken weiter, damit du von aktuellen, fundierten und wirkungsvollen Methoden profitieren kannst.
-  </p>
-
-  <p>
-    Mein Studio in Wien ist bewusst ruhig, hochwertig und persönlich gestaltet — ein Ort zum Ankommen, Entspannen und Wohlfühlen.
-  </p>
-          <div className="pt-6">
-            <Link
-              to="/kontakt"
-              className="inline-flex items-center px-7 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary-glow transition-colors"
-            >
-              Termin vereinbaren
-            </Link>
+          {/* Portrait */}
+          <div className="lg:col-span-5 reveal">
+            <div className="aspect-[4/5] overflow-hidden shadow-elegant">
+              <img
+                src={moniImg}
+                alt="Moni — Monishine Beauty Studio Wien"
+                loading="eager"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
           </div>
+
+          {/* Text content */}
+          <div className="lg:col-span-7 reveal reveal-delay-1">
+            <div className="space-y-6 text-foreground/80 leading-[1.9] font-light text-base md:text-[1.05rem]">
+              <p>
+                Monishine steht für moderne Beauty Treatments mit Persönlichkeit,
+                Präzision und einer Atmosphäre zum Wohlfühlen.
+              </p>
+              <p>
+                Mit viel Liebe zum Detail, echter Leidenschaft für Brows &amp; Lashes
+                und dem Wunsch, Menschen selbstbewusster und glücklicher zu machen,
+                ist ein Studio entstanden, in dem sich jede Person willkommen fühlen
+                darf — ganz ohne Druck, perfekt sein zu müssen.
+              </p>
+              <p>
+                Ob natürliche Brows, Lash Extensions, Glow Treatments oder persönliche
+                Beratung: Bei Monishine geht es nicht nur um Behandlungen, sondern
+                darum, dass du dich schön, wohl und selbstbewusst fühlst.
+              </p>
+              <p
+                className="text-foreground/65"
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "1.15rem",
+                  fontWeight: 300,
+                  lineHeight: 1.7,
+                }}
+              >
+                Für Ladies &amp; Gentlemen.<br />
+                Warm. Persönlich. Modern.
+              </p>
+            </div>
+
+            {/* Editorial quote */}
+            <blockquote className="mt-10 pl-6 border-l-2 border-accent/35">
+              <p
+                className="italic text-foreground/35 leading-relaxed"
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
+                  fontWeight: 300,
+                }}
+              >
+                Be your own kind of beautiful.
+              </p>
+            </blockquote>
+
+            {/* Badges */}
+            <div className="mt-10 flex flex-wrap gap-2">
+              {badges.map((badge) => (
+                <span
+                  key={badge}
+                  className="inline-flex items-center px-3 py-1.5 border border-foreground/15 bg-background text-[0.6rem] uppercase tracking-[0.18em] text-muted-foreground"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="mt-10 pt-10 border-t border-foreground/10">
+              <Link to="/kontakt" className="btn-primary group">
+                Termin buchen
+                <ArrowRight
+                  size={14}
+                  strokeWidth={1.5}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-<section className="py-20">
-  <div className="container-editorial">
-    <div className="grid grid-cols-3 gap-4">
-      <div className="aspect-[3/4] overflow-hidden shadow-soft">
-        <img
-          src={studio}
-          alt="Behandlungsraum Monishine"
-          loading="lazy"
-          className="w-full h-full object-cover"
-        />
+    {/* ══════════════════════════════════════════
+        Section 2 — Der Salon
+    ══════════════════════════════════════════ */}
+    <section className="py-24 md:py-32 bg-secondary/25">
+      <div className="container-editorial">
+
+        {/* Text block — two columns */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-14 md:mb-20">
+          <div className="lg:col-span-5 reveal">
+            <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
+              Ein Ort zum Wohlfühlen
+            </p>
+            <h2
+              className="text-foreground leading-[1.06]"
+              style={{
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+                fontWeight: 300,
+              }}
+            >
+              Mehr als nur ein Beauty Studio.
+            </h2>
+          </div>
+
+          <div className="lg:col-span-7 reveal reveal-delay-1 space-y-5 text-foreground/80 leading-[1.9] font-light text-base md:text-[1.05rem]">
+            <p>
+              Monishine wurde mit dem Wunsch geschaffen, einen Ort zu schaffen, an dem
+              Schönheit, Wohlbefinden und Persönlichkeit zusammenkommen.
+            </p>
+            <p>
+              Warme Farben, eine ruhige Atmosphäre und moderne Eleganz sorgen dafür,
+              dass sich jeder Besuch wie eine kleine Auszeit anfühlt — persönlich,
+              entspannt und herzlich.
+            </p>
+            <p>
+              Ob Brows, Lashes, Glow Treatments oder Beratung: Bei Monishine geht es
+              nicht nur um Beauty, sondern darum, dass du dich willkommen, wohl und
+              selbstbewusst fühlst.
+            </p>
+            <p
+              className="text-foreground/65"
+              style={{
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontSize: "1.15rem",
+                fontWeight: 300,
+                lineHeight: 1.7,
+              }}
+            >
+              Ein Studio mit Liebe zum Detail.<br />
+              Modern. Persönlich. Zum Wohlfühlen.
+            </p>
+          </div>
+        </div>
+
+        {/* Gallery: large left + two stacked right */}
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-3 lg:gap-4 reveal reveal-delay-1">
+          {/* Large feature image */}
+          <div className="aspect-[4/3] lg:aspect-auto lg:min-h-[560px] overflow-hidden shadow-soft">
+            <img
+              src={salon1Img}
+              alt="Monishine Studio Wien — Behandlungsraum"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          {/* Two stacked images */}
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-4">
+            <div className="aspect-[4/3] overflow-hidden shadow-soft">
+              <img
+                src={salon2Img}
+                alt="Monishine Studio Wien — Atmosphäre"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden shadow-soft">
+              <img
+                src={salon3Img}
+                alt="Monishine Studio Wien — Details"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div className="aspect-[3/4] overflow-hidden shadow-soft">
-        <img
-          src={studio2}
-          alt="Hautanalyse und Empfang"
-          loading="lazy"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="aspect-[3/4] overflow-hidden shadow-soft">
-        <img
-          src={studio3}
-          alt="Studio Atmosphäre"
-          loading="lazy"
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
   </SiteLayout>
 );
