@@ -5,6 +5,12 @@ import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
 import { cms } from "@/lib/cms/provider";
 import type { ServiceCategory } from "@/content/types";
+import vn1 from "@/assets/vorhernachher1.jpg";
+import vn2 from "@/assets/vorhernachher2.jpg";
+import vn3 from "@/assets/vorhernachher3.jpg";
+import vn4 from "@/assets/vorhernachher4.jpg";
+
+const vnImages = [vn1, vn2, vn3, vn4];
 
 const serif = {
   fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -129,7 +135,7 @@ const Leistungen = () => {
         intro="Brow Styling, Lashes, Permanent Make-up, Skin Treatments, Laser & mehr — sorgfältig zusammengestellt und persönlich auf dich abgestimmt."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="pt-20 md:pt-28 pb-0">
         <div className="container-editorial">
 
           {/* Tier 1 */}
@@ -160,6 +166,27 @@ const Leistungen = () => {
           </div>
 
         </div>
+
+        {/* ── Vorher/Nachher image marquee ── */}
+        <div className="marquee-outer overflow-hidden mt-16 md:mt-20 -mx-6 md:-mx-12 lg:-mx-20">
+          <div
+            className="marquee-track flex gap-3 md:gap-4"
+            style={{ animation: "marquee 50s linear infinite" }}
+          >
+            {[...vnImages, ...vnImages].map((src, i) => (
+              <div key={i} className="shrink-0 overflow-hidden shadow-soft">
+                <img
+                  src={src}
+                  alt={`Vorher Nachher ${(i % 4) + 1}`}
+                  loading="lazy"
+                  className="h-[240px] md:h-[320px] w-auto object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="pb-16 md:pb-20" />
+
       </section>
     </SiteLayout>
   );
