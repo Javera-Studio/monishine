@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import moni2 from "@/assets/moni2.jpg";
 
 const serif = {
   fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -61,6 +62,13 @@ const rightCol = [
   },
 ];
 
+const stats = [
+  { value: "5.0", stars: true, label: "Verifizierte Bewertung" },
+  { value: "400+", label: "Zufriedene Kundinnen" },
+  { value: "5 Jahre", label: "Treatwell Top Rated" },
+  { value: "100%", label: "Persönliche Betreuung" },
+];
+
 type Review = { quote: string; name: string; treatment: string; warm: boolean };
 
 const ReviewCard = ({ r }: { r: Review }) => (
@@ -91,67 +99,105 @@ const ReviewCard = ({ r }: { r: Review }) => (
 );
 
 const Testimonials = () => (
-  <section className="py-24 md:py-36 bg-background overflow-hidden">
+  <section className="pt-24 md:pt-36 pb-0 bg-background">
     <div className="container-editorial">
 
-      {/* ── Header ── */}
-      <div className="reveal">
-        {/* Treatwell badge */}
-        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-accent/25 bg-secondary/50">
-          <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
-          <span className="text-[0.58rem] uppercase tracking-[0.3em] text-accent/80">
-            Treatwell Top Rated
-          </span>
-          <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
-        </div>
+      {/* ── Header: two-column editorial layout ── */}
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-20 md:mb-28">
 
-        <h2
-          className="text-foreground leading-[1.04] max-w-2xl"
-          style={{ ...serif, fontSize: "clamp(2.2rem, 4vw, 4rem)" }}
-        >
-          5 Jahre in Folge ausgezeichnet.
-        </h2>
+        {/* Left — badge, headline, text, button, stats */}
+        <div className="order-2 lg:order-1 reveal lg:pt-6">
 
-        <p className="lede mt-6 max-w-xl">
-          Über Jahre hinweg vertrauen Kundinnen auf Monishine für präzise Beauty
-          Treatments, persönliche Beratung und eine warme Studioatmosphäre.
-        </p>
+          {/* Treatwell badge */}
+          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-accent/25 bg-secondary/50">
+            <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
+            <span className="text-[0.58rem] uppercase tracking-[0.3em] text-accent/80">
+              Treatwell Top Rated
+            </span>
+            <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
+          </div>
 
-        {/* Stats strip */}
-        <div className="mt-10 pt-8 border-t border-foreground/[0.07] grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {[
-            { value: "5.0 ★", label: "Bewertung" },
-            { value: "Top Rated", label: "seit 5 Jahren" },
-            { value: "100%", label: "Verifiziert" },
-            { value: "Brows · Lashes", label: "PMU · Glow" },
-          ].map(({ value, label }) => (
-            <div key={value}>
-              <p
-                style={{ ...serif, fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)", color: "hsl(var(--foreground) / 0.85)" }}
+          {/* Headline */}
+          <h2
+            className="text-foreground leading-[1.04]"
+            style={{ ...serif, fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)" }}
+          >
+            5 Jahre in Folge ausgezeichnet.
+          </h2>
+
+          {/* Body text */}
+          <p className="lede mt-6 max-w-lg">
+            Über 400 verifizierte Bewertungen und unzählige zufriedene Kundinnen machen
+            Monishine zu einer der beliebtesten Adressen für Brows, Lashes und Permanent
+            Make-up in Wien. Persönliche Beratung, präzise Arbeit und eine Atmosphäre zum
+            Wohlfühlen stehen seit dem ersten Tag im Mittelpunkt.
+          </p>
+
+          {/* CTA */}
+          <div className="mt-8">
+            <a
+              href="https://buchung.treatwell.de/ort/monishine/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline text-sm"
+            >
+              Bewertungen ansehen
+            </a>
+          </div>
+
+          {/* Stats strip with vertical dividers */}
+          <div className="mt-10 pt-8 border-t border-foreground/[0.07] flex">
+            {stats.map(({ value, stars, label }, i) => (
+              <div
+                key={value}
+                className="flex-1 px-5 first:pl-0"
+                style={i > 0 ? { borderLeft: "1px solid hsl(var(--foreground) / 0.08)" } : {}}
               >
-                {value}
-              </p>
-              <p className="eyebrow mt-1" style={{ color: "hsl(var(--accent) / 0.6)" }}>
-                {label}
-              </p>
-            </div>
-          ))}
+                <div className="flex items-baseline gap-1.5 flex-wrap">
+                  <p style={{ ...serif, fontSize: "clamp(1.5rem, 2vw, 1.9rem)", color: "hsl(var(--foreground) / 0.88)" }}>
+                    {value}
+                  </p>
+                  {stars && (
+                    <div className="flex gap-[2px]" style={{ marginBottom: "2px" }}>
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} size={9} fill={STAR_COLOR} strokeWidth={0} />
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <p className="eyebrow mt-1" style={{ color: "hsl(var(--accent) / 0.6)" }}>
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Right — portrait, editorial overhang */}
+        <div className="order-1 lg:order-2 reveal reveal-delay-1 lg:-mb-24">
+          <div
+            className="overflow-hidden shadow-elegant w-full"
+            style={{ borderRadius: "10px" }}
+          >
+            <img
+              src={moni2}
+              alt="Moni — Monishine Beauty Studio"
+              loading="eager"
+              className="w-full object-cover object-top"
+              style={{ maxHeight: "720px" }}
+            />
+          </div>
+        </div>
+
       </div>
 
       {/* ── Featured review ── */}
-      <div className="mt-20 md:mt-24 py-14 md:py-20 border-y border-foreground/[0.07] reveal">
+      <div className="mt-0 py-14 md:py-20 border-y border-foreground/[0.07] reveal">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Decorative opening guillemet */}
           <p
             aria-hidden
             className="select-none leading-none mb-4"
-            style={{
-              ...serif,
-              fontSize: "6rem",
-              color: "hsl(var(--accent) / 0.15)",
-              lineHeight: 0.7,
-            }}
+            style={{ ...serif, fontSize: "6rem", color: "hsl(var(--accent) / 0.15)", lineHeight: 0.7 }}
           >
             "
           </p>
@@ -179,25 +225,19 @@ const Testimonials = () => (
       <div className="mt-14 md:mt-16 reveal">
         <p
           className="font-script text-center"
-          style={{
-            fontSize: "clamp(1.8rem, 2.8vw, 2.8rem)",
-            color: "hsl(var(--accent))",
-            opacity: 0.38,
-          }}
+          style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.8rem)", color: "hsl(var(--accent))", opacity: 0.38 }}
         >
           Be your own kind of beautiful.
         </p>
       </div>
 
       {/* ── Staggered 2-column reviews ── */}
-      <div className="mt-14 md:mt-16 grid lg:grid-cols-2 gap-4 lg:gap-6 items-start reveal reveal-delay-1">
-        {/* Left column */}
+      <div className="mt-14 md:mt-16 pb-24 md:pb-36 grid lg:grid-cols-2 gap-4 lg:gap-6 items-start reveal reveal-delay-1">
         <div className="space-y-4">
           {leftCol.map((r) => (
             <ReviewCard key={r.name} r={r} />
           ))}
         </div>
-        {/* Right column — offset down for stagger */}
         <div className="space-y-4 lg:mt-16">
           {rightCol.map((r) => (
             <ReviewCard key={r.name} r={r} />
