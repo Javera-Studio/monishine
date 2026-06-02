@@ -26,9 +26,9 @@ const Kontakt = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Kontakt & Buchung"
-        title={<>Lass uns über deine <span className="italic text-primary">Haut</span> sprechen.</>}
-        intro="Schreib mir kurz, was du dir wünschst — ich melde mich persönlich bei dir und finde mit dir den passenden Termin."
+        eyebrow="Contact & Booking"
+        title={<>Dein Weg zu Brows, Lashes &amp; Beauty <span className="italic text-accent">beginnt hier.</span></>}
+        intro="Schreib mir kurz, welche Behandlung dich interessiert oder welche Fragen du hast. Ich melde mich persönlich bei dir und finde gemeinsam mit dir den passenden Termin."
       />
 
       <section className="py-20">
