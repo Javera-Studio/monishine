@@ -3,16 +3,6 @@
  * rendered on the site. These shapes are designed to map 1:1 to Notion
  * database properties so the local provider can be swapped for a Notion
  * provider without changing components.
- *
- * Notion mapping reference (see src/lib/cms/notion.ts):
- *   - `id`        ← Notion page id
- *   - `slug`      ← rich_text "Slug"
- *   - `title`     ← title "Name"
- *   - rich text fields ← rich_text
- *   - images      ← files & media (first file url)
- *   - tags        ← multi_select
- *   - order       ← number "Order"
- *   - published   ← checkbox "Published"
  */
 
 export interface ContentMeta {
@@ -23,15 +13,21 @@ export interface ContentMeta {
   updatedAt?: string;
 }
 
-export interface Treatment extends ContentMeta {
-  title: string;
-  description: string;
+export interface ServiceTreatment {
+  name: string;
+  description?: string;
   duration?: string;
   price?: string;
+}
+
+export interface ServiceCategory extends ContentMeta {
+  title: string;
+  tagline: string;
+  description: string;
   image: string;
-  href: string;
-  category?: string;
-  tags?: string[];
+  treatments: ServiceTreatment[];
+  /** Optional grouping label (e.g. "Brows & Lashes") */
+  group?: string;
 }
 
 export interface FaqItem extends ContentMeta {
@@ -59,7 +55,6 @@ export interface Article extends ContentMeta {
 }
 
 export interface EditableSection extends ContentMeta {
-  /** Stable key used by components to look up the section (e.g. "hero", "about-intro") */
   key: string;
   eyebrow?: string;
   title?: string;
