@@ -126,11 +126,13 @@ const Schulungen = () => (
     </section>
 
     {/* ══════════════════════════════════════
-        Topics grid
+        Topics — editorial split layout
     ══════════════════════════════════════ */}
-    <section id="inhalte" className="py-24 md:py-32 bg-secondary/20">
+    <section id="inhalte" className="py-24 md:py-32 bg-background">
       <div className="container-editorial">
-        <div className="mb-14 reveal">
+
+        {/* Section header */}
+        <div className="mb-16 md:mb-20 reveal">
           <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
             Schulungsinhalte
           </p>
@@ -142,21 +144,96 @@ const Schulungen = () => (
           </h2>
         </div>
 
-        {/* Numbered topic cards with 1px grid-gap border effect */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border reveal">
-          {topics.map((topic, i) => (
-            <div key={topic} className="bg-background p-7 md:p-8 flex items-start gap-5">
-              <span
-                className="shrink-0 text-accent leading-none mt-0.5"
-                style={{ ...serif, fontSize: "1.75rem" }}
+        {/* Split: sticky images left · editorial list right */}
+        <div className="grid lg:grid-cols-12 gap-14 lg:gap-16 items-start">
+
+          {/* Left — sticky image stack (desktop only) */}
+          <div className="hidden lg:flex lg:col-span-4 lg:sticky lg:top-28 flex-col gap-4 reveal">
+            <div className="aspect-[3/4] overflow-hidden shadow-elegant">
+              <img
+                src={schulung2}
+                alt="Monishine Lash Extension Schulung"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden shadow-soft">
+              <img
+                src={schulung4}
+                alt="Monishine Lash Artist Training"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Right — elegant numbered topic list */}
+          <div className="lg:col-span-8 reveal reveal-delay-1">
+
+            {/* Mobile-only single image for context */}
+            <div className="lg:hidden aspect-[16/9] overflow-hidden shadow-soft mb-12">
+              <img
+                src={schulung2}
+                alt="Monishine Lash Extension Schulung"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Topic items */}
+            <div>
+              {topics.map((topic, i) => (
+                <div
+                  key={topic}
+                  className="group flex items-baseline gap-6 md:gap-8 py-6 md:py-7 border-b cursor-default transition-all duration-400"
+                  style={{ borderColor: "hsl(var(--foreground) / 0.07)" }}
+                >
+                  {/* Number */}
+                  <span
+                    className="shrink-0 w-7 text-right transition-colors duration-400"
+                    style={{
+                      ...serif,
+                      fontSize: "0.78rem",
+                      color: "hsl(var(--accent) / 0.4)",
+                      letterSpacing: "0.06em",
+                      lineHeight: 1,
+                      paddingTop: "0.15em",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Topic label */}
+                  <span
+                    className="text-foreground/65 group-hover:text-foreground/90 transition-colors duration-400"
+                    style={{
+                      ...serif,
+                      fontSize: "clamp(1.05rem, 1.7vw, 1.45rem)",
+                      letterSpacing: "0.008em",
+                      lineHeight: 1.35,
+                    }}
+                  >
+                    {topic}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Script closing accent */}
+            <div className="pt-10 md:pt-12">
+              <p
+                className="font-script text-right"
+                style={{
+                  fontSize: "clamp(1.4rem, 2vw, 1.9rem)",
+                  color: "hsl(var(--accent))",
+                  opacity: 0.38,
+                }}
               >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <p className="text-foreground/80 font-light leading-relaxed text-sm md:text-[0.95rem]">
-                {topic}
+                Glow with Confidence.
               </p>
             </div>
-          ))}
+
+          </div>
         </div>
       </div>
     </section>
