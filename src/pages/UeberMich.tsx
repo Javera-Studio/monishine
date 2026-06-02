@@ -88,18 +88,18 @@ const UeberMich = () => (
             </div>
 
             {/* Editorial quote */}
-            <blockquote className="mt-10 pl-6 border-l-2 border-accent/35">
+            <div className="mt-10">
               <p
-                className="italic text-foreground/35 leading-relaxed"
+                className="font-script"
                 style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
-                  fontWeight: 300,
+                  fontSize: "clamp(2.2rem, 3.2vw, 3.2rem)",
+                  color: "hsl(var(--accent))",
+                  opacity: 0.6,
                 }}
               >
                 Be your own kind of beautiful.
               </p>
-            </blockquote>
+            </div>
 
             {/* Badges */}
             <div className="mt-10 flex flex-wrap gap-2">

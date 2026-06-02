@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         display: ['Italiana', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        script: ['"Great Vibes"', 'cursive'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
