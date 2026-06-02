@@ -13,7 +13,7 @@ const badges = [
 ];
 
 const Academy = () => (
-  <section className="py-16 md:py-32 bg-secondary/20">
+  <section className="surface-taupe py-16 md:py-32">
     <div className="container-editorial">
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
