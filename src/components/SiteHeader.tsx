@@ -1,10 +1,7 @@
-'use client'
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpg";
-import { imgSrc } from "@/lib/utils";
+import logo from "@/assets/monishine-logo.png.asset.json";
 
 const links = [
   { to: "/leistungen", label: "Leistungen" },
@@ -12,15 +9,15 @@ const links = [
   { to: "/hautanalyse", label: "Hautanalyse" },
   { to: "/produkte", label: "Produkte" },
   { to: "/preise", label: "Preise" },
-  { to: "/ueber-mich", label: "Über mich" },
+  { to: "/ueber-mich", label: "Über uns" },
   { to: "/kontakt", label: "Kontakt" },
-  { to: "/blog", label: "Blog" },
+  { to: "/blog", label: "Journal" },
 ];
 
 const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -32,23 +29,25 @@ const SiteHeader = () => {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/85 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-border/60"
+          : "bg-transparent"
       }`}
     >
-      <div className="container-editorial flex items-center justify-between h-24 md:h-32">
-        <Link href="/" className="flex items-center" aria-label="FACE AND MORE — Startseite">
-          <img src={imgSrc(logo)} alt="FACE AND MORE by Michaela Kornherr" className="h-24 md:h-28 w-auto" />
+      <div className="container-editorial flex items-center justify-between h-20 md:h-28">
+        <Link to="/" className="flex items-center" aria-label="Monishine — Startseite">
+          <img src={logo.url} alt="Monishine" className="h-12 md:h-16 w-auto" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-9">
+        <nav className="hidden lg:flex items-center gap-10">
           {links.map((l) => {
             const isActive = pathname === l.to || (l.to !== "/" && pathname.startsWith(l.to));
             return (
               <Link
                 key={l.to}
-                href={l.to}
-                className={`text-xs tracking-wide transition-colors ${
-                  isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                to={l.to}
+                className={`text-[0.7rem] uppercase tracking-[0.22em] transition-colors ${
+                  isActive ? "text-accent" : "text-foreground/75 hover:text-accent"
                 }`}
               >
                 {l.label}
@@ -58,10 +57,7 @@ const SiteHeader = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary-glow transition-colors"
-          >
+          <Link to="/kontakt" className="btn-primary">
             Termin buchen
           </Link>
         </div>
@@ -77,22 +73,18 @@ const SiteHeader = () => {
 
       {open && (
         <div className="lg:hidden bg-background border-t border-border">
-          <div className="container-editorial py-6 flex flex-col gap-5">
+          <div className="container-editorial py-8 flex flex-col gap-6">
             {links.map((l) => (
               <Link
                 key={l.to}
-                href={l.to}
+                to={l.to}
                 onClick={() => setOpen(false)}
-                className="text-base text-foreground"
+                className="text-sm uppercase tracking-[0.2em] text-foreground/85"
               >
                 {l.label}
               </Link>
             ))}
-            <Link
-              href="/kontakt"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center px-5 py-3 bg-primary text-primary-foreground text-sm tracking-wide"
-            >
+            <Link to="/kontakt" onClick={() => setOpen(false)} className="btn-primary mt-2">
               Termin buchen
             </Link>
           </div>
