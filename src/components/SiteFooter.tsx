@@ -3,7 +3,7 @@ import logo from "@/assets/monishine-logo.png.asset.json";
 
 const SiteFooter = () => (
   <footer className="bg-secondary/50 border-t border-border/60 mt-32">
-    <div className="container-editorial py-20 grid gap-14 md:grid-cols-3">
+    <div className="container-editorial py-20 grid gap-14 md:grid-cols-2">
 
       {/* Logo + tagline */}
       <div>
@@ -48,23 +48,12 @@ const SiteFooter = () => (
         </div>
       </div>
 
-      {/* Navigation */}
-      <div>
-        <p className="eyebrow mb-5">Studio</p>
-        <ul className="space-y-2.5 text-sm font-light">
-          <li><Link to="/ueber-mich" className="hover:text-accent transition-colors">Über uns</Link></li>
-          <li><Link to="/schulungen" className="hover:text-accent transition-colors">Schulungen</Link></li>
-          <li><Link to="/kontakt" className="hover:text-accent transition-colors">Kontakt</Link></li>
-          <li><Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link></li>
-          <li><Link to="/datenschutz" className="hover:text-accent transition-colors">Datenschutz</Link></li>
-        </ul>
-      </div>
-
     </div>
     <div className="border-t border-border/60">
-      <div className="container-editorial py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground font-light">
-        <p>© {new Date().getFullYear()} Monishine — Premium Beauty Studio</p>
-        <p>Made with care in Hamburg</p>
+      <div className="container-editorial py-6">
+        <p className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground font-light">
+          © {new Date().getFullYear()} Monishine — Premium Beauty Studio
+        </p>
       </div>
     </div>
   </footer>
