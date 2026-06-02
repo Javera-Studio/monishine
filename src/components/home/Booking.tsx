@@ -13,7 +13,7 @@ const Booking = () => (
       <div className="max-w-2xl">
         <p className="eyebrow mb-5 text-background/60">Termin buchen</p>
         <h2 className="headline text-background">
-          Bereit für deine Hautanalyse?
+          Dein Weg zu Brows, Lashes &amp; Beauty beginnt hier.
         </h2>
         <p className="lede mt-6 text-background/70">
           Schreib mir einfach auf WhatsApp — ich antworte persönlich und finde
