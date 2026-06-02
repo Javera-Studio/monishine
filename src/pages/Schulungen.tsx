@@ -148,8 +148,8 @@ const Schulungen = () => (
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-16 items-start">
 
           {/* Left — sticky image stack (desktop only) */}
-          <div className="hidden lg:flex lg:col-span-4 lg:sticky lg:top-28 flex-col gap-4 reveal">
-            <div className="aspect-[3/4] overflow-hidden shadow-elegant">
+          <div className="hidden lg:flex lg:col-span-3 lg:sticky lg:top-28 flex-col gap-3 reveal">
+            <div className="aspect-[3/4] overflow-hidden shadow-soft">
               <img
                 src={schulung2}
                 alt="Monishine Lash Extension Schulung"
@@ -168,7 +168,7 @@ const Schulungen = () => (
           </div>
 
           {/* Right — elegant numbered topic list */}
-          <div className="lg:col-span-8 reveal reveal-delay-1">
+          <div className="lg:col-span-9 reveal reveal-delay-1">
 
             {/* Mobile-only single image for context */}
             <div className="lg:hidden aspect-[16/9] overflow-hidden shadow-soft mb-12">
