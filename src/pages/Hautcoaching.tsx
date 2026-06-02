@@ -149,7 +149,7 @@ const Hautcoaching = () => (
           Starten wir mit deinem <span className="italic text-primary">Hautcoaching</span>.
         </h2>
         <p className="lede mt-6">
-          Buche dein persönliches Beratungsgespräch im Studio FACE AND MORE in Wien.
+          Buche dein persönliches Beratungsgespräch im Studio Monishine in Wien.
         </p>
         <Link
           to="/kontakt"

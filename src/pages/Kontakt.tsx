@@ -105,7 +105,7 @@ const Kontakt = () => {
               </div>
               <div className="flex gap-3 text-sm text-foreground/85">
                 <Mail size={16} className="text-primary mt-0.5" />
-                <a href="mailto:michaela@faceandmore.at">michaela@faceandmore.at</a>
+                <a href="mailto:michaela@monishine.at">michaela@monishine.at</a>
               </div>
             </div>
 

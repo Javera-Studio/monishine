@@ -78,7 +78,7 @@ const articles: BlogArticle[] = [
     relatedTo: "/produkte",
     content: [
       {
-        text: "Im Studio FACE AND MORE arbeite ich exklusiv mit ASAP Skincare — einer australischen Marke, die auf pharmazeutisch aktiven Wirkstoffen basiert. Was macht diese Produktlinie besonders, und warum setze ich sie sowohl in der Kabine als auch für die Heimpflege meiner Kundinnen ein?",
+        text: "Im Studio Monishine arbeite ich exklusiv mit ASAP Skincare — einer australischen Marke, die auf pharmazeutisch aktiven Wirkstoffen basiert. Was macht diese Produktlinie besonders, und warum setze ich sie sowohl in der Kabine als auch für die Heimpflege meiner Kundinnen ein?",
       },
       {
         heading: "Was ASAP auszeichnet",
@@ -168,7 +168,7 @@ const articles: BlogArticle[] = [
       },
       {
         heading: "Wie ich Fruchtsäure im Studio einsetze",
-        text: "Im Studio FACE AND MORE setze ich Fruchtsäure sowohl in der Kabine als auch als Teil eines individuellen Heimpflegeplans ein. Die Konzentration und Art der Säure wird immer auf den aktuellen Hautzustand abgestimmt — was bei einer Kundin gut wirkt, muss bei der nächsten nicht passen. Deshalb starten wir immer mit einem Gespräch und wenn nötig mit einer Hautanalyse, bevor wir mit einer Fruchtsäurebehandlung beginnen.",
+        text: "Im Studio Monishine setze ich Fruchtsäure sowohl in der Kabine als auch als Teil eines individuellen Heimpflegeplans ein. Die Konzentration und Art der Säure wird immer auf den aktuellen Hautzustand abgestimmt — was bei einer Kundin gut wirkt, muss bei der nächsten nicht passen. Deshalb starten wir immer mit einem Gespräch und wenn nötig mit einer Hautanalyse, bevor wir mit einer Fruchtsäurebehandlung beginnen.",
       },
     ],
   },

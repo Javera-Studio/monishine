@@ -7,7 +7,7 @@ import articles from "@/data/blogArticles";
 const Blog = () => (
   <SiteLayout>
     <PageHero
-      eyebrow="Blog — FACE AND MORE"
+      eyebrow="Blog — Monishine"
       title={
         <>
           Hautwissen, das <span className="italic text-primary">Klarheit</span> schafft.

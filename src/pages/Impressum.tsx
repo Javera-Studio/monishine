@@ -16,7 +16,7 @@ const Impressum = () => (
       <div className="container-editorial max-w-3xl">
         <LegalSection title="Angaben gemäß §5 ECG">
           <p>
-            FACE AND MORE<br />
+            Monishine<br />
             Michaela Kornherr<br />
             Wolfsaugasse 6/2<br />
             A-1200 Wien<br />
@@ -24,8 +24,8 @@ const Impressum = () => (
           </p>
           <p>
             Tel: +43 677 62 920 665<br />
-            E-Mail: michaela@faceandmore.at<br />
-            Website: <a href="https://www.faceandmore.at" className="underline hover:text-primary">www.faceandmore.at</a>
+            E-Mail: michaela@monishine.at<br />
+            Website: <a href="https://www.monishine.at" className="underline hover:text-primary">www.monishine.at</a>
           </p>
         </LegalSection>
 

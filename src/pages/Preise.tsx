@@ -95,7 +95,7 @@ const categories: Category[] = [
 const Preise = () => (
   <SiteLayout>
     <PageHero
-      eyebrow="Preise — FACE AND MORE Wien"
+      eyebrow="Preise — Monishine Wien"
       title={
         <>
           Transparente <span className="italic text-primary">Preise</span> für persönliche Hautpflege.
@@ -108,7 +108,7 @@ const Preise = () => (
       <div className="aspect-[21/9] overflow-hidden shadow-soft">
         <img
           src={haut}
-          alt="Hautpflege FACE AND MORE"
+          alt="Hautpflege Monishine"
           loading="lazy"
           className="w-full h-full object-cover"
         />

@@ -189,7 +189,7 @@ const Zubehoer = () => (
             Ob tägliche Reinigung, ergänzende Heimpflege oder professionelle Unterstützung deiner Pflegeroutine — moderne Hautpflege-Tools helfen dabei, die Haut glatter, frischer und gepflegter wirken zu lassen.
           </p>
           <p className="mt-5 text-foreground/75 leading-relaxed">
-            Bei FACE AND MORE werden Produkte und Tools individuell passend zum Hauttyp und zu den persönlichen Hautzielen empfohlen.
+            Bei Monishine werden Produkte und Tools individuell passend zum Hauttyp und zu den persönlichen Hautzielen empfohlen.
           </p>
           <div className="mt-10 flex flex-wrap gap-2">
             {benefitTags.map((t) => (
@@ -273,7 +273,7 @@ const Zubehoer = () => (
     {/* CTA */}
     <section className="py-24 md:py-32">
       <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">FACE AND MORE</p>
+        <p className="eyebrow mb-5">Monishine</p>
         <h2 className="headline">
           Professionelle Hautpflege beginnt mit der{" "}
           <span className="italic text-primary">richtigen Routine</span>.

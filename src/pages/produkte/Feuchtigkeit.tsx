@@ -295,7 +295,7 @@ const Feuchtigkeit = () => (
             Feuchtigkeitsarme Haut kann schnell fahl, gespannt oder empfindlich wirken. Moderne Pflegeprodukte kombinieren deshalb intensive Hydration mit beruhigenden Wirkstoffen, Antioxidantien und schützender Pflege für ein ausgeglichenes Hautbild.
           </p>
           <p className="mt-5 text-foreground/75 leading-relaxed">
-            Ob leichte Gelpflege, reichhaltige Feuchtigkeitscreme oder täglicher UV-Schutz — bei FACE AND MORE werden Pflegeprodukte individuell auf Hauttyp, Hautzustand und persönliche Hautbedürfnisse abgestimmt.
+            Ob leichte Gelpflege, reichhaltige Feuchtigkeitscreme oder täglicher UV-Schutz — bei Monishine werden Pflegeprodukte individuell auf Hauttyp, Hautzustand und persönliche Hautbedürfnisse abgestimmt.
           </p>
           <div className="mt-10 flex flex-wrap gap-2">
             {benefitTags.map((t) => (
@@ -379,7 +379,7 @@ const Feuchtigkeit = () => (
     {/* CTA */}
     <section className="py-24 md:py-32">
       <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">FACE AND MORE</p>
+        <p className="eyebrow mb-5">Monishine</p>
         <h2 className="headline">
           Gesunde Haut beginnt mit der{" "}
           <span className="italic text-primary">richtigen Pflege</span>.

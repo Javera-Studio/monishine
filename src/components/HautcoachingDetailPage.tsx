@@ -121,7 +121,7 @@ const HautcoachingDetailPage = (p: HautcoachingDetailProps) => (
         <h2 className="headline">
           Lass uns deine Haut <span className="italic text-primary">gemeinsam</span> verstehen.
         </h2>
-        <p className="lede mt-6">Buche dein persönliches Hautcoaching im Studio FACE AND MORE in Wien.</p>
+        <p className="lede mt-6">Buche dein persönliches Hautcoaching im Studio Monishine in Wien.</p>
         <Link
           to="/kontakt"
           className="group mt-10 inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary-glow transition-colors"

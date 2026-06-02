@@ -234,7 +234,7 @@ const Koerperpflege = () => (
             Auch die Körperhaut benötigt abgestimmte Pflege, Feuchtigkeit und gezielte Wirkstoffe, um geschmeidig, glatt und gepflegt zu wirken. Moderne Bodycare kombiniert intensive Hydration mit glättender, beruhigender und regenerierender Pflege für unterschiedliche Hautbedürfnisse.
           </p>
           <p className="mt-5 text-foreground/75 leading-relaxed">
-            Ob trockene Haut, Körperunreinheiten, sensible Haut nach Waxing oder unterstützende Pflege bei Cellulite — bei FACE AND MORE werden Produkte individuell auf Hauttyp und Hautzustand abgestimmt.
+            Ob trockene Haut, Körperunreinheiten, sensible Haut nach Waxing oder unterstützende Pflege bei Cellulite — bei Monishine werden Produkte individuell auf Hauttyp und Hautzustand abgestimmt.
           </p>
           <div className="mt-10 flex flex-wrap gap-2">
             {benefitTags.map((t) => (
@@ -318,7 +318,7 @@ const Koerperpflege = () => (
     {/* CTA */}
     <section className="py-24 md:py-32">
       <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">FACE AND MORE</p>
+        <p className="eyebrow mb-5">Monishine</p>
         <h2 className="headline">
           Professionelle Körperpflege für sichtbar{" "}
           <span className="italic text-primary">gepflegte Haut</span>.

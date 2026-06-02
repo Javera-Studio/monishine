@@ -116,7 +116,7 @@ const Leistungen = () => (
     <PageHero
       eyebrow="Leistungen"
       title={<>Behandlungen für jede Haut <span className="italic text-primary">— individuell</span> abgestimmt.</>}
-      intro="Jede Behandlung im Studio FACE AND MORE wird individuell auf dein Hautbild und deine Ziele abgestimmt — basierend auf einer fundierten Hautanalyse."
+      intro="Jede Behandlung im Studio Monishine wird individuell auf dein Hautbild und deine Ziele abgestimmt — basierend auf einer fundierten Hautanalyse."
     />
     <section className="pb-24 md:pb-32">
       <div className="container-editorial">
