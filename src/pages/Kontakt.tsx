@@ -50,19 +50,6 @@ const Kontakt = () => {
                 <input type="tel" className="w-full bg-background border border-input px-4 py-3 focus:outline-none focus:border-primary transition-colors" />
               </div>
               <div>
-                <label className="eyebrow block mb-2">Behandlung</label>
-                <select className="w-full bg-background border border-input px-4 py-3 focus:outline-none focus:border-primary transition-colors">
-                  <option>Hautanalyse</option>
-                  <option>Akne Behandlung</option>
-                  <option>Anti Aging</option>
-                  <option>Microneedling</option>
-                  <option>Fruchtsäure</option>
-                  <option>Problemhaut</option>
-                  <option>Microblading / PMU</option>
-                  <option>Sonstiges</option>
-                </select>
-              </div>
-              <div>
                 <label className="eyebrow block mb-2">Nachricht</label>
                 <textarea rows={5} className="w-full bg-background border border-input px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none" />
               </div>
