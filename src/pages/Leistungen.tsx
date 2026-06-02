@@ -11,10 +11,64 @@ const serif = {
   fontWeight: 300,
 } as const;
 
-const TreatmentCard = ({ category, index }: { category: ServiceCategory; index: number }) => {
+const FEATURED_IDS = ["lash-extensions", "brows-lash-styling"];
+const GRID_IDS = [
+  "permanent-make-up",
+  "pmu-removal",
+  "gesichtsbehandlungen",
+  "haarentfernung",
+  "koerperbehandlungen",
+  "fineline-tattoo",
+  "lash-schulungen",
+];
+
+const FeaturedCard = ({ category, isDark }: { category: ServiceCategory; isDark: boolean }) => {
+  const href = category.href ?? `/leistungen/${category.slug}`;
+  return (
+    <Link
+      to={href}
+      className={`group flex flex-col overflow-hidden transition-all duration-500 ${
+        isDark
+          ? "bg-foreground hover:bg-primary-glow"
+          : "bg-card border border-border/60 hover:border-foreground/25"
+      }`}
+    >
+      <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden shrink-0">
+        <img
+          src={category.image}
+          alt={category.title}
+          loading="eager"
+          className={`w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04] ${
+            isDark ? "opacity-70 group-hover:opacity-85" : ""
+          }`}
+        />
+      </div>
+      <div className="flex flex-col flex-1 p-8 md:p-10 lg:p-12">
+        <p className={`text-[0.58rem] uppercase tracking-[0.26em] mb-4 font-light ${isDark ? "text-background/45" : "text-muted-foreground"}`}>
+          {category.tagline}
+        </p>
+        <h2 className={`leading-[1.1] ${isDark ? "text-background" : "text-foreground"}`}
+          style={{ ...serif, fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}>
+          {category.title}
+        </h2>
+        <p className={`mt-4 text-sm leading-relaxed font-light ${isDark ? "text-background/55" : "text-muted-foreground"}`}>
+          {category.description}
+        </p>
+        <span className={`mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3 ${
+          isDark
+            ? "text-background/60 border-background/25 group-hover:text-background group-hover:border-background"
+            : "text-foreground/70 border-foreground/25 group-hover:text-accent group-hover:border-accent"
+        }`}>
+          Entdecken <ArrowUpRight size={14} />
+        </span>
+      </div>
+    </Link>
+  );
+};
+
+const GridCard = ({ category, index }: { category: ServiceCategory; index: number }) => {
   const isDark = index % 2 === 1;
   const href = category.href ?? `/leistungen/${category.slug}`;
-
   return (
     <Link
       to={href}
@@ -25,43 +79,26 @@ const TreatmentCard = ({ category, index }: { category: ServiceCategory; index: 
       }`}
     >
       <div className="aspect-[4/3] overflow-hidden shrink-0">
-        <img
-          src={category.image}
-          alt={category.title}
-          loading="lazy"
-          className={`w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04] ${
-            isDark ? "opacity-65 group-hover:opacity-80" : ""
-          }`}
+        <img src={category.image} alt={category.title} loading="lazy"
+          className={`w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04] ${isDark ? "opacity-65 group-hover:opacity-80" : ""}`}
         />
       </div>
       <div className="flex flex-col flex-1 p-7 md:p-8">
-        <p
-          className={`text-[0.6rem] uppercase tracking-[0.24em] mb-3 font-light ${
-            isDark ? "text-background/45" : "text-muted-foreground"
-          }`}
-        >
-          {String(index + 1).padStart(2, "0")} — {category.tagline}
+        <p className={`text-[0.6rem] uppercase tracking-[0.24em] mb-3 font-light ${isDark ? "text-background/45" : "text-muted-foreground"}`}>
+          {category.tagline}
         </p>
-        <h2
-          className={`leading-[1.12] flex-1 ${isDark ? "text-background" : "text-foreground"}`}
-          style={{ ...serif, fontSize: "clamp(1.25rem, 1.8vw, 1.6rem)" }}
-        >
+        <h2 className={`leading-[1.12] flex-1 ${isDark ? "text-background" : "text-foreground"}`}
+          style={{ ...serif, fontSize: "clamp(1.2rem, 1.6vw, 1.5rem)" }}>
           {category.title}
         </h2>
-        <p
-          className={`mt-3 text-sm leading-relaxed line-clamp-2 font-light ${
-            isDark ? "text-background/55" : "text-muted-foreground"
-          }`}
-        >
+        <p className={`mt-3 text-sm leading-relaxed line-clamp-2 font-light ${isDark ? "text-background/55" : "text-muted-foreground"}`}>
           {category.description}
         </p>
-        <span
-          className={`mt-7 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3 ${
-            isDark
-              ? "text-background/60 border-background/25 group-hover:text-background group-hover:border-background"
-              : "text-foreground/70 border-foreground/25 group-hover:text-accent group-hover:border-accent"
-          }`}
-        >
+        <span className={`mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3 ${
+          isDark
+            ? "text-background/60 border-background/25 group-hover:text-background group-hover:border-background"
+            : "text-foreground/70 border-foreground/25 group-hover:text-accent group-hover:border-accent"
+        }`}>
           Entdecken <ArrowUpRight size={13} />
         </span>
       </div>
@@ -76,6 +113,14 @@ const Leistungen = () => {
     cms.categories().then(setCategories);
   }, []);
 
+  const featured = FEATURED_IDS
+    .map(id => categories.find(c => c.id === id))
+    .filter(Boolean) as ServiceCategory[];
+
+  const grid = GRID_IDS
+    .map(id => categories.find(c => c.id === id))
+    .filter(Boolean) as ServiceCategory[];
+
   return (
     <SiteLayout>
       <PageHero
@@ -86,11 +131,24 @@ const Leistungen = () => {
 
       <section className="py-20 md:py-28">
         <div className="container-editorial">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {categories.map((c, i) => (
-              <TreatmentCard key={c.id} category={c} index={i} />
-            ))}
-          </div>
+
+          {/* Tier 1 */}
+          {featured.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+              {featured.map((c, i) => (
+                <FeaturedCard key={c.id} category={c} isDark={i === 0} />
+              ))}
+            </div>
+          )}
+
+          {/* Tier 2 */}
+          {grid.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {grid.map((c, i) => (
+                <GridCard key={c.id} category={c} index={i} />
+              ))}
+            </div>
+          )}
 
           <div className="mt-20 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <p className="font-serif text-2xl md:text-3xl max-w-md leading-snug">
@@ -100,6 +158,7 @@ const Leistungen = () => {
               Termin buchen
             </Link>
           </div>
+
         </div>
       </section>
     </SiteLayout>
