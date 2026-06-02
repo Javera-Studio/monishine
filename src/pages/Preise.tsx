@@ -264,8 +264,10 @@ const Preise = () => {
           </Link>
         </div>
       </section>
+     </div>
     </SiteLayout>
   );
+
 };
 
 export default Preise;
