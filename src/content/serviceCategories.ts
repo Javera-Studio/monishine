@@ -1,6 +1,6 @@
 import type { ServiceCategory } from "./types";
 import imgBrows from "@/assets/haut1.jpg";
-import imgLashExt from "@/assets/schulung1.jpg";
+import imgLashExt from "@/assets/lashes.jpg";
 import imgPmu from "@/assets/treatment-pmu.jpg";
 import imgPmuRemoval from "@/assets/neue.jpg";
 import imgFacial from "@/assets/gesichtsbehandlung.jpg";
