@@ -1,52 +1,87 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/moni.jpeg";
 
 const About = () => (
   <section className="py-24 md:py-32 bg-secondary/40">
     <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-      <div className="lg:col-span-5">
-        <div className="aspect-[4/5] overflow-hidden shadow-soft">
+
+      {/* Portrait */}
+      <div className="lg:col-span-5 reveal">
+        <div className="aspect-[4/5] overflow-hidden shadow-elegant">
           <img
             src={portrait}
-            alt="Michaela Kornherr — Hautexpertin & Gründerin von Monishine in Wien"
+            alt="Moni — Monishine Beauty Studio"
             loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>
       </div>
-      <div className="lg:col-span-7">
-        <p className="eyebrow mb-5">Über Michaela</p>
-        <h2 className="headline">
-          Hautgesundheit ist für mich <span className="italic text-primary">persönlich.</span>
-        </h2>
-        <p className="lede mt-6">
-          Seit vielen Jahren begleite ich Menschen auf dem Weg zu einer Haut, in der
-          sie sich wohlfühlen. Mein Anspruch: moderne, fundierte Behandlungen
-          kombiniert mit einer Atmosphäre, in der du dich verstanden fühlst.
-        </p>
-        <p className="mt-4 text-foreground/80 leading-relaxed">
-          Im Monishine Studio in Wien verbinde ich kontinuierliche
-          Weiterbildung mit echter Zeit für jede Kundin — von der Hautanalyse bis
-          zum individuellen Pflegeplan.
+
+      {/* Content */}
+      <div className="lg:col-span-7 reveal reveal-delay-1">
+        <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
+          Why Monishine
         </p>
 
-        <div className="mt-10 grid sm:grid-cols-3 gap-6 border-t border-border pt-8">
-          {[
-            ["15+", "Jahre Erfahrung"],
-            ["3D", "Hautanalyse"],
-            ["1:1", "Persönliche Betreuung"],
-          ].map(([n, l]) => (
-            <div key={l}>
-              <p className="font-serif text-3xl text-primary">{n}</p>
-              <p className="eyebrow mt-2">{l}</p>
-            </div>
-          ))}
+        <h2
+          className="text-foreground leading-[1.05]"
+          style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+            fontWeight: 300,
+          }}
+        >
+          Beauty sollte sich nicht perfekt anfühlen —
+          <em className="italic"> sondern persönlich.</em>
+        </h2>
+
+        <div className="mt-7 space-y-5 text-foreground/80 leading-[1.9] font-light">
+          <p>
+            Monishine steht für moderne Beauty Treatments mit Persönlichkeit,
+            Präzision und einer Atmosphäre zum Wohlfühlen.
+          </p>
+          <p>
+            Mit viel Liebe zum Detail, echter Leidenschaft für Brows &amp; Lashes
+            und dem Wunsch, Menschen selbstbewusster und glücklicher zu machen,
+            ist ein Studio entstanden, in dem sich jede Person willkommen
+            fühlen darf.
+          </p>
+          <p>
+            Ob natürliche Brows, Lash Extensions, Glow Treatments oder
+            Permanent Make-up – bei Monishine geht es nicht nur um
+            Behandlungen, sondern darum, dass du dich schön, wohl und
+            selbstbewusst fühlst.
+          </p>
         </div>
 
-        <Link to="/ueber-mich" className="link-underline mt-10 text-sm">
-          Mehr über mich erfahren →
-        </Link>
+        {/* Tagline */}
+        <p
+          className="mt-7 text-foreground/60"
+          style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "1.1rem",
+            fontWeight: 300,
+            lineHeight: 1.7,
+          }}
+        >
+          Für Ladies &amp; Gentlemen.<br />
+          Warm. Persönlich. Modern.
+        </p>
+
+        {/* CTA */}
+        <div className="mt-10 pt-8 border-t border-foreground/10">
+          <Link to="/ueber-mich" className="btn-primary group">
+            Mehr über Monishine
+            <ArrowRight
+              size={14}
+              strokeWidth={1.5}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </Link>
+        </div>
       </div>
+
     </div>
   </section>
 );
