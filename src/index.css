@@ -27,6 +27,11 @@
     --accent-foreground: 36 38% 96%;
     --accent-soft: 28 40% 86%;           /* soft warm tan */
 
+    /* Premium taupe — Monishine print/highlight palette */
+    --taupe: 30 19% 65%;                 /* #B7A796 */
+    --taupe-foreground: 36 38% 97%;      /* warm cream */
+
+
     --secondary: 32 28% 88%;             /* soft beige */
     --secondary-foreground: 24 14% 11%;
 
