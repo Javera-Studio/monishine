@@ -205,7 +205,7 @@ const UeberMich = () => (
           {/* Row 1: wide feature · medium · small */}
           <div className="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4">
             {/* salon1 — dominant wide image */}
-            <div className="col-span-2 lg:col-span-5 aspect-[4/3] lg:aspect-[3/2] overflow-hidden shadow-soft">
+            <div className="col-span-2 lg:col-span-6 aspect-[4/3] lg:aspect-[3/2] overflow-hidden shadow-soft">
               <img
                 src={salon1Img}
                 alt="Monishine Studio Wien — Behandlungsraum"
@@ -213,8 +213,8 @@ const UeberMich = () => (
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
             </div>
-            {/* salon5 — medium */}
-            <div className="lg:col-span-4 aspect-[4/3] overflow-hidden shadow-soft">
+            {/* salon5 — same size as salon2 */}
+            <div className="lg:col-span-3 aspect-[4/3] overflow-hidden shadow-soft">
               <img
                 src={salon5Img}
                 alt="Monishine Studio Wien — Studio Detail"
@@ -222,7 +222,7 @@ const UeberMich = () => (
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
             </div>
-            {/* salon2 — small */}
+            {/* salon2 — same size as salon5 */}
             <div className="lg:col-span-3 aspect-[4/3] overflow-hidden shadow-soft">
               <img
                 src={salon2Img}
@@ -235,8 +235,8 @@ const UeberMich = () => (
 
           {/* Row 2: wide landscape · portrait */}
           <div className="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4">
-            {/* IMG_0578 — wide cinematic */}
-            <div className="lg:col-span-7 aspect-[4/3] lg:aspect-[16/9] overflow-hidden shadow-soft">
+            {/* IMG_0578 — wide, matched height */}
+            <div className="lg:col-span-7 aspect-[4/3] lg:aspect-[7/4] overflow-hidden shadow-soft">
               <img
                 src={studioImg}
                 alt="Monishine Beauty Studio Wien"
@@ -245,8 +245,8 @@ const UeberMich = () => (
                 style={{ objectPosition: "right center" }}
               />
             </div>
-            {/* salon3 — accent */}
-            <div className="lg:col-span-5 aspect-[4/3] overflow-hidden shadow-soft">
+            {/* salon3 — matched height */}
+            <div className="lg:col-span-5 aspect-[4/3] lg:aspect-[5/4] overflow-hidden shadow-soft">
               <img
                 src={salon3Img}
                 alt="Monishine Studio Wien — Details"
