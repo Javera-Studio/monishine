@@ -23,7 +23,7 @@ const Leistungen = () => {
 
       <section className="py-20 md:py-28">
         <div className="container-editorial">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {categories.map((c, i) => (
               <Link
                 key={c.id}
