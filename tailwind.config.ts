@@ -13,6 +13,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['Italiana', '"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
@@ -31,6 +32,7 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        "accent-soft": "hsl(var(--accent-soft))",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -64,7 +66,7 @@ export default {
       },
       backgroundImage: {
         'gradient-warm': 'var(--gradient-warm)',
-        'gradient-teal': 'var(--gradient-teal)',
+        'gradient-taupe': 'var(--gradient-taupe)',
       },
       boxShadow: {
         soft: 'var(--shadow-soft)',

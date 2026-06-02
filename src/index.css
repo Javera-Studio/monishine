@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italiana&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,54 +6,56 @@
 
 @layer base {
   :root {
-    /* Editorial premium skin clinic palette */
-    --background: 340 18% 97%;          /* #FAFAF8 warm off-white */
-    --foreground: 0 0% 18%;            /* #2E2E2E deep ink */
+    /* Monishine — warm cream, beige, taupe, soft brown, black accents */
+    --background: 36 38% 95%;            /* warm cream #F6EFE4 */
+    --foreground: 24 14% 11%;            /* near-black ink #1F1A16 */
 
-    --card: 340 18% 98%;
-    --card-foreground: 0 0% 18%;
+    --card: 36 38% 96%;
+    --card-foreground: 24 14% 11%;
 
-    --popover: 60 14% 99%;
-    --popover-foreground: 0 0% 18%;
+    --popover: 36 38% 97%;
+    --popover-foreground: 24 14% 11%;
 
-    /* Logo teal */
-    --primary: 180 79% 33%;            /* #129798 */
-    --primary-foreground: 60 14% 98%;
-    --primary-soft: 173 31% 95%;       /* #EEF7F6 */
-    --primary-glow: 180 80% 28%;       /* #0E7F80 hover */
+    /* Primary: deep espresso/black for elegant CTAs */
+    --primary: 24 14% 11%;               /* #1F1A16 */
+    --primary-foreground: 36 38% 96%;    /* cream */
+    --primary-soft: 30 28% 90%;          /* soft beige */
+    --primary-glow: 22 18% 22%;          /* warm hover */
 
-    --secondary: 340 25% 90%;          /* soft aqua #EEF7F6 */
-    --secondary-foreground: 0 0% 18%;
+    /* Accent: warm brown/copper from Monishine logo */
+    --accent: 24 36% 58%;                /* #B98869 warm brown */
+    --accent-foreground: 36 38% 96%;
+    --accent-soft: 28 40% 86%;           /* soft warm tan */
 
-    --muted: 340 15% 93%;
-    --muted-foreground: 0 0% 38%;
+    --secondary: 32 28% 88%;             /* soft beige */
+    --secondary-foreground: 24 14% 11%;
 
-    --accent: 173 31% 95%;
-    --accent-foreground: 0 0% 18%;
+    --muted: 32 22% 91%;
+    --muted-foreground: 24 10% 38%;
 
-    --destructive: 0 60% 45%;
-    --destructive-foreground: 60 14% 98%;
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 36 38% 96%;
 
-    --border: 60 8% 88%;
-    --input: 60 8% 88%;
-    --ring: 180 79% 33%;
+    --border: 30 18% 84%;
+    --input: 30 18% 84%;
+    --ring: 24 14% 11%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
 
-   --gradient-warm: linear-gradient(180deg, hsl(340 18% 98%) 0%, hsl(340 25% 92%) 100%);
-    --gradient-teal: linear-gradient(135deg, hsl(180 79% 33%), hsl(180 80% 28%));
-    --shadow-soft: 0 1px 2px hsl(0 0% 18% / 0.04), 0 12px 40px -12px hsl(0 0% 18% / 0.08);
-    --shadow-elegant: 0 30px 60px -30px hsl(180 79% 33% / 0.22);
+    --gradient-warm: linear-gradient(180deg, hsl(36 38% 96%) 0%, hsl(32 30% 90%) 100%);
+    --gradient-taupe: linear-gradient(135deg, hsl(28 22% 82%), hsl(24 26% 68%));
+    --shadow-soft: 0 1px 2px hsl(24 14% 11% / 0.04), 0 18px 50px -20px hsl(24 14% 11% / 0.10);
+    --shadow-elegant: 0 30px 80px -30px hsl(24 14% 11% / 0.18);
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
-    --sidebar-background: 36 30% 97%;
-    --sidebar-foreground: 200 15% 16%;
-    --sidebar-primary: 188 38% 30%;
-    --sidebar-primary-foreground: 36 30% 97%;
-    --sidebar-accent: 32 18% 94%;
-    --sidebar-accent-foreground: 200 15% 16%;
-    --sidebar-border: 32 14% 88%;
-    --sidebar-ring: 188 38% 30%;
+    --sidebar-background: 36 38% 96%;
+    --sidebar-foreground: 24 14% 11%;
+    --sidebar-primary: 24 14% 11%;
+    --sidebar-primary-foreground: 36 38% 96%;
+    --sidebar-accent: 32 28% 90%;
+    --sidebar-accent-foreground: 24 14% 11%;
+    --sidebar-border: 30 18% 84%;
+    --sidebar-ring: 24 14% 11%;
   }
 }
 
@@ -68,36 +70,54 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'ss01', 'cv11';
+    font-weight: 300;
   }
   h1, h2, h3, h4, .font-serif {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
+  }
+  .font-display {
+    font-family: 'Italiana', 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.005em;
   }
 }
 
 @layer components {
   .container-editorial {
-    @apply mx-auto px-6 md:px-10 lg:px-16;
-    max-width: 1340px;
+    @apply mx-auto px-6 md:px-12 lg:px-20;
+    max-width: 1400px;
   }
   .eyebrow {
-    @apply text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground font-medium;
+    @apply text-[0.68rem] uppercase tracking-[0.28em] text-muted-foreground font-normal;
   }
   .display {
     @apply font-serif leading-[1.05] text-foreground;
-    font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
+    font-weight: 300;
   }
   .headline {
-    @apply font-serif leading-[1.1] text-foreground;
-    font-size: clamp(2rem, 3.6vw, 3.25rem);
+    @apply font-serif leading-[1.08] text-foreground;
+    font-size: clamp(2rem, 3.8vw, 3.5rem);
+    font-weight: 300;
   }
   .lede {
-    @apply text-base md:text-lg text-muted-foreground leading-relaxed;
+    @apply text-base md:text-lg text-muted-foreground leading-[1.75];
+    font-weight: 300;
   }
   .link-underline {
-    @apply relative inline-flex items-center gap-2 text-foreground transition-colors hover:text-primary;
+    @apply relative inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent;
   }
+
+  /* Elegant CTA buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-9 py-4 bg-foreground text-background text-xs tracking-[0.22em] uppercase font-normal transition-all duration-500 hover:bg-accent;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-9 py-4 border border-foreground/30 text-foreground text-xs tracking-[0.22em] uppercase font-normal transition-all duration-500 hover:border-foreground hover:bg-foreground hover:text-background;
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(16px);
