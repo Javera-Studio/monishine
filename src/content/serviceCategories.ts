@@ -1,6 +1,8 @@
 import type { ServiceCategory } from "./types";
 import imgBrows from "@/assets/haut1.jpg";
+import imgLashExt from "@/assets/schulung1.jpg";
 import imgPmu from "@/assets/treatment-pmu.jpg";
+import imgPmuRemoval from "@/assets/neue.jpg";
 import imgFacial from "@/assets/gesichtsbehandlung.jpg";
 import imgLaser from "@/assets/treatment-skin.jpg";
 import imgBody from "@/assets/allgemeine-hautberatung.jpg";
@@ -9,13 +11,13 @@ import imgFineline from "@/assets/treatment-microneedling.jpg";
 
 export const serviceCategories: ServiceCategory[] = [
   {
-    id: "augenbrauen-wimpern",
-    slug: "augenbrauen-wimpern",
+    id: "brows-lash-styling",
+    slug: "brows-lash-styling",
     order: 1,
-    title: "Augenbrauen & Wimpern",
-    tagline: "Brows · Lashes · Lash Extensions",
+    title: "Brows & Lash Styling",
+    tagline: "Brow Lifting · Lash Lifting · Styling",
     description:
-      "Definierte Brauen, ein offener Wimpernblick und hochwertige Wimpernverlängerungen — alles für deinen perfekten Augenausdruck.",
+      "Definierte Brauen, ein offener Wimpernblick und gepflegtes Styling — für deinen natürlichen Augenausdruck.",
     image: imgBrows,
     group: "Brows & Lashes",
     treatments: [
@@ -25,6 +27,20 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Browshine", description: "Glow-Finish und Pflege für gepflegte, glänzende Brauen.", duration: "30 Min", price: "ab € 40" },
       { name: "Tinting", description: "Brauen- und Wimpernfärbung in natürlichen Nuancen.", duration: "20 Min", price: "ab € 20" },
       { name: "Glow Combo Treatments", description: "Lash Lift + Brow Styling + Tinting — das Komplettpaket.", duration: "90 Min", price: "ab € 120" },
+    ],
+  },
+  {
+    id: "lash-extensions",
+    slug: "lash-extensions",
+    order: 2,
+    title: "Lash Extensions",
+    tagline: "Classic · Volume · Wispy · Refill",
+    description:
+      "Hochwertige Wimpernverlängerungen für jeden Look — von natürlich bis dramatisch, mit Präzision und Liebe zum Detail angebracht.",
+    image: imgLashExt,
+    group: "Brows & Lashes",
+    featured: true,
+    treatments: [
       { name: "Classic Lashes", description: "Wimpernverlängerung 1:1 für einen natürlichen, gepflegten Look.", duration: "120 Min", price: "ab € 110" },
       { name: "Volume Lashes", description: "Mehrere feine Wimpern pro Naturwimper — voller, weicher Effekt.", duration: "150 Min", price: "ab € 140" },
       { name: "Wispy Lashes", description: "Spikey, luftiger Look mit ausdrucksstarkem Finish.", duration: "150 Min", price: "ab € 150" },
@@ -34,11 +50,11 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "permanent-make-up",
     slug: "permanent-make-up",
-    order: 2,
-    title: "Permanent Make-up",
-    tagline: "Powder Brows · Lip Blush · Removal",
+    order: 3,
+    title: "Permanent Make-up & PMU",
+    tagline: "Powder Brows · Lip Blush · Refresh",
     description:
-      "Langanhaltende, natürlich wirkende PMU-Techniken für Brauen und Lippen — inklusive Korrekturen und sanfter Entfernung.",
+      "Langanhaltende, natürlich wirkende PMU-Techniken für Brauen und Lippen — inklusive Korrekturen und Auffrischungen.",
     image: imgPmu,
     group: "PMU",
     treatments: [
@@ -47,6 +63,19 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "PMU Treatments", description: "Individuelle PMU-Behandlungen nach persönlicher Beratung.", duration: "ab 120 Min", price: "auf Anfrage" },
       { name: "Refresh Sessions", description: "Auffrischung bestehender PMU-Arbeiten innerhalb 18 Monaten.", duration: "90 Min", price: "ab € 180" },
       { name: "Corrections", description: "Korrektur und Optimierung bestehender Pigmentierungen.", duration: "ab 90 Min", price: "auf Anfrage" },
+    ],
+  },
+  {
+    id: "pmu-removal",
+    slug: "pmu-removal",
+    order: 4,
+    title: "PMU Removal",
+    tagline: "Removal · Correction Sessions",
+    description:
+      "Sanfte, schrittweise Entfernung und Korrektur von Permanent Make-up — mit modernem Remover-Verfahren.",
+    image: imgPmuRemoval,
+    group: "PMU",
+    treatments: [
       { name: "PMU Removal Treatments", description: "Schrittweise Entfernung mit modernem Remover-Verfahren.", duration: "60 Min", price: "ab € 95" },
       { name: "Correction / Removal Sessions", description: "Kombinierte Sitzungen für gezielte Korrekturen.", duration: "60–90 Min", price: "ab € 120" },
     ],
@@ -54,7 +83,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "gesichtsbehandlungen",
     slug: "gesichtsbehandlungen",
-    order: 3,
+    order: 5,
     title: "Gesichtsbehandlungen",
     tagline: "Facials · Glow · Skin",
     description:
@@ -73,7 +102,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "haarentfernung",
     slug: "haarentfernung",
-    order: 4,
+    order: 6,
     title: "Dauerhafte Haarentfernung",
     tagline: "ICE Diodenlaser · Ladies & Gentlemen",
     description:
@@ -91,7 +120,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "koerperbehandlungen",
     slug: "koerperbehandlungen",
-    order: 5,
+    order: 7,
     title: "Körperbehandlungen",
     tagline: "Body Care & Glow",
     description:
@@ -106,7 +135,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "zahnaufhellung",
     slug: "zahnaufhellung",
-    order: 6,
+    order: 8,
     title: "Zahnaufhellung",
     tagline: "Teeth Whitening",
     description:
@@ -120,7 +149,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "fineline-tattoo",
     slug: "fineline-tattoo",
-    order: 7,
+    order: 9,
     title: "Fineline Tattoo",
     tagline: "Delicate Fineline Art",
     description:

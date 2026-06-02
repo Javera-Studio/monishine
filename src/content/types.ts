@@ -28,6 +28,8 @@ export interface ServiceCategory extends ContentMeta {
   treatments: ServiceTreatment[];
   /** Optional grouping label (e.g. "Brows & Lashes") */
   group?: string;
+  /** Marks a signature/hero category for featured layout treatment */
+  featured?: boolean;
 }
 
 export interface FaqItem extends ContentMeta {

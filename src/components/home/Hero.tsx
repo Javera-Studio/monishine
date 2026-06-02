@@ -78,7 +78,7 @@ const Hero = () => (
             <span
               className="font-script block"
               style={{
-                fontSize: "clamp(2.6rem, 4.6vw, 4.6rem)",
+                fontSize: "clamp(3.65rem, 6.4vw, 6.4rem)",
                 color: "hsl(var(--accent))",
                 opacity: 0.8,
                 letterSpacing: "0.01em",
