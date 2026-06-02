@@ -214,7 +214,7 @@ const Preise = () => {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-16 md:py-28 bg-gradient-warm">
+      <section className="py-16 md:py-28 border-t border-border/40">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-4">
