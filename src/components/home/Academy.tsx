@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import schulung1 from "@/assets/schulung1.jpg";
-import schulung2 from "@/assets/schulung2.jpg";
-import schulung3 from "@/assets/schulung3.jpg";
-import schulung4 from "@/assets/schulung4.jpg";
+import schulung1 from "@/assets/IMG_2081.jpeg";
+import schulung2 from "@/assets/IMG_2085.jpeg";
+import schulung3 from "@/assets/IMG_2086.jpeg";
+import schulung4 from "@/assets/IMG_6555.jpeg";
 
 const badges = [
   "Lash Extension Schulungen",
