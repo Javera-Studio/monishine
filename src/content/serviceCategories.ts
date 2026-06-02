@@ -1,8 +1,6 @@
 import type { ServiceCategory } from "./types";
 import imgBrows from "@/assets/wimpernkranz.jpg";
-import imgLashes from "@/assets/treatment-facial.jpg";
 import imgPmu from "@/assets/treatment-pmu.jpg";
-import imgRemoval from "@/assets/treatment-akne.jpg";
 import imgFacial from "@/assets/gesichtsbehandlung.jpg";
 import imgLaser from "@/assets/treatment-skin.jpg";
 import imgBody from "@/assets/treatment-antiaging.jpg";
@@ -14,10 +12,10 @@ export const serviceCategories: ServiceCategory[] = [
     id: "augenbrauen-wimpern",
     slug: "augenbrauen-wimpern",
     order: 1,
-    title: "Augenbrauen & Wimpernbehandlungen",
-    tagline: "Brow & Lash Styling",
+    title: "Augenbrauen & Wimpern",
+    tagline: "Brows · Lashes · Lash Extensions",
     description:
-      "Definierte Brauen und ein offener Wimpernblick — natürlich, präzise und perfekt auf dich abgestimmt.",
+      "Definierte Brauen, ein offener Wimpernblick und hochwertige Wimpernverlängerungen — alles für deinen perfekten Augenausdruck.",
     image: imgBrows,
     group: "Brows & Lashes",
     treatments: [
@@ -27,20 +25,7 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Browshine", description: "Glow-Finish und Pflege für gepflegte, glänzende Brauen.", duration: "30 Min", price: "ab € 40" },
       { name: "Tinting", description: "Brauen- und Wimpernfärbung in natürlichen Nuancen.", duration: "20 Min", price: "ab € 20" },
       { name: "Glow Combo Treatments", description: "Lash Lift + Brow Styling + Tinting — das Komplettpaket.", duration: "90 Min", price: "ab € 120" },
-    ],
-  },
-  {
-    id: "wimpernverlaengerung",
-    slug: "wimpernverlaengerung",
-    order: 2,
-    title: "Wimpernverlängerung",
-    tagline: "Lash Extensions",
-    description:
-      "Hochwertige Wimpernverlängerungen — von dezent natürlich bis ausdrucksstark.",
-    image: imgLashes,
-    group: "Brows & Lashes",
-    treatments: [
-      { name: "Classic Lashes", description: "1:1 Technik für einen natürlichen, gepflegten Look.", duration: "120 Min", price: "ab € 110" },
+      { name: "Classic Lashes", description: "Wimpernverlängerung 1:1 für einen natürlichen, gepflegten Look.", duration: "120 Min", price: "ab € 110" },
       { name: "Volume Lashes", description: "Mehrere feine Wimpern pro Naturwimper — voller, weicher Effekt.", duration: "150 Min", price: "ab € 140" },
       { name: "Wispy Lashes", description: "Spikey, luftiger Look mit ausdrucksstarkem Finish.", duration: "150 Min", price: "ab € 150" },
       { name: "Refill Treatments", description: "Auffüllen nach 2–3 Wochen für konstante Fülle.", duration: "60–90 Min", price: "ab € 55" },
@@ -49,11 +34,11 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "permanent-make-up",
     slug: "permanent-make-up",
-    order: 3,
-    title: "Permanent Make-up & PMU",
-    tagline: "Powder Brows · Lip Blush",
+    order: 2,
+    title: "Permanent Make-up",
+    tagline: "Powder Brows · Lip Blush · Removal",
     description:
-      "Langanhaltende, natürlich wirkende PMU-Techniken für Brauen und Lippen — handwerklich präzise.",
+      "Langanhaltende, natürlich wirkende PMU-Techniken für Brauen und Lippen — inklusive Korrekturen und sanfter Entfernung.",
     image: imgPmu,
     group: "PMU",
     treatments: [
@@ -62,19 +47,6 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "PMU Treatments", description: "Individuelle PMU-Behandlungen nach persönlicher Beratung.", duration: "ab 120 Min", price: "auf Anfrage" },
       { name: "Refresh Sessions", description: "Auffrischung bestehender PMU-Arbeiten innerhalb 18 Monaten.", duration: "90 Min", price: "ab € 180" },
       { name: "Corrections", description: "Korrektur und Optimierung bestehender Pigmentierungen.", duration: "ab 90 Min", price: "auf Anfrage" },
-    ],
-  },
-  {
-    id: "pmu-remover",
-    slug: "pmu-remover",
-    order: 4,
-    title: "PMU Remover",
-    tagline: "PMU Removal & Korrekturen",
-    description:
-      "Sanfte Entfernung und Korrektur unerwünschter Permanent Make-up-Ergebnisse.",
-    image: imgRemoval,
-    group: "PMU",
-    treatments: [
       { name: "PMU Removal Treatments", description: "Schrittweise Entfernung mit modernem Remover-Verfahren.", duration: "60 Min", price: "ab € 95" },
       { name: "Correction / Removal Sessions", description: "Kombinierte Sitzungen für gezielte Korrekturen.", duration: "60–90 Min", price: "ab € 120" },
     ],
@@ -82,7 +54,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "gesichtsbehandlungen",
     slug: "gesichtsbehandlungen",
-    order: 5,
+    order: 3,
     title: "Gesichtsbehandlungen",
     tagline: "Facials · Glow · Skin",
     description:
@@ -101,7 +73,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "haarentfernung",
     slug: "haarentfernung",
-    order: 6,
+    order: 4,
     title: "Dauerhafte Haarentfernung",
     tagline: "ICE Diodenlaser · Ladies & Gentlemen",
     description:
@@ -119,7 +91,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "koerperbehandlungen",
     slug: "koerperbehandlungen",
-    order: 7,
+    order: 5,
     title: "Körperbehandlungen",
     tagline: "Body Care & Glow",
     description:
@@ -134,7 +106,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "zahnaufhellung",
     slug: "zahnaufhellung",
-    order: 8,
+    order: 6,
     title: "Zahnaufhellung",
     tagline: "Teeth Whitening",
     description:
@@ -142,13 +114,13 @@ export const serviceCategories: ServiceCategory[] = [
     image: imgTeeth,
     group: "Smile",
     treatments: [
-      { name: "Teeth Whitening Treatment", description: "Professionelle Aufhellung mit sichtbarem Sofortergebnis.", duration: "60 Min", price: "ab € 99" },
+      { name: "Teeth Whitening Treatments", description: "Professionelle Aufhellung mit sichtbarem Sofortergebnis.", duration: "60 Min", price: "ab € 99" },
     ],
   },
   {
     id: "fineline-tattoo",
     slug: "fineline-tattoo",
-    order: 9,
+    order: 7,
     title: "Fineline Tattoo",
     tagline: "Delicate Fineline Art",
     description:
