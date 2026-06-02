@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import heroImg from "@/assets/michaela.jpg";
+import heroImg from "@/assets/IMG_0578.jpeg";
 
 const TREATWELL = "https://buchung.treatwell.de/ort/monishine/";
 
