@@ -60,8 +60,8 @@ const Hero = () => (
       <div className="relative z-10 container-editorial w-full lg:min-h-screen lg:flex lg:items-center">
         <div className="max-w-[520px] pt-3 pb-12 lg:py-36 reveal">
 
-          <p className="eyebrow mb-6 text-accent" style={{ letterSpacing: "0.3em" }}>
-            Brows. Lashes. Glow.
+          <p className="mb-6 text-accent font-light" style={{ fontSize: "0.75rem", letterSpacing: "0.35em", textTransform: "uppercase" }}>
+            Brows • Lashes • Glow
           </p>
 
           <h1
