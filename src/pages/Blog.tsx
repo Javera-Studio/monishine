@@ -1,63 +1,42 @@
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
-import articles from "@/data/blogArticles";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const Blog = () => (
   <SiteLayout>
     <PageHero
-      eyebrow="Blog — Monishine"
+      eyebrow="Schulungen"
       title={
         <>
-          Hautwissen, das <span className="italic text-primary">Klarheit</span> schafft.
+          Wissen & <span className="italic text-primary">Schulungen.</span>
         </>
       }
-      intro="Persönliche Einblicke, Wirkstoffe verständlich erklärt und Tipps aus der Praxis — für eine Hautpflege, die wirklich wirkt."
+      intro="Professionelle Schulungen rund um Brows, Lashes und moderne Beauty Treatments. Hier findest du bald alle aktuellen Angebote."
     />
 
-    <section className="py-20 md:py-28">
-      <div className="container-editorial grid sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-x-10 lg:gap-y-20">
-        {articles.map((a) => (
-          <article key={a.slug} className="group flex flex-col">
-            <Link to={`/blog/${a.slug}`} className="aspect-[4/5] overflow-hidden mb-6 block">
-              <img
-                src={a.image}
-                alt={a.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-              />
-            </Link>
-            <p className="eyebrow mb-3">{a.category}</p>
-            <h2 className="font-serif text-2xl leading-snug text-foreground group-hover:text-primary transition-colors">
-              <Link to={`/blog/${a.slug}`}>{a.title}</Link>
-            </h2>
-            <p className="mt-4 text-foreground/70 leading-relaxed text-sm">{a.excerpt}</p>
-            <Link
-              to={`/blog/${a.slug}`}
-              className="mt-6 inline-flex items-center gap-2 text-sm tracking-wide text-primary hover:text-primary-glow transition-colors"
-            >
-              Artikel lesen <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section className="py-24 md:py-32 bg-secondary/40">
-      <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">Persönliche Beratung</p>
-        <h2 className="headline">
-          Frag mich gerne <span className="italic text-primary">persönlich</span>.
+    <section className="py-24 md:py-32">
+      <div className="container-editorial text-center max-w-xl mx-auto">
+        <p className="eyebrow mb-5 text-accent">Demnächst verfügbar</p>
+        <h2
+          className="text-foreground leading-[1.06]"
+          style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "clamp(1.8rem, 3vw, 3rem)",
+            fontWeight: 300,
+          }}
+        >
+          Die Schulungsseite wird gerade aufgebaut.
         </h2>
         <p className="lede mt-6">
-          Du hast eine Frage zu deiner Haut oder zu einer Behandlung? Schreib mir — ich antworte persönlich.
+          Interesse an einer Schulung oder Weiterbildung? Melde dich gerne direkt — ich informiere dich persönlich über aktuelle Termine.
         </p>
         <Link
           to="/kontakt"
-          className="group mt-10 inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary-glow transition-colors"
+          className="group mt-10 inline-flex items-center gap-2 btn-primary"
         >
-          Kontakt aufnehmen <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+          Jetzt anfragen
+          <ArrowRight size={14} strokeWidth={1.5} className="transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
     </section>

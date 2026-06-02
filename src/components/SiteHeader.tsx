@@ -6,7 +6,7 @@ import logo from "@/assets/monishine-logo.png.asset.json";
 const links = [
   { to: "/leistungen", label: "Treatments" },
   { to: "/ueber-mich", label: "Über uns" },
-  { to: "/blog", label: "Journal" },
+  { to: "/blog", label: "Schulungen" },
   { to: "/kontakt", label: "Kontakt" },
 ];
 
