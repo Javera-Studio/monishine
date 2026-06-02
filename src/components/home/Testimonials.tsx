@@ -99,7 +99,7 @@ const ReviewCard = ({ r }: { r: Review }) => (
 );
 
 const Testimonials = () => (
-  <section className="pt-16 md:pt-36 pb-0 bg-background">
+  <section className="surface-taupe pt-16 md:pt-36 pb-0">
     <div className="container-editorial">
 
       {/* ── Header: two-column editorial layout ── */}

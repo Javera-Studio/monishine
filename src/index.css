@@ -27,6 +27,11 @@
     --accent-foreground: 36 38% 96%;
     --accent-soft: 28 40% 86%;           /* soft warm tan */
 
+    /* Premium taupe — Monishine print/highlight palette */
+    --taupe: 30 19% 65%;                 /* #B7A796 */
+    --taupe-foreground: 36 38% 97%;      /* warm cream */
+
+
     --secondary: 32 28% 88%;             /* soft beige */
     --secondary-foreground: 24 14% 11%;
 
@@ -125,6 +130,34 @@
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 px-9 py-4 border border-foreground/30 text-foreground text-xs tracking-[0.22em] uppercase font-normal transition-all duration-500 hover:border-foreground hover:bg-foreground hover:text-background;
   }
+
+  /* Premium taupe surface — Monishine print look.
+     Re-maps semantic tokens locally so descendants automatically
+     render with cream text, soft cream borders, and a deeper taupe
+     accent without changing component code. */
+  .surface-taupe {
+    background-color: hsl(var(--taupe));
+    --background: 30 19% 65%;
+    --foreground: 36 38% 97%;
+    --muted: 30 14% 58%;
+    --muted-foreground: 36 30% 90%;
+    --border: 36 30% 88%;
+    --card: 30 19% 65%;
+    --card-foreground: 36 38% 97%;
+    --secondary: 30 14% 56%;
+    --secondary-foreground: 36 38% 97%;
+    --accent: 36 38% 97%;
+    --accent-foreground: 24 14% 18%;
+    --primary: 36 38% 97%;
+    --primary-foreground: 24 14% 18%;
+    --ring: 36 38% 97%;
+    color: hsl(var(--foreground));
+  }
+  .surface-taupe .bg-gradient-warm,
+  .surface-taupe.bg-gradient-warm {
+    background: transparent !important;
+  }
+
 
   .reveal {
     opacity: 0;
