@@ -114,9 +114,9 @@ const Faq = () => {
     setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="py-24 md:py-32 bg-gradient-warm">
+    <section className="py-16 md:py-32 bg-gradient-warm">
       <div className="container-editorial">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
           {/* ── Left: sticky headline + CTA ── */}
           <div className="lg:col-span-4 lg:sticky lg:top-28 reveal">

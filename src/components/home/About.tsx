@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/moni.jpeg";
 
 const About = () => (
-  <section className="py-24 md:py-32 bg-secondary/40">
-    <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+  <section className="py-16 md:py-32 bg-secondary/40">
+    <div className="container-editorial grid lg:grid-cols-12 gap-10 lg:gap-20 items-center">
 
       {/* Portrait */}
       <div className="lg:col-span-5 reveal">
