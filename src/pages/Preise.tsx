@@ -145,8 +145,10 @@ const Preise = () => {
 
   return (
     <SiteLayout>
+     <div className="surface-taupe">
       {/* ── Hero ── */}
-      <section className="bg-gradient-warm">
+      <section>
+
         <div className="container-editorial pt-16 md:pt-24 pb-16 md:pb-24">
           <p className="eyebrow mb-6">Alle Preise auf einen Blick</p>
           <h1
