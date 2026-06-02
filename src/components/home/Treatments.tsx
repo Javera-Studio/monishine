@@ -180,6 +180,18 @@ const Treatments = () => {
               Jede Behandlung wird persönlich auf dich abgestimmt — vom feinen Brow Styling
               bis zum modernen Skin Treatment.
             </p>
+            {/* Trust badges */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["400+ zufriedene Kund:innen", "5 Jahre Top Rated", "Zertifizierte Beauty Expertin"].map((b) => (
+                <span
+                  key={b}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-foreground/12 bg-secondary/40 text-[0.58rem] uppercase tracking-[0.18em] text-foreground/50 font-light"
+                >
+                  <span className="text-accent/60" style={{ fontSize: "0.38rem" }}>✦</span>
+                  {b}
+                </span>
+              ))}
+            </div>
           </div>
           <Link to="/leistungen" className="link-underline text-sm shrink-0">
             Alle Leistungen <ArrowUpRight size={16} />
