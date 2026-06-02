@@ -1,231 +1,210 @@
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
-const featured = {
-  text: "Die Aknebehandlung ist jedes Mal wirklich ausgezeichnet! Da ich regelmäßig bei Michaela bin, ist meine Haut um einiges besser geworden. Ich fühle mich immer sehr gut aufgehoben.",
-  name: "Charlotte",
-  tag: "Akne & Problemhaut",
-};
+const serif = {
+  fontFamily: "'Cormorant Garamond', Georgia, serif",
+  fontWeight: 300,
+} as const;
 
-const reviews = [
-  {
-    text: "Individuelle Beratung und Behandlung wie es gerade passt und was man gerade braucht. Super Beratung ohne dass man zu einem Produktkauf gedrängt wird.",
-    name: "Nina",
-    tag: "Persönliche Beratung",
-  },
-  {
-    text: "Michaela strahlt eine außergewöhnliche Freundlichkeit und Wärme aus. Man fühlt sich sehr gut aufgehoben und absolut willkommen.",
-    name: "Bruno",
-    tag: "Vertrauen & Atmosphäre",
-  },
-  {
-    text: "…ich strahle heute wie ein glasierter Donut nach dem Microneedling.",
-    name: "Claudia",
-    tag: "Microneedling Glow",
-    short: true,
-  },
-  {
-    text: "Michaela ist fachlich äußerst kompetent und sie hat eine sehr angenehme Art.",
-    name: "Heidemarie",
-    tag: "Kompetenz & Anti Aging",
-  },
-  {
-    text: "Eine absolute Wohlfühloase! Das liebevoll eingerichtete Ambiente und die kompetente, herzliche Betreuung lassen keine Wünsche offen.",
-    name: "Milana",
-    tag: "Wohlfühlatmosphäre",
-  },
-];
+const STAR_COLOR = "#C9A66B";
 
-const Stars = () => (
-  <div className="flex gap-1" style={{ color: "#C9A66B" }} aria-label="5 von 5 Sternen">
+const Stars = ({ size = 11 }: { size?: number }) => (
+  <div className="flex gap-[3px]" aria-label="5 von 5 Sternen">
     {Array.from({ length: 5 }).map((_, i) => (
-      <Star key={i} size={13} fill="currentColor" strokeWidth={0} />
+      <Star key={i} size={size} fill={STAR_COLOR} strokeWidth={0} />
     ))}
   </div>
 );
 
-const Initial = ({ name }: { name: string }) => (
-  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary font-serif text-base">
-    {name.charAt(0)}
-  </span>
+const featured = {
+  quote:
+    "Moni ist einfach großartig! 💕 Meine Wimpern sehen traumhaft aus — perfekt geformt, leicht und trotzdem ausdrucksstark. Man merkt sofort, wie viel Liebe sie in ihre Arbeit steckt. Ich habe mich rundum wohlgefühlt und komme definitiv wieder.",
+  name: "Saskia",
+  treatment: "Wimpernverlängerung",
+};
+
+const leftCol = [
+  {
+    quote:
+      "Die Lippenpigmentierung ist mit eine der besten Entscheidungen meines Lebens gewesen. Die Farbe ist perfekt und ich sehe direkt frischer aus. Danke für deine zauberhafte Arbeit Moni!",
+    name: "Salma",
+    treatment: "Permanent Make-up",
+    warm: true,
+  },
+  {
+    quote:
+      "Eine liebevolle Wimpernstylistin mit Erfahrung, die weiß wie es geht und das perfekte Ergebnis zaubert. 😍",
+    name: "Sabina",
+    treatment: "Lash Extensions",
+    warm: false,
+  },
+  {
+    quote: "Super nette Beratung für mich und meine Mutter, wir sind so zufrieden.",
+    name: "Aktas",
+    treatment: "PMU & Brows",
+    warm: true,
+  },
+];
+
+const rightCol = [
+  {
+    quote:
+      "Monishine ist eine super kompetente Kosmetikerin mit Erfahrung. Die Atmosphäre war 1A, ich habe mich gut aufgehoben gefühlt. Sie nimmt sich Zeit, gibt Tipps und man kann super entspannen.",
+    name: "Angelina",
+    treatment: "Micro-Needling",
+    warm: false,
+  },
+  {
+    quote: "Das es voll ist habe ich mir gedacht — aber dass es sooo toll ist, wow 🥰",
+    name: "Julia",
+    treatment: "Hydrating Facial",
+    warm: true,
+  },
+];
+
+type Review = { quote: string; name: string; treatment: string; warm: boolean };
+
+const ReviewCard = ({ r }: { r: Review }) => (
+  <article
+    className={`group p-7 md:p-8 transition-all duration-500 ${
+      r.warm ? "bg-secondary/35" : ""
+    }`}
+  >
+    <Stars />
+    <blockquote
+      className="mt-5 leading-[1.78] text-foreground/75 group-hover:text-foreground/95 transition-colors duration-500"
+      style={{ ...serif, fontSize: "clamp(0.98rem, 1.5vw, 1.15rem)" }}
+    >
+      „{r.quote}"
+    </blockquote>
+    <footer className="mt-6 pt-5 border-t border-foreground/[0.07]">
+      <p style={{ ...serif, fontSize: "0.88rem", color: "hsl(var(--foreground) / 0.7)" }}>
+        — {r.name}
+      </p>
+      <p className="eyebrow mt-1" style={{ color: "hsl(var(--accent) / 0.65)" }}>
+        {r.treatment}
+      </p>
+      <p className="mt-2 text-[0.55rem] uppercase tracking-[0.2em] text-foreground/28 flex items-center gap-1.5">
+        <span>✓</span> Verifizierte Bewertung
+      </p>
+    </footer>
+  </article>
 );
 
 const Testimonials = () => (
-  <section className="relative py-28 md:py-40 bg-background overflow-hidden">
-    {/* subtle decorative wash */}
-    <div
-      aria-hidden
-      className="pointer-events-none absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full opacity-60 blur-3xl"
-      style={{ background: "radial-gradient(closest-side, hsl(var(--primary-soft)), transparent)" }}
-    />
-    <div
-      aria-hidden
-      className="pointer-events-none absolute -bottom-40 -left-32 h-[420px] w-[420px] rounded-full opacity-50 blur-3xl"
-      style={{ background: "radial-gradient(closest-side, hsl(var(--primary-soft)), transparent)" }}
-    />
+  <section className="py-24 md:py-36 bg-background overflow-hidden">
+    <div className="container-editorial">
 
-    <div className="container-editorial relative">
-      {/* Header */}
-      <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
-        <div className="md:col-span-7">
-          <p className="eyebrow mb-6">Kundinnenstimmen</p>
-          <h2 className="display max-w-[14ch]">
-            Vertrauen, das unter die Haut geht.
-          </h2>
-        </div>
-        <div className="md:col-span-4 md:col-start-9">
-          <p className="lede">
-            Echte Erfahrungen von Kundinnen, die ihre Hautreise bei
-            Face and More begonnen haben.
-          </p>
-          <div className="mt-6 flex items-center gap-3">
-            <Stars />
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              5,0 · Google Bewertungen
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Editorial grid */}
-      <div className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-stretch">
-        {/* Featured */}
-        <article className="md:col-span-8 relative bg-card border border-border/70 p-10 md:p-12 lg:p-14 shadow-soft flex flex-col h-full">
-          <Quote
-            aria-hidden
-            className="absolute -top-6 left-8 md:left-12 text-primary/15"
-            size={120}
-            strokeWidth={1}
-            fill="currentColor"
-          />
-          <div className="relative flex flex-col h-full">
-            <div className="flex items-center gap-4">
-              <span className="eyebrow text-primary">Featured</span>
-              <span className="h-px w-10 bg-primary/40" />
-              <span className="eyebrow">{featured.tag}</span>
-            </div>
-
-            <blockquote className="font-serif text-2xl md:text-3xl lg:text-[2.4rem] leading-[1.25] mt-8 md:mt-10 text-foreground/95">
-              „{featured.text}“
-            </blockquote>
-
-            <figcaption className="mt-10 md:mt-12 flex items-center justify-between flex-wrap gap-6">
-              <div className="flex items-center gap-4">
-                <Initial name={featured.name} />
-                <div>
-                  <p className="text-sm font-medium tracking-wide">— {featured.name}</p>
-                  <p className="eyebrow mt-1">Langzeit-Kundin</p>
-                </div>
-              </div>
-              <Stars />
-            </figcaption>
-          </div>
-        </article>
-
-        {/* Right stacked column — matches featured height */}
-        <div className="md:col-span-4 flex flex-col gap-6 md:gap-8 h-full">
-          <article className="flex-1 bg-primary/[0.04] border border-primary/15 p-8 md:p-9 flex flex-col">
-            <Stars />
-            <blockquote className="font-serif text-lg md:text-xl leading-snug mt-5 text-foreground/90">
-              „{reviews[0].text}“
-            </blockquote>
-            <figcaption className="mt-auto pt-8 flex items-center gap-3">
-              <Initial name={reviews[0].name} />
-              <div>
-                <p className="text-sm font-medium">— {reviews[0].name}</p>
-                <p className="eyebrow mt-0.5">{reviews[0].tag}</p>
-              </div>
-            </figcaption>
-          </article>
-
-          <article className="flex-1 bg-card border border-border/70 p-8 md:p-9 flex flex-col">
-            <Stars />
-            <blockquote className="font-serif text-lg md:text-xl leading-snug mt-5 text-foreground/90">
-              „{reviews[1].text}“
-            </blockquote>
-            <figcaption className="mt-auto pt-8 flex items-center gap-3">
-              <Initial name={reviews[1].name} />
-              <div>
-                <p className="text-sm font-medium">— {reviews[1].name}</p>
-                <p className="eyebrow mt-0.5">{reviews[1].tag}</p>
-              </div>
-            </figcaption>
-          </article>
+      {/* ── Header ── */}
+      <div className="reveal">
+        {/* Treatwell badge */}
+        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-accent/25 bg-secondary/50">
+          <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
+          <span className="text-[0.58rem] uppercase tracking-[0.3em] text-accent/80">
+            Treatwell Top Rated
+          </span>
+          <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
         </div>
 
-        {/* Row 2 — three cards, all aligned top & bottom */}
-        <article className="md:col-span-5 relative p-10 md:p-12 bg-gradient-to-br from-primary to-primary-glow text-primary-foreground flex flex-col h-full">
-          <Quote
-            aria-hidden
-            className="absolute top-6 right-6 text-primary-foreground/20"
-            size={64}
-            strokeWidth={1}
-            fill="currentColor"
-          />
-          <blockquote className="font-serif text-2xl md:text-3xl leading-snug">
-            „{reviews[2].text}“
-          </blockquote>
-          <figcaption className="mt-auto pt-10 flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium">— {reviews[2].name}</p>
-              <p className="text-[0.7rem] uppercase tracking-[0.22em] mt-1 text-primary-foreground/70">
-                {reviews[2].tag}
+        <h2
+          className="text-foreground leading-[1.04] max-w-2xl"
+          style={{ ...serif, fontSize: "clamp(2.2rem, 4vw, 4rem)" }}
+        >
+          5 Jahre in Folge ausgezeichnet.
+        </h2>
+
+        <p className="lede mt-6 max-w-xl">
+          Über Jahre hinweg vertrauen Kundinnen auf Monishine für präzise Beauty
+          Treatments, persönliche Beratung und eine warme Studioatmosphäre.
+        </p>
+
+        {/* Stats strip */}
+        <div className="mt-10 pt-8 border-t border-foreground/[0.07] grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {[
+            { value: "5.0 ★", label: "Bewertung" },
+            { value: "Top Rated", label: "seit 5 Jahren" },
+            { value: "100%", label: "Verifiziert" },
+            { value: "Brows · Lashes", label: "PMU · Glow" },
+          ].map(({ value, label }) => (
+            <div key={value}>
+              <p
+                style={{ ...serif, fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)", color: "hsl(var(--foreground) / 0.85)" }}
+              >
+                {value}
+              </p>
+              <p className="eyebrow mt-1" style={{ color: "hsl(var(--accent) / 0.6)" }}>
+                {label}
               </p>
             </div>
-            <div className="flex gap-1" style={{ color: "#E8D6A8" }}>
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={13} fill="currentColor" strokeWidth={0} />
-              ))}
-            </div>
-          </figcaption>
-        </article>
-
-        <article className="md:col-span-3 bg-card border border-border/70 p-8 md:p-9 flex flex-col h-full">
-          <Stars />
-          <blockquote className="font-serif text-lg md:text-xl leading-snug mt-6 text-foreground/90">
-            „{reviews[3].text}“
-          </blockquote>
-          <figcaption className="mt-auto pt-8">
-            <p className="text-sm font-medium">— {reviews[3].name}</p>
-            <p className="eyebrow mt-1">{reviews[3].tag}</p>
-          </figcaption>
-        </article>
-
-        <article className="md:col-span-4 bg-secondary/60 border border-border/60 p-8 md:p-10 flex flex-col h-full">
-          <Stars />
-          <blockquote className="font-serif text-lg md:text-xl leading-snug mt-6 text-foreground/90">
-            „{reviews[4].text}“
-          </blockquote>
-          <figcaption className="mt-auto pt-8 flex items-center gap-3">
-            <Initial name={reviews[4].name} />
-            <div>
-              <p className="text-sm font-medium">— {reviews[4].name}</p>
-              <p className="eyebrow mt-0.5">{reviews[4].tag}</p>
-            </div>
-          </figcaption>
-        </article>
+          ))}
+        </div>
       </div>
 
-      {/* Footer note */}
-      <div className="mt-24 md:mt-32 border-t border-border/60 pt-10">
+      {/* ── Featured review ── */}
+      <div className="mt-20 md:mt-24 py-14 md:py-20 border-y border-foreground/[0.07] reveal">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Decorative opening guillemet */}
+          <p
+            aria-hidden
+            className="select-none leading-none mb-4"
+            style={{
+              ...serif,
+              fontSize: "6rem",
+              color: "hsl(var(--accent) / 0.15)",
+              lineHeight: 0.7,
+            }}
+          >
+            "
+          </p>
+          <blockquote
+            style={{ ...serif, fontSize: "clamp(1.15rem, 2.2vw, 1.7rem)", lineHeight: 1.7, color: "hsl(var(--foreground) / 0.85)" }}
+          >
+            {featured.quote}
+          </blockquote>
+          <div className="mt-10 flex flex-col items-center gap-2">
+            <Stars size={12} />
+            <p className="mt-1" style={{ ...serif, fontSize: "0.92rem", color: "hsl(var(--foreground) / 0.6)" }}>
+              — {featured.name}
+            </p>
+            <p className="eyebrow" style={{ color: "hsl(var(--accent) / 0.65)" }}>
+              {featured.treatment}
+            </p>
+            <p className="text-[0.55rem] uppercase tracking-[0.2em] text-foreground/28 flex items-center gap-1.5 mt-1">
+              <span>✓</span> Verifizierte Bewertung
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Script accent ── */}
+      <div className="mt-14 md:mt-16 reveal">
         <p
-          className="font-script text-center mb-4"
+          className="font-script text-center"
           style={{
             fontSize: "clamp(1.8rem, 2.8vw, 2.8rem)",
             color: "hsl(var(--accent))",
-            opacity: 0.5,
+            opacity: 0.38,
           }}
         >
-          Where Beauty feels personal.
+          Be your own kind of beautiful.
         </p>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-          <p className="font-serif text-2xl md:text-3xl max-w-xl leading-snug">
-            Persönliche Betreuung, die man spürt — Behandlung für Behandlung.
-          </p>
-          <a href="/kontakt" className="link-underline text-sm uppercase tracking-[0.2em]">
-            Termin vereinbaren →
-          </a>
+      </div>
+
+      {/* ── Staggered 2-column reviews ── */}
+      <div className="mt-14 md:mt-16 grid lg:grid-cols-2 gap-4 lg:gap-6 items-start reveal reveal-delay-1">
+        {/* Left column */}
+        <div className="space-y-4">
+          {leftCol.map((r) => (
+            <ReviewCard key={r.name} r={r} />
+          ))}
+        </div>
+        {/* Right column — offset down for stagger */}
+        <div className="space-y-4 lg:mt-16">
+          {rightCol.map((r) => (
+            <ReviewCard key={r.name} r={r} />
+          ))}
         </div>
       </div>
+
     </div>
   </section>
 );
