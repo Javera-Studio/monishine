@@ -8,7 +8,7 @@ const WhatsAppIcon = () => (
 );
 
 const Booking = () => (
-  <section className="py-24 md:py-32 bg-foreground text-background">
+  <section className="py-16 md:py-32 bg-foreground text-background">
     <div className="container-editorial">
       <div className="max-w-2xl">
         <p className="eyebrow mb-5 text-background/60">Termin buchen</p>
@@ -21,21 +21,21 @@ const Booking = () => (
         </p>
       </div>
 
-      <div className="mt-12 grid lg:grid-cols-3 gap-6 items-stretch">
+      <div className="mt-10 md:mt-12 grid lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
         {/* WhatsApp — primary */}
         <a
           href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
           target="_blank"
           rel="noopener noreferrer"
-          className="lg:col-span-2 group bg-primary text-primary-foreground p-10 md:p-12 flex flex-col justify-between min-h-[240px] hover:bg-primary-glow transition-colors"
+          className="lg:col-span-2 group bg-primary text-primary-foreground p-7 md:p-12 flex flex-col justify-between min-h-[220px] md:min-h-[240px] hover:bg-primary-glow transition-colors"
         >
           <div className="flex items-start justify-between">
             <WhatsAppIcon />
-            <ArrowUpRight size={28} strokeWidth={1.3} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRight size={24} strokeWidth={1.3} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </div>
-          <div className="mt-10">
+          <div className="mt-8 md:mt-10">
             <p className="eyebrow text-primary-foreground/70">Empfohlen</p>
-            <p className="font-serif text-3xl md:text-4xl mt-2">
+            <p className="font-serif text-2xl md:text-4xl mt-2 leading-tight">
               Direkt auf WhatsApp schreiben
             </p>
             <p className="mt-3 text-sm text-primary-foreground/80 max-w-md">
@@ -45,10 +45,10 @@ const Booking = () => (
         </a>
 
         {/* Rechte Spalte — Kontaktformular + Treatwell */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 md:gap-6">
           <Link
             to="/kontakt"
-            className="group flex-1 bg-background/5 border border-background/15 p-8 flex flex-col justify-between hover:bg-background/10 transition-colors"
+            className="group flex-1 bg-background/5 border border-background/15 p-6 md:p-8 flex flex-col justify-between hover:bg-background/10 transition-colors"
           >
             <div className="flex items-start justify-between">
               <Calendar size={20} strokeWidth={1.4} className="text-background/60" />
@@ -67,7 +67,7 @@ const Booking = () => (
             href="https://buchung.treatwell.de/ort/monishine/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex-1 bg-background/5 border border-background/15 p-8 flex flex-col justify-between hover:bg-background/10 transition-colors"
+            className="group flex-1 bg-background/5 border border-background/15 p-6 md:p-8 flex flex-col justify-between hover:bg-background/10 transition-colors"
           >
             <div className="flex items-start justify-between">
               <p className="eyebrow text-background/50">Online-Buchung</p>

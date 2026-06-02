@@ -99,11 +99,11 @@ const ReviewCard = ({ r }: { r: Review }) => (
 );
 
 const Testimonials = () => (
-  <section className="pt-24 md:pt-36 pb-0 bg-background">
+  <section className="pt-16 md:pt-36 pb-0 bg-background">
     <div className="container-editorial">
 
       {/* ── Header: two-column editorial layout ── */}
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-20 md:mb-28">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 md:mb-28">
 
         {/* Left — badge, headline, text, button, stats */}
         <div className="order-2 lg:order-1 reveal lg:pt-6">
@@ -146,15 +146,15 @@ const Testimonials = () => (
           </div>
 
           {/* Stats strip with vertical dividers */}
-          <div className="mt-10 pt-8 border-t border-foreground/[0.07] flex">
+          <div className="mt-10 pt-8 border-t border-foreground/[0.07] grid grid-cols-2 lg:flex gap-y-6">
             {stats.map(({ value, stars, label }, i) => (
               <div
                 key={value}
-                className="flex-1 px-5 first:pl-0"
+                className="lg:flex-1 px-4 lg:px-5 lg:first:pl-0"
                 style={i > 0 ? { borderLeft: "1px solid hsl(var(--foreground) / 0.08)" } : {}}
               >
                 <div className="flex items-baseline gap-1.5 flex-wrap">
-                  <p style={{ ...serif, fontSize: "clamp(1.5rem, 2vw, 1.9rem)", color: "hsl(var(--foreground) / 0.88)" }}>
+                  <p style={{ ...serif, fontSize: "clamp(1.4rem, 2vw, 1.9rem)", color: "hsl(var(--foreground) / 0.88)" }}>
                     {value}
                   </p>
                   {stars && (
@@ -232,7 +232,7 @@ const Testimonials = () => (
       </div>
 
       {/* ── Staggered 2-column reviews ── */}
-      <div className="mt-14 md:mt-16 pb-24 md:pb-36 grid lg:grid-cols-2 gap-4 lg:gap-6 items-start reveal reveal-delay-1">
+      <div className="mt-12 md:mt-16 pb-16 md:pb-36 grid lg:grid-cols-2 gap-4 lg:gap-6 items-start reveal reveal-delay-1">
         <div className="space-y-4">
           {leftCol.map((r) => (
             <ReviewCard key={r.name} r={r} />

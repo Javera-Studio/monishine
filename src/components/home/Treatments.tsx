@@ -162,11 +162,11 @@ const Treatments = () => {
     .filter(Boolean) as ServiceCategory[];
 
   return (
-    <section className="pt-24 md:pt-32 pb-0">
+    <section className="pt-16 md:pt-32 pb-0">
       <div className="container-editorial">
 
         {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 md:mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-20">
           <div className="max-w-xl">
             <p
               className="font-script mb-2"
@@ -217,7 +217,7 @@ const Treatments = () => {
         )}
 
         {/* Bottom CTA */}
-        <div className="mt-20 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="mt-14 md:mt-20 pt-10 md:pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="font-serif text-2xl md:text-3xl max-w-md leading-snug">
             <span
               className="block text-foreground/70 font-light leading-[1.85]"
