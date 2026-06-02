@@ -207,7 +207,7 @@ const Treatments = () => {
         {/* Bottom CTA */}
         <div className="mt-20 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="font-serif text-2xl md:text-3xl max-w-md leading-snug">
-            Nicht sicher, welche Behandlung zu dir passt?
+            Egal ob du zum ersten Mal ein Beauty Studio besuchst oder bereits Erfahrung hast – wir beraten Ladies &amp; Gentlemen persönlich und ohne Druck.
           </p>
           <Link to="/kontakt" className="btn-primary shrink-0">
             Kostenlose Beratung
