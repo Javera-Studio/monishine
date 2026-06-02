@@ -130,37 +130,56 @@ const Hero = () => (
     </section>
 
     {/* ══════════════════════════════════════
-        Trust strip — separate section below hero
+        Trust strip — elegant editorial labels
     ══════════════════════════════════════ */}
-    <section className="bg-secondary/30 border-t border-border/50 py-10 md:py-12">
+    <section
+      className="border-t border-border/40 py-10 md:py-12"
+      style={{ background: "linear-gradient(to bottom, hsl(var(--secondary) / 0.25), hsl(var(--background)))" }}
+    >
       <div className="container-editorial reveal">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {badges.map(({ label }) => (
-            <div
+        {/* Floating asymmetric trust labels — varied widths, airy spacing */}
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-x-8 md:gap-y-4">
+          {badges.map(({ label }, i) => (
+            <span
               key={label}
-              className="flex items-center gap-2.5 px-4 py-3.5 rounded-sm border border-border/60 bg-background/70"
-              style={{ boxShadow: "0 1px 3px hsl(24 14% 11% / 0.05), 0 4px 12px hsl(24 14% 11% / 0.04)" }}
+              className="inline-flex items-center gap-2 transition-opacity duration-500 hover:opacity-100"
+              style={{
+                opacity: i % 2 === 0 ? 0.75 : 0.6,
+              }}
             >
               <span
-                className="shrink-0 text-accent/70"
-                style={{ fontSize: "0.45rem", lineHeight: 1 }}
+                className="text-accent"
+                style={{ fontSize: "0.38rem", lineHeight: 1, opacity: 0.7 }}
+                aria-hidden
               >
                 ✦
               </span>
-              <span className="text-[0.6rem] uppercase tracking-[0.16em] text-foreground/60 font-light leading-snug">
+              <span
+                className="text-[0.62rem] uppercase tracking-[0.28em] text-foreground/55 font-light"
+                style={{ letterSpacing: "0.26em" }}
+              >
                 {label}
               </span>
-            </div>
+              {i < badges.length - 1 && (
+                <span
+                  className="hidden md:inline-block ml-4 text-border"
+                  style={{ fontSize: "0.5rem", opacity: 0.5 }}
+                  aria-hidden
+                >
+                  ·
+                </span>
+              )}
+            </span>
           ))}
         </div>
 
         {/* Editorial signature quote */}
         <p
-          className="font-script mt-7 text-center"
+          className="font-script mt-8 text-center"
           style={{
-            fontSize: "clamp(1.7rem, 2.2vw, 2.1rem)",
+            fontSize: "clamp(1.6rem, 2vw, 2rem)",
             color: "hsl(var(--accent))",
-            opacity: 0.55,
+            opacity: 0.5,
           }}
         >
           Be your own kind of beautiful.
