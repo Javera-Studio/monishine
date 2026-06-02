@@ -10,7 +10,7 @@ const PageHero = ({ eyebrow, title, intro }: PageHeroProps) => (
   <section className="bg-gradient-warm">
     <div className="container-editorial pt-16 md:pt-24 pb-16 md:pb-24">
       <p className="eyebrow mb-6">{eyebrow}</p>
-      <h1 className="display max-w-4xl">{title}</h1>
+      <h1 className="display max-w-4xl" style={{ fontSize: "clamp(2.2rem, 4.8vw, 4.4rem)" }}>{title}</h1>
       {intro && <p className="lede mt-7 max-w-2xl">{intro}</p>}
     </div>
   </section>

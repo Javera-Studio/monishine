@@ -34,7 +34,7 @@ const UeberMich = () => (
             className="text-foreground leading-[1.05] max-w-3xl"
             style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontSize: "clamp(2.5rem, 4.5vw, 4.5rem)",
+              fontSize: "clamp(2.2rem, 4.8vw, 4.4rem)",
               fontWeight: 300,
             }}
           >

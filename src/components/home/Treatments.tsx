@@ -222,13 +222,16 @@ const Treatments = () => {
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontWeight: 300,
-            fontSize: "clamp(1.6rem, 2.8vw, 2.8rem)",
-            color: "hsl(var(--foreground) / 0.82)",
+            fontSize: "clamp(1.8rem, 3vw, 3rem)",
+            color: "hsl(var(--foreground) / 0.85)",
             letterSpacing: "-0.005em",
           }}
         >
-          Echte Ergebnisse. Echter Glow.
+          Natürlich. Präzise. Sichtbar.
         </h3>
+        <p className="mt-4 text-foreground/55 font-light text-sm md:text-base max-w-xl mx-auto leading-[1.85]">
+          Jede Behandlung wird individuell auf dich abgestimmt. Hier siehst du echte Ergebnisse aus dem Studio.
+        </p>
       </div>
 
       {/* ── Vorher/Nachher image marquee ── */}
