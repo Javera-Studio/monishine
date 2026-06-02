@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import portrait from "@/assets/studio.jpg";
+import portrait from "@/assets/moni.jpeg";
 
 const About = () => (
   <section className="py-24 md:py-32 bg-secondary/40">

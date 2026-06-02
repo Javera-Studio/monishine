@@ -1,10 +1,10 @@
 import type { ServiceCategory } from "./types";
-import imgBrows from "@/assets/wimpernkranz.jpg";
+import imgBrows from "@/assets/haut1.jpg";
 import imgPmu from "@/assets/treatment-pmu.jpg";
 import imgFacial from "@/assets/gesichtsbehandlung.jpg";
 import imgLaser from "@/assets/treatment-skin.jpg";
-import imgBody from "@/assets/treatment-antiaging.jpg";
-import imgTeeth from "@/assets/skin-analysis.jpg";
+import imgBody from "@/assets/allgemeine-hautberatung.jpg";
+import imgTeeth from "@/assets/hero-skin.jpg";
 import imgFineline from "@/assets/treatment-microneedling.jpg";
 
 export const serviceCategories: ServiceCategory[] = [

@@ -2,7 +2,7 @@ import img1 from "@/assets/treatment-fruchtsaeure.jpg";
 import img2 from "@/assets/treatment-microneedling.jpg";
 import img3 from "@/assets/treatment-facial.jpg";
 import img4 from "@/assets/treatment-skin.jpg";
-import img5 from "@/assets/treatment-antiaging.jpg";
+import img5 from "@/assets/allgemeine-hautberatung.jpg";
 import img6 from "@/assets/gesichtsbehandlung.jpg";
 
 export interface BlogArticle {
