@@ -24,7 +24,7 @@ const Booking = () => (
       <div className="mt-12 grid lg:grid-cols-3 gap-6 items-stretch">
         {/* WhatsApp — primary */}
         <a
-          href="https://wa.me/436776292066?text=Hallo%20Michaela%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+          href="https://wa.me/4917624050812?text=Hallo%20Michaela%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
           target="_blank"
           rel="noopener noreferrer"
           className="lg:col-span-2 group bg-primary text-primary-foreground p-10 md:p-12 flex flex-col justify-between min-h-[240px] hover:bg-primary-glow transition-colors"
@@ -64,7 +64,7 @@ const Booking = () => (
           </Link>
 
           <a
-            href="https://www.treatwell.at/ort/face-and-more/"
+            href="https://buchung.treatwell.de/ort/monishine/"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex-1 bg-background/5 border border-background/15 p-8 flex flex-col justify-between hover:bg-background/10 transition-colors"

@@ -79,7 +79,7 @@ const Kontakt = () => {
           <aside className="lg:col-span-5 space-y-8">
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/436776292066?text=Hallo%20Michaela%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+              href="https://wa.me/4917624050812?text=Hallo%20Michaela%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-between bg-primary text-primary-foreground p-7 hover:bg-primary-glow transition-colors"
@@ -119,7 +119,7 @@ const Kontakt = () => {
             </div>
 
             
-<a href="https://www.treatwell.at/ort/face-and-more/"
+<a href="https://buchung.treatwell.de/ort/monishine/"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-between border border-border p-5 hover:border-primary/40 transition-colors"
