@@ -40,7 +40,7 @@ const FeaturedCard = ({ category, isDark }: { category: ServiceCategory; isDark:
       }`}
     >
       {/* Tall image */}
-      <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden shrink-0">
+      <div className="aspect-[4/3] md:aspect-[3/2] overflow-hidden shrink-0">
         <img
           src={category.image}
           alt={category.title}
