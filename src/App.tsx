@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Leistungen from "./pages/Leistungen.tsx";
 import LeistungenCategory from "./pages/LeistungenCategory.tsx";
 import UeberMich from "./pages/UeberMich.tsx";
+import Preise from "./pages/Preise.tsx";
 import Kontakt from "./pages/Kontakt.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import Datenschutz from "./pages/Datenschutz.tsx";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/leistungen" element={<Leistungen />} />
           <Route path="/leistungen/:slug" element={<LeistungenCategory />} />
+          <Route path="/preise" element={<Preise />} />
           <Route path="/ueber-mich" element={<UeberMich />} />
           <Route path="/schulungen" element={<Schulungen />} />
           <Route path="/blog" element={<Blog />} />
