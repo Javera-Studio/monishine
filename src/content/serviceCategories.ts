@@ -5,8 +5,8 @@ import imgPmu from "@/assets/treatment-pmu.jpg";
 import imgPmuRemoval from "@/assets/neue.jpg";
 import imgFacial from "@/assets/gesichtsbehandlung.jpg";
 import imgLaser from "@/assets/treatment-skin.jpg";
-import imgBody from "@/assets/allgemeine-hautberatung.jpg";
-import imgFineline from "@/assets/treatment-microneedling.jpg";
+import imgBody from "@/assets/bodytreatment.jpg";
+import imgFineline from "@/assets/fineline.jpg";
 import imgSchulung from "@/assets/schulung3.jpg";
 
 export const serviceCategories: ServiceCategory[] = [
