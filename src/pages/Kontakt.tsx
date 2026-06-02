@@ -79,7 +79,7 @@ const Kontakt = () => {
           <aside className="lg:col-span-5 space-y-8">
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/4917624050812?text=Hallo%20Michaela%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+              href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-between bg-primary text-primary-foreground p-7 hover:bg-primary-glow transition-colors"
@@ -97,25 +97,36 @@ const Kontakt = () => {
             <div className="bg-secondary/60 p-7 space-y-4">
               <p className="eyebrow">Studio</p>
               <div className="flex gap-3 text-sm text-foreground/85">
-                <MapPin size={16} className="text-primary mt-0.5" /> Wolfsaugasse 6/2, A-1200 Wien
+                <MapPin size={16} className="text-primary mt-0.5" /> Bramfelder Straße 77, 22305 Hamburg
               </div>
               <div className="flex gap-3 text-sm text-foreground/85">
                 <Phone size={16} className="text-primary mt-0.5" />
-                <a href="tel:+436776292066">+43 677 62 920 665</a>
+                <a href="tel:+4917634050812">+49 176 340 50 812</a>
               </div>
               <div className="flex gap-3 text-sm text-foreground/85">
                 <Mail size={16} className="text-primary mt-0.5" />
-                <a href="mailto:michaela@monishine.at">michaela@monishine.at</a>
+                <a href="mailto:monishine@outlook.de">monishine@outlook.de</a>
               </div>
             </div>
 
             <div className="bg-secondary/60 p-7 space-y-4">
               <p className="eyebrow">Öffnungszeiten</p>
-              <p className="text-sm text-foreground/85">Mo – Do: 08:30 – 18:00 Uhr</p>
-              <p className="text-sm text-foreground/85">
-                Fr: 08:30 – 13:00 Uhr{" "}
-                <span className="text-foreground/50">(nachmittags nach Rücksprache)</span>
-              </p>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                {[
+                  ["Montag",    "11:00 – 16:00"],
+                  ["Dienstag",  "11:00 – 19:00"],
+                  ["Mittwoch",  "11:00 – 19:00"],
+                  ["Donnerstag","11:00 – 18:00"],
+                  ["Freitag",   "11:00 – 16:00"],
+                  ["Samstag",   "Geschlossen"],
+                  ["Sonntag",   "Geschlossen"],
+                ].map(([day, hours]) => (
+                  <>
+                    <span key={day} className="text-foreground/85">{day}</span>
+                    <span key={hours} className={hours === "Geschlossen" ? "text-foreground/40" : "text-foreground/85"}>{hours}</span>
+                  </>
+                ))}
+              </div>
             </div>
 
             

@@ -17,14 +17,13 @@ const Impressum = () => (
         <LegalSection title="Angaben gemäß §5 ECG">
           <p>
             Monishine<br />
-            Michaela Kornherr<br />
-            Wolfsaugasse 6/2<br />
-            A-1200 Wien<br />
-            Österreich
+            Bramfelder Straße 77<br />
+            22305 Hamburg<br />
+            Deutschland
           </p>
           <p>
-            Tel: +43 677 62 920 665<br />
-            E-Mail: michaela@monishine.at<br />
+            Tel: +49 176 340 50 812<br />
+            E-Mail: monishine@outlook.de<br />
             Website: <a href="https://www.monishine.at" className="underline hover:text-primary">www.monishine.at</a>
           </p>
         </LegalSection>

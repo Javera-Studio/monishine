@@ -11,7 +11,7 @@ export const sections: EditableSection[] = [
     id: "hero",
     slug: "hero",
     key: "hero",
-    eyebrow: "Premium Beauty & Glow Studio · Wien",
+    eyebrow: "Premium Beauty & Glow Studio · Hamburg",
     title:
       "Eine Beauty-Routine, die deine natürliche Schönheit unterstreicht.",
     body:

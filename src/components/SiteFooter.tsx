@@ -36,13 +36,13 @@ const SiteFooter = () => (
           <li>Bramfelder Straße 77</li>
           <li>22305 Hamburg</li>
           <li>
-            <a href="tel:+4917624050812" className="hover:text-accent transition-colors">
-              +49 176 24050812
+            <a href="tel:+4917634050812" className="hover:text-accent transition-colors">
+              +49 176 340 50 812
             </a>
           </li>
           <li>
-            <a href="mailto:michaela@monishine.at" className="hover:text-accent transition-colors">
-              michaela@monishine.at
+            <a href="mailto:monishine@outlook.de" className="hover:text-accent transition-colors">
+              monishine@outlook.de
             </a>
           </li>
         </ul>

@@ -14,18 +14,18 @@ const Datenschutz = () => (
     <section className="py-16">
       <div className="container-editorial max-w-3xl">
         <Section title="Verantwortliche">
-          <p>Michaela Kornherr</p>
-            <p>Wolfsaugasse 6/2</p>
-            <p>A-1200 Wien</p>
-<p>
-  E-Mail:{" "}
-  <a
-    href="mailto:michaela@monishine.at"
-    className="text-foreground transition hover:text-rose"
-  >
-    michaela@monishine.at
-  </a>
-</p>
+          <p>Monishine</p>
+          <p>Bramfelder Straße 77</p>
+          <p>22305 Hamburg</p>
+          <p>
+            E-Mail:{" "}
+            <a
+              href="mailto:monishine@outlook.de"
+              className="text-foreground transition hover:text-accent"
+            >
+              monishine@outlook.de
+            </a>
+          </p>
         </Section>
         <Section title="Kontaktaufnahme">
           <p>Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
