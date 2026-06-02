@@ -14,6 +14,7 @@ import Impressum from "./pages/Impressum.tsx";
 import Datenschutz from "./pages/Datenschutz.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import Schulungen from "./pages/Schulungen.tsx";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/leistungen" element={<Leistungen />} />
           <Route path="/leistungen/:slug" element={<LeistungenCategory />} />
           <Route path="/ueber-mich" element={<UeberMich />} />
+          <Route path="/schulungen" element={<Schulungen />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/kontakt" element={<Kontakt />} />

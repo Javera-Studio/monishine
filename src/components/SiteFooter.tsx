@@ -6,7 +6,7 @@ const SiteFooter = () => (
     <div className="container-editorial py-20 grid gap-14 md:grid-cols-4">
       <div className="md:col-span-2">
         <Link to="/" aria-label="Monishine — Startseite" className="inline-block">
-          <img src={logo.url} alt="Monishine" className="h-16 md:h-20 w-auto" />
+          <img src={logo.url} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
         </Link>
         <p className="mt-8 max-w-sm text-sm text-muted-foreground leading-[1.85] font-light">
           Premium Beauty &amp; Glow Studio — moderne Behandlungen, persönliche
@@ -36,7 +36,7 @@ const SiteFooter = () => (
         <p className="eyebrow mb-5">Studio</p>
         <ul className="space-y-2.5 text-sm font-light">
           <li><Link to="/ueber-mich" className="hover:text-accent transition-colors">Über uns</Link></li>
-          <li><Link to="/blog" className="hover:text-accent transition-colors">Journal</Link></li>
+          <li><Link to="/schulungen" className="hover:text-accent transition-colors">Schulungen</Link></li>
           <li><Link to="/kontakt" className="hover:text-accent transition-colors">Kontakt</Link></li>
           <li><Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link></li>
           <li><Link to="/datenschutz" className="hover:text-accent transition-colors">Datenschutz</Link></li>

@@ -6,7 +6,7 @@ import logo from "@/assets/monishine-logo.png.asset.json";
 const links = [
   { to: "/leistungen", label: "Treatments" },
   { to: "/ueber-mich", label: "Über uns" },
-  { to: "/blog", label: "Schulungen" },
+  { to: "/schulungen", label: "Schulungen" },
   { to: "/kontakt", label: "Kontakt" },
 ];
 
@@ -32,7 +32,7 @@ const SiteHeader = () => {
     >
       <div className="container-editorial flex items-center justify-between h-20 md:h-28">
         <Link to="/" className="flex items-center" aria-label="Monishine — Startseite">
-          <img src={logo.url} alt="Monishine" className="h-12 md:h-16 w-auto" />
+          <img src={logo.url} alt="Monishine" className="h-[4.2rem] md:h-[5.6rem] w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">

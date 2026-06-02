@@ -2,6 +2,7 @@ import SiteLayout from "@/components/SiteLayout";
 import Hero from "@/components/home/Hero";
 import Treatments from "@/components/home/Treatments";
 import About from "@/components/home/About";
+import Academy from "@/components/home/Academy";
 import Testimonials from "@/components/home/Testimonials";
 import Booking from "@/components/home/Booking";
 
@@ -10,6 +11,7 @@ const Index = () => (
     <Hero />
     <Treatments />
     <About />
+    <Academy />
     <Testimonials />
     <Booking />
   </SiteLayout>
