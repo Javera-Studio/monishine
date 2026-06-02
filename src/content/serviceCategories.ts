@@ -1,10 +1,10 @@
 import type { ServiceCategory } from "./types";
-import imgBrows from "@/assets/haut1.jpg";
+import imgBrows from "@/assets/browslashes.jpg";
 import imgLashExt from "@/assets/lashes.jpg";
 import imgPmu from "@/assets/treatment-pmu.jpg";
-import imgPmuRemoval from "@/assets/neue.jpg";
+import imgPmuRemoval from "@/assets/pmuremove.jpg";
 import imgFacial from "@/assets/gesichtsbehandlung.jpg";
-import imgLaser from "@/assets/treatment-skin.jpg";
+import imgLaser from "@/assets/haarentfernung.jpg";
 import imgBody from "@/assets/bodytreatment.jpg";
 import imgFineline from "@/assets/fineline.jpg";
 import imgSchulung from "@/assets/schulung3.jpg";
