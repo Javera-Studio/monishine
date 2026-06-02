@@ -130,52 +130,50 @@ const Hero = () => (
     </section>
 
     {/* ══════════════════════════════════════
-        Trust strip — elegant editorial labels
+        Trust strip — infinite marquee
     ══════════════════════════════════════ */}
     <section
-      className="border-t border-border/40 py-10 md:py-12"
+      className="border-t border-border/40"
       style={{ background: "linear-gradient(to bottom, hsl(var(--secondary) / 0.25), hsl(var(--background)))" }}
     >
-      <div className="container-editorial reveal">
-        {/* Floating asymmetric trust labels — varied widths, airy spacing */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 md:gap-x-8 md:gap-y-4">
-          {badges.map(({ label }, i) => (
+      {/* Marquee ticker */}
+      <div className="marquee-outer overflow-hidden py-8 md:py-10">
+        <div
+          className="marquee-track flex whitespace-nowrap"
+          style={{ animation: "marquee 42s linear infinite" }}
+        >
+          {/* Two identical sets — second copy makes the loop seamless */}
+          {[...badges, ...badges].map(({ label }, i) => (
             <span
-              key={label}
-              className="inline-flex items-center gap-2 transition-opacity duration-500 hover:opacity-100"
-              style={{
-                opacity: i % 2 === 0 ? 0.75 : 0.6,
-              }}
+              key={i}
+              className="inline-flex items-center gap-2.5 shrink-0 px-5 md:px-7"
             >
               <span
-                className="text-accent"
-                style={{ fontSize: "0.38rem", lineHeight: 1, opacity: 0.7 }}
+                className="text-accent shrink-0"
+                style={{ fontSize: "0.38rem", opacity: 0.65 }}
                 aria-hidden
               >
                 ✦
               </span>
-              <span
-                className="text-[0.62rem] uppercase tracking-[0.28em] text-foreground/55 font-light"
-                style={{ letterSpacing: "0.26em" }}
-              >
+              <span className="text-[0.62rem] uppercase tracking-[0.26em] text-foreground/55 font-light shrink-0">
                 {label}
               </span>
-              {i < badges.length - 1 && (
-                <span
-                  className="hidden md:inline-block ml-4 text-border"
-                  style={{ fontSize: "0.5rem", opacity: 0.5 }}
-                  aria-hidden
-                >
-                  ·
-                </span>
-              )}
+              <span
+                className="ml-3 text-foreground/20 shrink-0"
+                style={{ fontSize: "0.55rem" }}
+                aria-hidden
+              >
+                ·
+              </span>
             </span>
           ))}
         </div>
+      </div>
 
-        {/* Editorial signature quote */}
+      {/* Editorial signature quote */}
+      <div className="container-editorial pb-8 md:pb-10">
         <p
-          className="font-script mt-8 text-center"
+          className="font-script text-center"
           style={{
             fontSize: "clamp(1.6rem, 2vw, 2rem)",
             color: "hsl(var(--accent))",

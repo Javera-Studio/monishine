@@ -139,3 +139,11 @@
 @keyframes reveal {
   to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-outer:hover .marquee-track {
+  animation-play-state: paused;
+}
