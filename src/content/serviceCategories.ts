@@ -6,8 +6,8 @@ import imgPmuRemoval from "@/assets/neue.jpg";
 import imgFacial from "@/assets/gesichtsbehandlung.jpg";
 import imgLaser from "@/assets/treatment-skin.jpg";
 import imgBody from "@/assets/allgemeine-hautberatung.jpg";
-import imgTeeth from "@/assets/hero-skin.jpg";
 import imgFineline from "@/assets/treatment-microneedling.jpg";
+import imgSchulung from "@/assets/schulung3.jpg";
 
 export const serviceCategories: ServiceCategory[] = [
   {
@@ -36,10 +36,9 @@ export const serviceCategories: ServiceCategory[] = [
     title: "Lash Extensions",
     tagline: "Classic · Volume · Wispy · Refill",
     description:
-      "Hochwertige Wimpernverlängerungen für jeden Look — von natürlich bis dramatisch, mit Präzision und Liebe zum Detail angebracht.",
+      "Hochwertige Wimpernverlängerungen für jeden Look — von natürlich bis ausdrucksstark, präzise und mit Liebe zum Detail.",
     image: imgLashExt,
     group: "Brows & Lashes",
-    featured: true,
     treatments: [
       { name: "Classic Lashes", description: "Wimpernverlängerung 1:1 für einen natürlichen, gepflegten Look.", duration: "120 Min", price: "ab € 110" },
       { name: "Volume Lashes", description: "Mehrere feine Wimpern pro Naturwimper — voller, weicher Effekt.", duration: "150 Min", price: "ab € 140" },
@@ -133,23 +132,9 @@ export const serviceCategories: ServiceCategory[] = [
     ],
   },
   {
-    id: "zahnaufhellung",
-    slug: "zahnaufhellung",
-    order: 8,
-    title: "Zahnaufhellung",
-    tagline: "Teeth Whitening",
-    description:
-      "Sanftes Bleaching für ein strahlend weißes Lächeln — ohne Empfindlichkeiten.",
-    image: imgTeeth,
-    group: "Smile",
-    treatments: [
-      { name: "Teeth Whitening Treatments", description: "Professionelle Aufhellung mit sichtbarem Sofortergebnis.", duration: "60 Min", price: "ab € 99" },
-    ],
-  },
-  {
     id: "fineline-tattoo",
     slug: "fineline-tattoo",
-    order: 9,
+    order: 8,
     title: "Fineline Tattoo",
     tagline: "Delicate Fineline Art",
     description:
@@ -159,5 +144,18 @@ export const serviceCategories: ServiceCategory[] = [
     treatments: [
       { name: "Fineline Tattoo Services", description: "Individuelle Motivgestaltung und Stechen in Fineline-Technik.", duration: "ab 60 Min", price: "ab € 150" },
     ],
+  },
+  {
+    id: "lash-schulungen",
+    slug: "lash-schulungen",
+    href: "/schulungen",
+    order: 9,
+    title: "Lash Extension Schulungen",
+    tagline: "Academy · Training · Praxisnah",
+    description:
+      "Professionelle Lash Extension Schulungen in persönlicher Studioatmosphäre — für Anfängerinnen und erfahrene Artists.",
+    image: imgSchulung,
+    group: "Academy",
+    treatments: [],
   },
 ];

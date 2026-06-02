@@ -30,6 +30,8 @@ export interface ServiceCategory extends ContentMeta {
   group?: string;
   /** Marks a signature/hero category for featured layout treatment */
   featured?: boolean;
+  /** Override the default /leistungen/:slug link */
+  href?: string;
 }
 
 export interface FaqItem extends ContentMeta {

@@ -4,91 +4,75 @@ import { ArrowUpRight } from "lucide-react";
 import { cms } from "@/lib/cms/provider";
 import type { ServiceCategory } from "@/content/types";
 
-const FeaturedCard = ({ category, index }: { category: ServiceCategory; index: number }) => (
-  <Link
-    to={`/leistungen/${category.slug}`}
-    className="group sm:col-span-2 lg:col-span-2 block bg-foreground text-background overflow-hidden relative hover:bg-primary-glow transition-colors duration-500"
-  >
-    <div className="grid lg:grid-cols-2 h-full">
+const serif = {
+  fontFamily: "'Cormorant Garamond', Georgia, serif",
+  fontWeight: 300,
+} as const;
+
+const TreatmentCard = ({ category, index }: { category: ServiceCategory; index: number }) => {
+  const isDark = index % 2 === 1;
+  const href = category.href ?? `/leistungen/${category.slug}`;
+
+  return (
+    <Link
+      to={href}
+      className={`group flex flex-col overflow-hidden transition-all duration-500 ${
+        isDark
+          ? "bg-foreground hover:bg-primary-glow"
+          : "bg-card border border-border/60 hover:border-foreground/25"
+      }`}
+    >
       {/* Image */}
-      <div className="aspect-[4/3] lg:aspect-auto overflow-hidden">
+      <div className="aspect-[4/3] overflow-hidden shrink-0">
         <img
           src={category.image}
           alt={category.title}
           loading="lazy"
-          className="w-full h-full object-cover opacity-70 transition-all duration-[1400ms] ease-out group-hover:scale-[1.04] group-hover:opacity-80"
+          className={`w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04] ${
+            isDark ? "opacity-65 group-hover:opacity-80" : ""
+          }`}
         />
       </div>
-      {/* Content */}
-      <div className="p-8 md:p-10 flex flex-col justify-between">
-        <div>
-          {/* Signature badge */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-background/20 text-[0.55rem] uppercase tracking-[0.25em] text-background/60 mb-6">
-            <span style={{ fontSize: "0.4rem" }}>✦</span>
-            Signature Treatment
-          </span>
-          <p className="eyebrow mb-3 text-background/50">
-            {String(index + 1).padStart(2, "0")} — {category.tagline}
-          </p>
-          <h3
-            className="text-background leading-[1.08]"
-            style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontSize: "clamp(1.8rem, 2.8vw, 2.8rem)",
-              fontWeight: 300,
-            }}
-          >
-            {category.title}
-          </h3>
-          <p className="mt-4 text-sm text-background/60 leading-relaxed">
-            {category.description}
-          </p>
-        </div>
-        <div className="mt-8 flex items-center justify-between">
-          <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-background/70 border-b border-background/30 pb-1 transition-all duration-300 group-hover:text-background group-hover:border-background group-hover:gap-3">
-            Entdecken
-            <ArrowUpRight size={14} />
-          </span>
-          <p
-            className="font-script text-background/25"
-            style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.6rem)" }}
-          >
-            Brows. Lashes. Glow.
-          </p>
-        </div>
-      </div>
-    </div>
-  </Link>
-);
 
-const CategoryCard = ({ category, index }: { category: ServiceCategory; index: number }) => (
-  <Link
-    to={`/leistungen/${category.slug}`}
-    className="group block bg-card border border-border/60 hover:border-foreground/30 transition-all duration-500"
-  >
-    <div className="aspect-[4/5] overflow-hidden bg-muted">
-      <img
-        src={category.image}
-        alt={category.title}
-        loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
-      />
-    </div>
-    <div className="p-6 md:p-8">
-      <p className="eyebrow mb-3">{String(index + 1).padStart(2, "0")} — {category.tagline}</p>
-      <h3 className="font-serif text-2xl md:text-[1.75rem] leading-[1.15] text-foreground">
-        {category.title}
-      </h3>
-      <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-2">
-        {category.description}
-      </p>
-      <span className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-foreground border-b border-foreground/30 pb-1 transition-all duration-300 group-hover:text-accent group-hover:border-accent group-hover:gap-3">
-        Entdecken
-        <ArrowUpRight size={14} />
-      </span>
-    </div>
-  </Link>
-);
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-7 md:p-8">
+        <p
+          className={`text-[0.6rem] uppercase tracking-[0.24em] mb-3 font-light ${
+            isDark ? "text-background/45" : "text-muted-foreground"
+          }`}
+        >
+          {String(index + 1).padStart(2, "0")} — {category.tagline}
+        </p>
+
+        <h3
+          className={`leading-[1.12] flex-1 ${isDark ? "text-background" : "text-foreground"}`}
+          style={{ ...serif, fontSize: "clamp(1.25rem, 1.8vw, 1.6rem)" }}
+        >
+          {category.title}
+        </h3>
+
+        <p
+          className={`mt-3 text-sm leading-relaxed line-clamp-2 font-light ${
+            isDark ? "text-background/55" : "text-muted-foreground"
+          }`}
+        >
+          {category.description}
+        </p>
+
+        <span
+          className={`mt-7 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3 ${
+            isDark
+              ? "text-background/60 border-background/25 group-hover:text-background group-hover:border-background"
+              : "text-foreground/70 border-foreground/25 group-hover:text-accent group-hover:border-accent"
+          }`}
+        >
+          Entdecken
+          <ArrowUpRight size={13} />
+        </span>
+      </div>
+    </Link>
+  );
+};
 
 const Treatments = () => {
   const [categories, setCategories] = useState<ServiceCategory[]>([]);
@@ -100,6 +84,8 @@ const Treatments = () => {
   return (
     <section className="py-24 md:py-32">
       <div className="container-editorial">
+
+        {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 md:mb-20">
           <div className="max-w-xl">
             <p
@@ -115,22 +101,20 @@ const Treatments = () => {
               bis zum modernen Skin Treatment.
             </p>
           </div>
-          <Link to="/leistungen" className="link-underline text-sm">
+          <Link to="/leistungen" className="link-underline text-sm shrink-0">
             Alle Leistungen
             <ArrowUpRight size={16} />
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {categories.map((c, i) =>
-            c.featured ? (
-              <FeaturedCard key={c.id} category={c} index={i} />
-            ) : (
-              <CategoryCard key={c.id} category={c} index={i} />
-            )
-          )}
+        {/* 3×3 checkerboard grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {categories.map((c, i) => (
+            <TreatmentCard key={c.id} category={c} index={i} />
+          ))}
         </div>
 
+        {/* Bottom CTA */}
         <div className="mt-20 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="font-serif text-2xl md:text-3xl max-w-md leading-snug">
             Nicht sicher, welche Behandlung zu dir passt?
