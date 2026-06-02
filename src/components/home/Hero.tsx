@@ -90,10 +90,20 @@ const Hero = () => (
             Signature.
           </h1>
 
-          <div className="mt-8 space-y-2" style={{ maxWidth: "400px" }}>
-            <p className="lede">Moderne Beauty Treatments für Ladies &amp; Gentlemen.</p>
-            <p className="lede">Spezialisiert auf Brows &amp; Lashes, persönliche Beratung und präzise Arbeit.</p>
-            <p className="lede">In einer warmen Studioatmosphäre zum Wohlfühlen.</p>
+          <div className="mt-8 space-y-3" style={{ maxWidth: "460px" }}>
+            {[
+              "Moderne Beauty Treatments für Ladies & Gentlemen.",
+              "Spezialisiert auf Brows & Lashes, persönliche Beratung und präzise Arbeit.",
+              "In einer warmen Studioatmosphäre zum Wohlfühlen.",
+            ].map((line) => (
+              <p
+                key={line}
+                className="text-muted-foreground font-light"
+                style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)", lineHeight: 1.8 }}
+              >
+                {line}
+              </p>
+            ))}
           </div>
 
           {/* CTA buttons — extra breathing room below subheadline */}
