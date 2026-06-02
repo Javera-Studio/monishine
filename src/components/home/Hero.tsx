@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero-skin.jpg";
+import heroAsset from "@/assets/monishine-studio.jpg.asset.json";
+const heroImg = heroAsset.url;
 
 const Hero = () => (
   <section className="relative overflow-hidden bg-gradient-warm">
