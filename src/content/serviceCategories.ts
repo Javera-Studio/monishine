@@ -50,7 +50,7 @@ export const serviceCategories: ServiceCategory[] = [
     id: "permanent-make-up",
     slug: "permanent-make-up",
     order: 3,
-    title: "Permanent Make-up & PMU",
+    title: "Permanent Make-up",
     tagline: "Powder Brows · Lip Blush · Refresh",
     description:
       "Langanhaltende, natürlich wirkende PMU-Techniken für Brauen und Lippen — inklusive Korrekturen und Auffrischungen.",
