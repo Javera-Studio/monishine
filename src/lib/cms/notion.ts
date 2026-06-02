@@ -35,9 +35,9 @@ async function fetchCollection<T>(collection: string, params?: Record<string, st
 
 export const notionProvider: CmsProvider = {
   name: "notion",
-  getTreatments: () => fetchCollection("treatments"),
-  getTreatmentBySlug: async (slug) => {
-    const all = await fetchCollection<any>("treatments", { slug });
+  getCategories: () => fetchCollection("categories"),
+  getCategoryBySlug: async (slug) => {
+    const all = await fetchCollection<any>("categories", { slug });
     return all[0] ?? null;
   },
   getFaq: (category) =>
