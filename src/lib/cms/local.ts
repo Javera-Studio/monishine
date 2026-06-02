@@ -36,7 +36,8 @@ export const localProvider: CmsProvider = {
 
   async getArticles() {
     // Bridge to existing blog data until the editorial schema is unified
-    const { blogArticles } = await import("@/data/blogArticles");
+    const mod = await import("@/data/blogArticles");
+    const blogArticles = mod.default;
     return blogArticles.map((a) => ({
       id: a.slug,
       slug: a.slug,
