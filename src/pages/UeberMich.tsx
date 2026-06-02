@@ -1,10 +1,10 @@
 import SiteLayout from "@/components/SiteLayout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import moniImg from "@/assets/studio.jpg";
-import salon1Img from "@/assets/studio.jpg";
-import salon2Img from "@/assets/studio2.jpg";
-import salon3Img from "@/assets/studio3.jpg";
+import moniImg from "@/assets/moni.jpeg";
+import salon1Img from "@/assets/salon1.png";
+import salon2Img from "@/assets/salon2.jpeg";
+import salon3Img from "@/assets/salon3.jpeg";
 
 const badges = [
   "Brows & Lashes Specialist",
