@@ -261,7 +261,7 @@ const Reinigung = () => (
             Ob empfindliche Haut, tägliche Reinigung oder verfeinernde AHA-Pflege — hochwertige Reinigungsprodukte helfen dabei, die Haut klarer, glatter und frischer wirken zu lassen.
           </p>
           <p className="mt-5 text-foreground/75 leading-relaxed">
-            Bei FACE AND MORE werden Reinigungsprodukte individuell auf Hauttyp, Hautzustand und persönliche Hautbedürfnisse abgestimmt.
+            Bei Monishine werden Reinigungsprodukte individuell auf Hauttyp, Hautzustand und persönliche Hautbedürfnisse abgestimmt.
           </p>
           <div className="mt-10 flex flex-wrap gap-2">
             {benefitTags.map((t) => (
@@ -345,7 +345,7 @@ const Reinigung = () => (
     {/* CTA */}
     <section className="py-24 md:py-32">
       <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">FACE AND MORE</p>
+        <p className="eyebrow mb-5">Monishine</p>
         <h2 className="headline">
           Professionelle Hautpflege beginnt mit der richtigen{" "}
           <span className="italic text-primary">Reinigung</span>.

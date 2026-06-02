@@ -57,7 +57,7 @@ const Problemhaut = () => (
     a: "Ja — Stress, Schlafmangel, Ernährung und hormonelle Veränderungen können sich deutlich auf das Hautbild auswirken. Die Haut reagiert oft sensibel auf innere und äußere Belastungen.",
   },
   {
-    q: "Welche Pflegeprodukte verwendet FACE AND MORE?",
+    q: "Welche Pflegeprodukte verwendet Monishine?",
     a: "Im Studio wird mit ASAP Skincare gearbeitet — einer professionellen Wirkstoffpflege aus Australien. Die Produkte sind vegan, frei von Mikroplastik, Mineralölen und künstlichen Duftstoffen.",
   },
   {

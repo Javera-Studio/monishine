@@ -270,7 +270,7 @@ const Problemhaut = () => (
             Unreine Haut entsteht häufig durch ein Zusammenspiel aus überschüssigem Talg, Entzündungen, gestörter Hautbarriere und äußeren Einflüssen. Moderne Problemhautpflege setzt deshalb nicht auf aggressive Austrocknung, sondern auf gezielte Wirkstoffe zur Unterstützung einer ruhigeren und ausgeglicheneren Haut.
           </p>
           <p className="mt-5 text-foreground/75 leading-relaxed">
-            Bei FACE AND MORE werden Pflegeprodukte individuell auf Hautzustand, Empfindlichkeit und Hautziele abgestimmt — für eine langfristig gesunde und klar wirkende Haut.
+            Bei Monishine werden Pflegeprodukte individuell auf Hautzustand, Empfindlichkeit und Hautziele abgestimmt — für eine langfristig gesunde und klar wirkende Haut.
           </p>
           <div className="mt-10 flex flex-wrap gap-2">
             {benefitTags.map((t) => (
@@ -354,7 +354,7 @@ const Problemhaut = () => (
     {/* CTA */}
     <section className="py-24 md:py-32">
       <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">FACE AND MORE</p>
+        <p className="eyebrow mb-5">Monishine</p>
         <h2 className="headline">
           Klare Haut beginnt mit der{" "}
           <span className="italic text-primary">richtigen Pflege</span>.

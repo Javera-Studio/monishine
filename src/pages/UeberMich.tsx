@@ -42,7 +42,7 @@ const UeberMich = () => (
   </p>
 
   <p>
-    Mein Ziel ist es nicht, Haut nur kurzfristig zu verbessern, sondern sie langfristig zu verstehen, zu stärken und nachhaltig zu begleiten. Deshalb erhältst du bei FACE AND MORE nicht nur eine Behandlung, sondern auch individuell abgestimmte Pflegeempfehlungen für Zuhause.
+    Mein Ziel ist es nicht, Haut nur kurzfristig zu verbessern, sondern sie langfristig zu verstehen, zu stärken und nachhaltig zu begleiten. Deshalb erhältst du bei Monishine nicht nur eine Behandlung, sondern auch individuell abgestimmte Pflegeempfehlungen für Zuhause.
   </p>
 
   <p>
@@ -74,7 +74,7 @@ const UeberMich = () => (
       <div className="aspect-[3/4] overflow-hidden shadow-soft">
         <img
           src={studio}
-          alt="Behandlungsraum FACE AND MORE"
+          alt="Behandlungsraum Monishine"
           loading="lazy"
           className="w-full h-full object-cover"
         />

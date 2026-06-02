@@ -246,7 +246,7 @@ const Sonnenschutz = () => (
             UV-Strahlung zählt zu den häufigsten Ursachen vorzeitiger Hautalterung, Pigmentflecken und gestresster Haut. Moderne Sonnenschutzpflege kombiniert deshalb effektiven UVA- und UVB-Schutz mit Feuchtigkeit, leichter Pflege und angenehmen Texturen für den Alltag.
           </p>
           <p className="mt-5 text-foreground/75 leading-relaxed">
-            Ob leichte Tagespflege, getönter Glow oder praktische Pflege-Sets — bei FACE AND MORE werden Produkte individuell auf Hauttyp, Alltag und Hautbedürfnisse abgestimmt.
+            Ob leichte Tagespflege, getönter Glow oder praktische Pflege-Sets — bei Monishine werden Produkte individuell auf Hauttyp, Alltag und Hautbedürfnisse abgestimmt.
           </p>
           <div className="mt-10 flex flex-wrap gap-2">
             {benefitTags.map((t) => (
@@ -330,7 +330,7 @@ const Sonnenschutz = () => (
     {/* CTA */}
     <section className="py-24 md:py-32">
       <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">FACE AND MORE</p>
+        <p className="eyebrow mb-5">Monishine</p>
         <h2 className="headline">
           Täglicher Sonnenschutz ist{" "}
           <span className="italic text-primary">moderne Hautpflege</span>.

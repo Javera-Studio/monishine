@@ -250,7 +250,7 @@ const TreatmentPage = (p: TreatmentPageProps) => (
           <p className="eyebrow mb-5">Persönlich. Diskret.</p>
           <h2 className="headline">Hautpflege mit <span className="italic text-primary">Wirkung</span> und Ruhe.</h2>
           <p className="mt-6 text-foreground/75 leading-relaxed max-w-md">
-            Im Studio FACE AND MORE in Wien nehme ich mir bewusst Zeit für dich und deine Haut. Mit persönlicher Beratung, individueller Pflege und entspannter Atmosphäre entsteht eine Behandlung, die sich genauso gut anfühlt, wie sie wirkt.
+            Im Studio Monishine in Wien nehme ich mir bewusst Zeit für dich und deine Haut. Mit persönlicher Beratung, individueller Pflege und entspannter Atmosphäre entsteht eine Behandlung, die sich genauso gut anfühlt, wie sie wirkt.
           </p>
           {p.closingNote && (
             <p className="mt-6 text-foreground/75 leading-relaxed max-w-md">{p.closingNote}</p>
@@ -286,7 +286,7 @@ const TreatmentPage = (p: TreatmentPageProps) => (
         <p className="eyebrow mb-5">Bereit?</p>
         <h2 className="headline">Lass uns gemeinsam <span className="italic text-primary">starten</span>.</h2>
         <p className="lede mt-6">
-          Buche dein persönliches Erstgespräch oder direkt deinen Termin im Studio FACE AND MORE in Wien.
+          Buche dein persönliches Erstgespräch oder direkt deinen Termin im Studio Monishine in Wien.
         </p>
         <Link
           to="/kontakt"

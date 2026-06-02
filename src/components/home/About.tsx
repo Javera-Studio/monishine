@@ -8,7 +8,7 @@ const About = () => (
         <div className="aspect-[4/5] overflow-hidden shadow-soft">
           <img
             src={portrait}
-            alt="Michaela Kornherr — Hautexpertin & Gründerin von FACE AND MORE in Wien"
+            alt="Michaela Kornherr — Hautexpertin & Gründerin von Monishine in Wien"
             loading="lazy"
             className="w-full h-full object-cover"
           />
@@ -25,7 +25,7 @@ const About = () => (
           kombiniert mit einer Atmosphäre, in der du dich verstanden fühlst.
         </p>
         <p className="mt-4 text-foreground/80 leading-relaxed">
-          Im FACE AND MORE Studio in Wien verbinde ich kontinuierliche
+          Im Monishine Studio in Wien verbinde ich kontinuierliche
           Weiterbildung mit echter Zeit für jede Kundin — von der Hautanalyse bis
           zum individuellen Pflegeplan.
         </p>

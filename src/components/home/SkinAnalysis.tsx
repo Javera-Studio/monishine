@@ -26,7 +26,7 @@ const SkinAnalysis = () => (
           <div className="aspect-[4/5] overflow-hidden bg-muted shadow-elegant">
             <img
               src={analysisImg}
-              alt="Modernes 3D-Hautanalysegerät im Studio FACE AND MORE Wien"
+              alt="Modernes 3D-Hautanalysegerät im Studio Monishine Wien"
               className="w-full h-full object-cover"
               loading="lazy"
               width={1600}

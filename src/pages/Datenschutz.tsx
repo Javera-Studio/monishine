@@ -20,10 +20,10 @@ const Datenschutz = () => (
 <p>
   E-Mail:{" "}
   <a
-    href="mailto:michaela@faceandmore.at"
+    href="mailto:michaela@monishine.at"
     className="text-foreground transition hover:text-rose"
   >
-    michaela@faceandmore.at
+    michaela@monishine.at
   </a>
 </p>
         </Section>

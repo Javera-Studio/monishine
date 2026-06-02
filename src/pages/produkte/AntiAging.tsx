@@ -303,7 +303,7 @@ const AntiAging = () => (
             Moderne Anti-Aging Pflege bedeutet heute mehr als nur Feuchtigkeit. Hochwertige Wirkstoffe wie Retinol, Fruchtsäuren, Antioxidantien und regenerative Aktivstoffe unterstützen die Haut dabei, glatter, strahlender und ausgeglichener zu wirken.
           </p>
           <p className="mt-5 text-foreground/75 leading-relaxed">
-            Bei FACE AND MORE werden Pflegeprodukte individuell auf Hautzustand, Hauttyp und persönliche Hautziele abgestimmt — für sichtbare Ergebnisse und eine langfristig gesunde Hautbalance.
+            Bei Monishine werden Pflegeprodukte individuell auf Hautzustand, Hauttyp und persönliche Hautziele abgestimmt — für sichtbare Ergebnisse und eine langfristig gesunde Hautbalance.
           </p>
           <div className="mt-10 flex flex-wrap gap-2">
             {benefitTags.map((t) => (
@@ -387,7 +387,7 @@ const AntiAging = () => (
     {/* CTA */}
     <section className="py-24 md:py-32">
       <div className="container-editorial text-center max-w-2xl mx-auto">
-        <p className="eyebrow mb-5">FACE AND MORE</p>
+        <p className="eyebrow mb-5">Monishine</p>
         <h2 className="headline">
           Individuelle Hautpflege beginnt mit{" "}
           <span className="italic text-primary">professioneller Beratung</span>.
