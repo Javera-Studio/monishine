@@ -57,6 +57,10 @@ const faqs = [
     q: "Kann ich mich vorab beraten lassen?",
     a: "Natürlich. Eine persönliche Beratung gehört bei Monishine dazu. Gemeinsam finden wir die Behandlung, die am besten zu deinen Wünschen und deinem Typ passt.",
   },
+  {
+    q: "Ist Monishine auch für Männer geeignet?",
+    a: "Ja. Viele unserer Behandlungen wie Brow Styling, Gesichtsbehandlungen oder Laserbehandlungen werden regelmäßig von Männern gebucht. Wir legen Wert auf eine entspannte Atmosphäre, persönliche Beratung und natürliche Ergebnisse.",
+  },
 ];
 
 const FaqItem = ({
