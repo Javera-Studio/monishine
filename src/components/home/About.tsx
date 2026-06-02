@@ -28,7 +28,7 @@ const About = () => (
           className="text-foreground leading-[1.05]"
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+            fontSize: "clamp(1.7rem, 3vw, 3rem)",
             fontWeight: 300,
           }}
         >

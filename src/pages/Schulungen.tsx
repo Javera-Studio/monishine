@@ -55,7 +55,7 @@ const Schulungen = () => (
           </p>
           <h1
             className="text-foreground leading-[1.02]"
-            style={{ ...serif, fontSize: "clamp(3rem, 5.5vw, 5.25rem)" }}
+            style={{ ...serif, fontSize: "clamp(2.4rem, 4.4vw, 4.2rem)" }}
           >
             Werde Lash Artist mit{" "}
             <em className="italic">Technik, Gefühl &amp; Selbstvertrauen.</em>
