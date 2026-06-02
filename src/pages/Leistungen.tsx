@@ -77,7 +77,7 @@ const Leistungen = () => {
                   </div>
                 </Link>
               )
-            )
+            )}
           </div>
 
           <div className="mt-20 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
