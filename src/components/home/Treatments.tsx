@@ -219,7 +219,12 @@ const Treatments = () => {
         {/* Bottom CTA */}
         <div className="mt-20 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="font-serif text-2xl md:text-3xl max-w-md leading-snug">
-            Egal ob du zum ersten Mal ein Beauty Studio besuchst oder bereits Erfahrung hast – wir beraten Ladies &amp; Gentlemen persönlich und ohne Druck.
+            <span
+              className="block text-foreground/70 font-light leading-[1.85]"
+              style={{ fontSize: "0.95rem", maxWidth: "460px" }}
+            >
+              Persönliche Beratung für Ladies &amp; Gentlemen – individuell, entspannt und auf deine Wünsche abgestimmt.
+            </span>
           </p>
           <Link to="/kontakt" className="btn-primary shrink-0">
             Kostenlose Beratung
