@@ -90,11 +90,11 @@ const Hero = () => (
             Signature.
           </h1>
 
-          <p className="lede mt-8" style={{ maxWidth: "400px" }}>
-            Moderne Beauty Treatments für Ladies &amp; Gentlemen —
-            spezialisiert auf Brows &amp; Lashes, mit persönlicher Beratung,
-            präziser Arbeit und einer warmen Studioatmosphäre zum Wohlfühlen.
-          </p>
+          <div className="mt-8 space-y-2" style={{ maxWidth: "400px" }}>
+            <p className="lede">Moderne Beauty Treatments für Ladies &amp; Gentlemen.</p>
+            <p className="lede">Spezialisiert auf Brows &amp; Lashes, persönliche Beratung und präzise Arbeit.</p>
+            <p className="lede">In einer warmen Studioatmosphäre zum Wohlfühlen.</p>
+          </div>
 
           {/* CTA buttons — extra breathing room below subheadline */}
           <div className="mt-14 flex flex-col sm:flex-row gap-3 items-start">
