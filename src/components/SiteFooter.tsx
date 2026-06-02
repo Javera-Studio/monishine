@@ -3,9 +3,9 @@ import logo from "@/assets/monishine-logo.png.asset.json";
 
 const SiteFooter = () => (
   <footer className="bg-secondary/50 border-t border-border/60 mt-32">
-    <div className="container-editorial py-20 grid gap-14 md:grid-cols-2">
+    <div className="container-editorial py-20 grid gap-10 md:grid-cols-3 md:items-start">
 
-      {/* Logo + tagline */}
+      {/* Left — Logo + tagline */}
       <div>
         <Link to="/" aria-label="Monishine — Startseite" className="inline-block">
           <img src={logo.url} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
@@ -16,10 +16,23 @@ const SiteFooter = () => (
         </p>
       </div>
 
-      {/* Studio info + Google Maps */}
-      <div>
-        <p className="eyebrow mb-5">Studio</p>
-        <ul className="space-y-3 text-sm text-foreground/75 font-light mb-6">
+      {/* Center — Google Maps */}
+      <div className="overflow-hidden border border-border/50">
+        <iframe
+          title="Monishine Studio Hamburg"
+          src="https://maps.google.com/maps?q=Bramfelder+Stra%C3%9Fe+77%2C+22305+Hamburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="200"
+          style={{ border: 0, display: "block", filter: "grayscale(0.2) contrast(0.95)" }}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+
+      {/* Right — Address, right-aligned */}
+      <div className="text-right">
+        <ul className="space-y-3 text-sm text-foreground/75 font-light">
           <li>Bramfelder Straße 77</li>
           <li>22305 Hamburg</li>
           <li>
@@ -33,19 +46,6 @@ const SiteFooter = () => (
             </a>
           </li>
         </ul>
-        {/* Google Maps embed */}
-        <div className="overflow-hidden border border-border/50">
-          <iframe
-            title="Monishine Studio Hamburg"
-            src="https://maps.google.com/maps?q=Bramfelder+Stra%C3%9Fe+77%2C+22305+Hamburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            width="100%"
-            height="180"
-            style={{ border: 0, display: "block", filter: "grayscale(0.2) contrast(0.95)" }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
       </div>
 
     </div>
