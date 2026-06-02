@@ -22,15 +22,21 @@ const SiteFooter = () => (
         </ul>
       </div>
       <div>
-        <p className="eyebrow mb-5">Navigation</p>
+        <p className="eyebrow mb-5">Treatments</p>
         <ul className="space-y-2.5 text-sm font-light">
-          <li><Link to="/leistungen" className="hover:text-accent transition-colors">Leistungen</Link></li>
-          <li><Link to="/hautcoaching" className="hover:text-accent transition-colors">Hautcoaching</Link></li>
-          <li><Link to="/hautanalyse" className="hover:text-accent transition-colors">Hautanalyse</Link></li>
-          <li><Link to="/produkte" className="hover:text-accent transition-colors">Produkte</Link></li>
-          <li><Link to="/preise" className="hover:text-accent transition-colors">Preise</Link></li>
-          <li><Link to="/blog" className="hover:text-accent transition-colors">Journal</Link></li>
+          <li><Link to="/leistungen/augenbrauen-wimpern" className="hover:text-accent transition-colors">Augenbrauen & Wimpern</Link></li>
+          <li><Link to="/leistungen/wimpernverlaengerung" className="hover:text-accent transition-colors">Wimpernverlängerung</Link></li>
+          <li><Link to="/leistungen/permanent-make-up" className="hover:text-accent transition-colors">Permanent Make-up</Link></li>
+          <li><Link to="/leistungen/gesichtsbehandlungen" className="hover:text-accent transition-colors">Gesichtsbehandlungen</Link></li>
+          <li><Link to="/leistungen/haarentfernung" className="hover:text-accent transition-colors">Haarentfernung</Link></li>
+          <li><Link to="/leistungen" className="hover:text-accent transition-colors">Alle Treatments</Link></li>
+        </ul>
+      </div>
+      <div>
+        <p className="eyebrow mb-5">Studio</p>
+        <ul className="space-y-2.5 text-sm font-light">
           <li><Link to="/ueber-mich" className="hover:text-accent transition-colors">Über uns</Link></li>
+          <li><Link to="/blog" className="hover:text-accent transition-colors">Journal</Link></li>
           <li><Link to="/kontakt" className="hover:text-accent transition-colors">Kontakt</Link></li>
           <li><Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link></li>
           <li><Link to="/datenschutz" className="hover:text-accent transition-colors">Datenschutz</Link></li>

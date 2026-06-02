@@ -1,12 +1,10 @@
 /**
  * Local CMS provider — sources content from typed modules in `src/content/`.
- *
- * Async signatures match the future Notion provider so components don't need
- * to change when we swap. Each call resolves synchronously today.
+ * Async signatures mirror the future Notion provider.
  */
 
 import type { CmsProvider } from "./provider";
-import { treatments } from "@/content/treatments";
+import { serviceCategories } from "@/content/serviceCategories";
 import { faqItems } from "@/content/faq";
 import { specials } from "@/content/specials";
 import { sections } from "@/content/sections";
@@ -14,14 +12,14 @@ import { sections } from "@/content/sections";
 export const localProvider: CmsProvider = {
   name: "local",
 
-  async getTreatments() {
-    return treatments
-      .filter((t) => t.published !== false)
+  async getCategories() {
+    return serviceCategories
+      .filter((c) => c.published !== false)
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   },
 
-  async getTreatmentBySlug(slug) {
-    return treatments.find((t) => t.slug === slug) ?? null;
+  async getCategoryBySlug(slug) {
+    return serviceCategories.find((c) => c.slug === slug) ?? null;
   },
 
   async getFaq(category) {
@@ -35,7 +33,6 @@ export const localProvider: CmsProvider = {
   },
 
   async getArticles() {
-    // Bridge to existing blog data until the editorial schema is unified
     const mod = await import("@/data/blogArticles");
     const blogArticles = mod.default;
     return blogArticles.map((a) => ({

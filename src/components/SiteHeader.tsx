@@ -4,14 +4,10 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/monishine-logo.png.asset.json";
 
 const links = [
-  { to: "/leistungen", label: "Leistungen" },
-  { to: "/hautcoaching", label: "Hautcoaching" },
-  { to: "/hautanalyse", label: "Hautanalyse" },
-  { to: "/produkte", label: "Produkte" },
-  { to: "/preise", label: "Preise" },
+  { to: "/leistungen", label: "Treatments" },
   { to: "/ueber-mich", label: "Über uns" },
-  { to: "/kontakt", label: "Kontakt" },
   { to: "/blog", label: "Journal" },
+  { to: "/kontakt", label: "Kontakt" },
 ];
 
 const SiteHeader = () => {
