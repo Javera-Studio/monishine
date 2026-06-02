@@ -50,9 +50,18 @@ const SiteFooter = () => (
 
     </div>
     <div className="border-t border-border/60">
-      <div className="container-editorial py-6">
-        <p className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground font-light">
-          © {new Date().getFullYear()} Monishine — Premium Beauty Studio
+      <div className="container-editorial py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground font-light">
+        <p>© {new Date().getFullYear()} Monishine — Premium Beauty Studio</p>
+        <p>
+          Webdesign by{" "}
+          <a
+            href="https://www.javera-studio.at"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            JAVERA Studio
+          </a>
         </p>
       </div>
     </div>
