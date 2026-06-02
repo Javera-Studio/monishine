@@ -10,7 +10,7 @@ const BrandPhilosophy = () => (
         alt="Monishine Studio"
         loading="lazy"
         className="w-full object-cover"
-        style={{ maxHeight: "70vh", objectPosition: "center center" }}
+        style={{ maxHeight: "42vh", objectPosition: "center center" }}
       />
 
       {/* Left fade */}
@@ -31,7 +31,7 @@ const BrandPhilosophy = () => (
     </div>
 
     {/* Slogan + divider */}
-    <div className="relative z-10 flex flex-col items-center -mt-16 md:-mt-24 pb-4">
+    <div className="relative z-10 flex flex-col items-center -mt-10 md:-mt-14 pb-4">
       <p
         className="font-script text-center px-6"
         style={{

@@ -112,63 +112,63 @@ const Faq = () => {
   return (
     <section className="py-24 md:py-32 bg-gradient-warm">
       <div className="container-editorial">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-        {/* Header */}
-        <div className="max-w-2xl mb-14 md:mb-18 reveal">
-          <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
-            FAQ
-          </p>
-          <h2
-            className="text-foreground leading-[1.05]"
-            style={{ ...serif, fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
-          >
-            Alles, was du vor deinem Termin wissen möchtest.
-          </h2>
-          <p className="lede mt-6">
-            Du hast Fragen zu unseren Behandlungen, Permanent Make-up oder
-            Schulungen? Hier findest du die häufigsten Antworten. Für alles
-            Weitere erreichst du uns jederzeit direkt.
-          </p>
-        </div>
+          {/* ── Left: sticky headline + CTA ── */}
+          <div className="lg:col-span-4 lg:sticky lg:top-28 reveal">
+            <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
+              FAQ
+            </p>
+            <h2
+              className="text-foreground leading-[1.05]"
+              style={{ ...serif, fontSize: "clamp(2rem, 3vw, 3rem)" }}
+            >
+              Alles, was du vor deinem Termin wissen möchtest.
+            </h2>
+            <p className="mt-6 text-foreground/60 font-light leading-[1.85] text-sm md:text-base">
+              Du hast Fragen zu unseren Behandlungen, Permanent Make-up oder
+              Schulungen? Hier findest du die häufigsten Antworten.
+            </p>
 
-        {/* Accordion */}
-        <div className="max-w-3xl reveal reveal-delay-1">
-          <div className="border-t border-foreground/[0.07]">
-            {faqs.map((item, i) => (
-              <FaqItem
-                key={i}
-                q={item.q}
-                a={item.a}
-                open={openIndex === i}
-                onToggle={() => toggle(i)}
-              />
-            ))}
+            {/* CTA */}
+            <div className="mt-10 pt-8 border-t border-foreground/[0.07]">
+              <p
+                className="text-foreground leading-[1.1] mb-4"
+                style={{ ...serif, fontSize: "clamp(1.2rem, 1.8vw, 1.5rem)" }}
+              >
+                Du hast noch Fragen?
+              </p>
+              <p className="text-foreground/55 font-light text-sm leading-[1.85] mb-6">
+                Schreib mir direkt auf WhatsApp — ich berate dich persönlich.
+              </p>
+              <a
+                href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20eurem%20Angebot."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary group inline-flex items-center gap-2"
+              >
+                <WhatsAppIcon />
+                WhatsApp schreiben
+              </a>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 md:mt-20 pt-12 border-t border-foreground/[0.07] max-w-3xl reveal">
-          <p
-            className="text-foreground leading-[1.05] mb-4"
-            style={{ ...serif, fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)" }}
-          >
-            Du hast noch Fragen?
-          </p>
-          <p className="text-foreground/65 font-light leading-[1.85] text-sm md:text-base max-w-xl mb-8">
-            Schreib mir gerne direkt auf WhatsApp – ich berate dich persönlich
-            und finde gemeinsam mit dir die passende Behandlung.
-          </p>
-          <a
-            href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20eurem%20Angebot."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary group inline-flex items-center gap-2"
-          >
-            <WhatsAppIcon />
-            WhatsApp schreiben
-          </a>
-        </div>
+          {/* ── Right: accordion ── */}
+          <div className="lg:col-span-8 reveal reveal-delay-1">
+            <div className="border-t border-foreground/[0.07]">
+              {faqs.map((item, i) => (
+                <FaqItem
+                  key={i}
+                  q={item.q}
+                  a={item.a}
+                  open={openIndex === i}
+                  onToggle={() => toggle(i)}
+                />
+              ))}
+            </div>
+          </div>
 
+        </div>
       </div>
     </section>
   );

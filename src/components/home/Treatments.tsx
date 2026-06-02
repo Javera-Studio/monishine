@@ -170,7 +170,7 @@ const Treatments = () => {
           <div className="max-w-xl">
             <p
               className="font-script mb-2"
-              style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.5rem)", color: "hsl(var(--accent))", opacity: 0.45 }}
+              style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.6rem)", color: "hsl(var(--accent))", opacity: 0.6 }}
             >
               Brows. Lashes. Glow.
             </p>
@@ -216,8 +216,23 @@ const Treatments = () => {
 
       </div>
 
+      {/* ── Vorher/Nachher headline ── */}
+      <div className="container-editorial mt-16 md:mt-20 mb-8 md:mb-10 text-center">
+        <h3
+          style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontWeight: 300,
+            fontSize: "clamp(1.6rem, 2.8vw, 2.8rem)",
+            color: "hsl(var(--foreground) / 0.82)",
+            letterSpacing: "-0.005em",
+          }}
+        >
+          Echte Ergebnisse. Echter Glow.
+        </h3>
+      </div>
+
       {/* ── Vorher/Nachher image marquee ── */}
-      <div className="marquee-outer overflow-hidden mt-16 md:mt-20">
+      <div className="marquee-outer overflow-hidden">
         <div
           className="marquee-track flex gap-3 md:gap-4"
           style={{ animation: "marquee 50s linear infinite" }}
