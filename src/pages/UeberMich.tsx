@@ -139,24 +139,27 @@ const UeberMich = () => (
     <section className="py-24 md:py-32 bg-secondary/25">
       <div className="container-editorial">
 
-        {/* Text block — headline left (+ eingang.jpg below) / body right */}
+        {/* Eyebrow + headline — full width above grid */}
+        <div className="mb-10 md:mb-12 reveal">
+          <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
+            Ein Ort zum Wohlfühlen
+          </p>
+          <h2
+            className="text-foreground leading-[1.06]"
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+              fontWeight: 300,
+            }}
+          >
+            Mehr als nur ein Beauty Studio.
+          </h2>
+        </div>
+
+        {/* Grid: eingang image left, text right — both start at same level */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-12 md:mb-16">
           <div className="lg:col-span-5 reveal">
-            <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
-              Ein Ort zum Wohlfühlen
-            </p>
-            <h2
-              className="text-foreground leading-[1.06]"
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                fontWeight: 300,
-              }}
-            >
-              Mehr als nur ein Beauty Studio.
-            </h2>
-            {/* Entrance photo directly below headline */}
-            <div className="mt-8 aspect-[4/3] overflow-hidden shadow-soft">
+            <div className="aspect-[4/3] overflow-hidden shadow-soft">
               <img
                 src={eingangImg}
                 alt="Monishine Studio Wien — Eingang"
