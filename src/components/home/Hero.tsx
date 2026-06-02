@@ -16,11 +16,12 @@ const badges = [
 const Hero = () => (
   <section className="relative bg-background overflow-hidden">
     {/* ── Mobile image — in document flow, fades into background ── */}
-    <div className="lg:hidden relative h-[72vw] min-h-[300px] max-h-[500px]">
+    <div className="lg:hidden relative h-[80vw] min-h-[320px] max-h-[540px]">
       <img
         src={heroImg}
         alt="Monishine Beauty Studio Wien — Brows & Lashes"
-        className="w-full h-full object-cover object-top"
+        className="w-full h-full object-cover"
+        style={{ objectPosition: "center 30%" }}
         loading="eager"
       />
       <div
@@ -32,20 +33,21 @@ const Hero = () => (
       />
     </div>
 
-    {/* ── Desktop image — absolute, right 73%, bleeds to edges ── */}
-    <div className="hidden lg:block absolute inset-y-0 right-0 w-[73%] pointer-events-none select-none">
+    {/* ── Desktop image — absolute, right 80%, object-contain so full studio shows ── */}
+    <div className="hidden lg:block absolute inset-y-0 right-0 w-[80%] pointer-events-none select-none">
       <img
         src={heroImg}
         alt="Monishine Beauty Studio Wien — Brows & Lashes"
-        className="w-full h-full object-cover object-top"
+        className="w-full h-full"
+        style={{ objectFit: "contain", objectPosition: "right center" }}
         loading="eager"
       />
       {/* Soft left-edge gradient blending image into cream background */}
       <div
-        className="absolute inset-y-0 left-0 w-[62%]"
+        className="absolute inset-y-0 left-0 w-[52%]"
         style={{
           background:
-            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.82) 30%, hsl(var(--background) / 0.35) 62%, transparent 100%)",
+            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.88) 28%, hsl(var(--background) / 0.35) 58%, transparent 100%)",
         }}
       />
     </div>
