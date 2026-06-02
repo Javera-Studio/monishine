@@ -25,10 +25,10 @@ const SiteFooter = () => (
         <p className="eyebrow mb-5">Treatments</p>
         <ul className="space-y-2.5 text-sm font-light">
           <li><Link to="/leistungen/augenbrauen-wimpern" className="hover:text-accent transition-colors">Augenbrauen & Wimpern</Link></li>
-          <li><Link to="/leistungen/wimpernverlaengerung" className="hover:text-accent transition-colors">Wimpernverlängerung</Link></li>
           <li><Link to="/leistungen/permanent-make-up" className="hover:text-accent transition-colors">Permanent Make-up</Link></li>
           <li><Link to="/leistungen/gesichtsbehandlungen" className="hover:text-accent transition-colors">Gesichtsbehandlungen</Link></li>
           <li><Link to="/leistungen/haarentfernung" className="hover:text-accent transition-colors">Haarentfernung</Link></li>
+          <li><Link to="/leistungen/koerperbehandlungen" className="hover:text-accent transition-colors">Körperbehandlungen</Link></li>
           <li><Link to="/leistungen" className="hover:text-accent transition-colors">Alle Treatments</Link></li>
         </ul>
       </div>
