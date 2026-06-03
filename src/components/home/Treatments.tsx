@@ -162,7 +162,7 @@ const Treatments = () => {
     .filter(Boolean) as ServiceCategory[];
 
   return (
-    <section className="pt-16 md:pt-32 pb-0">
+    <section className="pt-16 md:pt-32 pb-0 bg-taupe">
       <div className="container-editorial">
 
         {/* Section header */}
