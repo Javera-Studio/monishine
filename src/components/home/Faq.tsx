@@ -146,7 +146,7 @@ const Faq = () => {
                 Schreib mir direkt auf WhatsApp — ich berate dich persönlich.
               </p>
               <a
-                href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20eurem%20Angebot."
+                href="https://wa.me/4917624050812?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20eurem%20Angebot."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary group inline-flex items-center gap-2"

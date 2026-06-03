@@ -7,7 +7,7 @@ const StickyMobileCTA = () => (
         Nicht sicher, welche Behandlung passt?
       </span>
       <a
-        href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+        href="https://wa.me/4917624050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
         target="_blank"
         rel="noopener noreferrer"
         className="shrink-0 inline-flex items-center text-[0.62rem] uppercase tracking-[0.22em] text-foreground border-b border-foreground/25 pb-0.5 transition-colors duration-300 hover:text-accent hover:border-accent"

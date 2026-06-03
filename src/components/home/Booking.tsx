@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import kontaktImg from "@/assets/kontakt.png";
 
-const WA_URL = "https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren.";
+const WA_URL = "https://wa.me/4917624050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren.";
 const TW_URL = "https://buchung.treatwell.de/ort/monishine/";
 
 const Booking = () => (

@@ -169,7 +169,7 @@ const Preise = () => {
               </p>
               <div className="mt-10">
                 <a
-                  href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+                  href="https://wa.me/4917624050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"

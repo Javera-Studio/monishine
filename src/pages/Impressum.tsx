@@ -22,7 +22,7 @@ const Impressum = () => (
             Deutschland
           </p>
           <p>
-            Tel: +49 176 340 50 812<br />
+            Tel: +49 176 240 50 812<br />
             E-Mail: monishine@outlook.de<br />
             Website: <a href="https://www.monishine.at" className="underline hover:text-primary">www.monishine.at</a>
           </p>
