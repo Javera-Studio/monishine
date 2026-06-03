@@ -103,13 +103,21 @@ const Testimonials = () => (
       {/* ── Header: two-column editorial layout ── */}
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 md:mb-28">
 
-        {/* Left — badge · headline · text · CTA · stats */}
-        <div className="order-2 lg:order-1 reveal lg:pt-6">
-
+        {/* Left — light panel with dark text */}
+        <div
+          className="order-2 lg:order-1 reveal p-8 md:p-10 lg:p-12"
+          style={{ backgroundColor: "#FAF7F2" }}
+        >
           {/* Treatwell badge */}
-          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-accent/25 bg-secondary/50">
+          <div
+            className="inline-flex items-center gap-2 mb-8 px-4 py-2"
+            style={{ border: "1px solid rgba(155,123,102,0.3)", backgroundColor: "rgba(155,123,102,0.06)" }}
+          >
             <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
-            <span className="text-[0.58rem] uppercase tracking-[0.3em] text-accent/80">
+            <span
+              className="uppercase font-light"
+              style={{ fontSize: "0.58rem", letterSpacing: "0.3em", color: "#9B7B66" }}
+            >
               Treatwell Top Rated
             </span>
             <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
@@ -117,14 +125,17 @@ const Testimonials = () => (
 
           {/* Headline */}
           <h2
-            className="text-foreground leading-[1.04]"
-            style={{ ...serif, fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)" }}
+            className="leading-[1.04]"
+            style={{ ...serif, fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)", color: "#1C1611" }}
           >
             5 Jahre in Folge ausgezeichnet.
           </h2>
 
           {/* Body text */}
-          <p className="lede mt-6 max-w-lg">
+          <p
+            className="mt-6 font-light leading-[1.85]"
+            style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)", color: "#5F554D" }}
+          >
             Über 400 verifizierte Bewertungen und unzählige zufriedene Kundinnen machen
             Monishine zu einer der beliebtesten Adressen für Brows, Lashes und Permanent
             Make-up in Wien. Persönliche Beratung, präzise Arbeit und eine Atmosphäre zum
@@ -137,22 +148,26 @@ const Testimonials = () => (
               href="https://buchung.treatwell.de/ort/monishine/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline text-sm"
+              className="inline-flex items-center gap-2 px-7 py-3 text-xs tracking-[0.22em] uppercase font-normal transition-opacity duration-300 hover:opacity-70"
+              style={{ border: "1px solid #1C1611", color: "#1C1611" }}
             >
               Bewertungen ansehen
             </a>
           </div>
 
           {/* Stats strip */}
-          <div className="mt-10 pt-8 border-t border-foreground/[0.07] grid grid-cols-2 lg:flex gap-y-6">
+          <div
+            className="mt-10 pt-8 grid grid-cols-2 lg:flex gap-y-6"
+            style={{ borderTop: "1px solid rgba(28,22,17,0.08)" }}
+          >
             {stats.map(({ value, stars, label }, i) => (
               <div
                 key={value}
                 className="lg:flex-1 px-4 lg:px-5 lg:first:pl-0"
-                style={i > 0 ? { borderLeft: "1px solid hsl(var(--foreground) / 0.08)" } : {}}
+                style={i > 0 ? { borderLeft: "1px solid rgba(28,22,17,0.08)" } : {}}
               >
                 <div className="flex items-baseline gap-1.5 flex-wrap">
-                  <p style={{ ...serif, fontSize: "clamp(1.4rem, 2vw, 1.9rem)", color: "hsl(var(--foreground) / 0.88)" }}>
+                  <p style={{ ...serif, fontSize: "clamp(1.4rem, 2vw, 1.9rem)", color: "#1C1611" }}>
                     {value}
                   </p>
                   {stars && (
@@ -163,7 +178,10 @@ const Testimonials = () => (
                     </div>
                   )}
                 </div>
-                <p className="eyebrow mt-1" style={{ color: "hsl(var(--accent) / 0.6)" }}>
+                <p
+                  className="mt-1 uppercase font-light"
+                  style={{ fontSize: "0.57rem", letterSpacing: "0.22em", color: "#9B7B66" }}
+                >
                   {label}
                 </p>
               </div>
