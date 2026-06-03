@@ -248,7 +248,7 @@ const Treatments = () => {
         )}
 
         {/* Script slogan — directly under the grid */}
-        <div className="mt-12 md:mt-16 text-center">
+        <div className="mt-12 md:mt-16 mb-16 md:mb-24 text-center">
           <p
             className="font-script shimmer-gold"
             style={{ fontSize: "clamp(2.1rem, 2.6vw, 2.6rem)" }}
