@@ -110,15 +110,12 @@ const Testimonials = () => (
       {/* ── Header: two-column editorial layout ── */}
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 md:mb-28">
 
-        {/* Left — white panel with dark text */}
-        <div
-          className="order-2 lg:order-1 reveal p-8 md:p-10 lg:p-12"
-          style={{ backgroundColor: PANEL_BG, border: `1px solid ${CARD_BORDER}` }}
-        >
+        {/* Left — text on section background */}
+        <div className="order-2 lg:order-1 reveal lg:pt-6">
           {/* Treatwell badge */}
           <div
             className="inline-flex items-center gap-2 mb-8 px-4 py-2"
-            style={{ border: `1px solid ${CARD_BORDER}`, backgroundColor: "#F7F4F0" }}
+            style={{ border: `1px solid ${CARD_BORDER}` }}
           >
             <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
             <span

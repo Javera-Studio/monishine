@@ -57,7 +57,13 @@ const Hero = () => (
 
       {/* ── Content ── */}
       <div className="relative z-10 container-editorial w-full lg:min-h-screen lg:flex lg:items-center">
-        <div className="max-w-[520px] pt-3 pb-12 lg:py-36 reveal">
+        {/* Soft local overlay behind text — desktop only */}
+        <div
+          className="hidden lg:block absolute inset-y-0 left-0 w-[44%] pointer-events-none"
+          style={{ background: "linear-gradient(to right, hsl(var(--background) / 0.45) 0%, transparent 100%)" }}
+        />
+
+        <div className="relative max-w-[520px] pt-3 pb-12 lg:py-36 reveal">
 
           <p className="mb-6 text-accent font-light" style={{ fontSize: "0.75rem", letterSpacing: "0.35em", textTransform: "uppercase" }}>
             Brows • Lashes • Glow
@@ -70,6 +76,7 @@ const Hero = () => (
               fontSize: "clamp(3.1rem, 5.5vw, 5.5rem)",
               fontWeight: 300,
               letterSpacing: "-0.01em",
+              textShadow: "0 1px 12px rgba(255,251,245,0.18)",
             }}
           >
             Your Glow
@@ -96,14 +103,18 @@ const Hero = () => (
               <p
                 key={line}
                 className="text-muted-foreground font-light"
-                style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)", lineHeight: 1.8 }}
+                style={{
+                  fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)",
+                  lineHeight: 1.8,
+                  textShadow: "0 1px 8px rgba(255,251,245,0.12)",
+                }}
               >
                 {line}
               </p>
             ))}
           </div>
 
-          {/* CTA buttons — extra breathing room below subheadline */}
+          {/* CTA buttons */}
           <div className="mt-14 flex flex-col sm:flex-row gap-3 items-start">
             <a
               href={TREATWELL}
@@ -118,7 +129,11 @@ const Hero = () => (
                 className="transition-transform group-hover:translate-x-1"
               />
             </a>
-            <Link to="/leistungen" className="btn-outline">
+            <Link
+              to="/leistungen"
+              className="inline-flex items-center justify-center gap-2 px-9 py-4 text-xs tracking-[0.22em] uppercase font-normal transition-all duration-500 hover:bg-foreground/5"
+              style={{ backgroundColor: "#fff", color: "#1C1611", border: "1px solid rgba(28,22,17,0.2)" }}
+            >
               Treatments entdecken
             </Link>
           </div>
