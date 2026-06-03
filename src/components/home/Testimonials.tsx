@@ -6,13 +6,15 @@ const serif = {
   fontWeight: 300,
 } as const;
 
-const STAR_COLOR = "#C9A66B";
-const CARD_BG    = "#A8937C";   // slightly darker than surface-taupe bg
-const CARD_TEXT  = "#F7F3EE";
-const CARD_MUTED = "rgba(247,243,238,0.60)";
-const CARD_DIM   = "rgba(247,243,238,0.38)";
-const CARD_GOLD  = "#D8B98A";
-const CARD_BORDER = "rgba(247,243,238,0.10)";
+/* ── colour tokens ── */
+const BG          = "#F7F4F0";   // section background — light cream
+const PANEL_BG    = "#FFFFFF";   // left column + review cards
+const CARD_BORDER = "#E8DED4";   // card border
+const ESPRESSO    = "#2D221C";   // main headlines
+const BODY        = "#5A4A3E";   // body / quote text
+const TAUPE       = "#8C7664";   // names, labels, muted text
+const STAR_COLOR  = "#D4AF37";   // gold stars
+const DIVIDER     = "rgba(45,34,28,0.07)";
 
 const Stars = ({ size = 11 }: { size?: number }) => (
   <div className="flex gap-[3px]" aria-label="5 von 5 Sternen">
@@ -73,27 +75,27 @@ type Review = typeof reviews[number];
 
 const ReviewCard = ({ r }: { r: Review }) => (
   <article
-    className="flex flex-col p-7 md:p-8 transition-opacity duration-500 hover:opacity-90"
-    style={{ backgroundColor: CARD_BG }}
+    className="flex flex-col p-7 md:p-8"
+    style={{ backgroundColor: PANEL_BG, border: `1px solid ${CARD_BORDER}` }}
   >
     <Stars size={11} />
     <blockquote
       className="mt-4 flex-1 font-light leading-[1.78]"
-      style={{ ...serif, fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)", color: CARD_TEXT }}
+      style={{ ...serif, fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)", color: BODY }}
     >
       „{r.quote}"
     </blockquote>
     <footer className="mt-5 pt-5" style={{ borderTop: `1px solid ${CARD_BORDER}` }}>
-      <p style={{ ...serif, fontSize: "0.88rem", color: CARD_TEXT }}>— {r.name}</p>
+      <p style={{ ...serif, fontSize: "0.88rem", color: ESPRESSO }}>— {r.name}</p>
       <p
         className="mt-1 font-light uppercase"
-        style={{ fontSize: "0.57rem", letterSpacing: "0.22em", color: CARD_GOLD }}
+        style={{ fontSize: "0.57rem", letterSpacing: "0.22em", color: TAUPE }}
       >
         {r.treatment}
       </p>
       <p
         className="mt-2 flex items-center gap-1.5 font-light uppercase"
-        style={{ fontSize: "0.54rem", letterSpacing: "0.18em", color: CARD_DIM }}
+        style={{ fontSize: "0.54rem", letterSpacing: "0.18em", color: TAUPE, opacity: 0.6 }}
       >
         <span>✓</span> Verifizierte Bewertung
       </p>
@@ -102,26 +104,26 @@ const ReviewCard = ({ r }: { r: Review }) => (
 );
 
 const Testimonials = () => (
-  <section className="surface-taupe pt-6 md:pt-10 pb-0">
+  <section className="pt-6 md:pt-10 pb-0" style={{ backgroundColor: BG }}>
     <div className="container-editorial">
 
       {/* ── Header: two-column editorial layout ── */}
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 md:mb-28">
 
-        {/* Left — light panel with dark text */}
+        {/* Left — white panel with dark text */}
         <div
           className="order-2 lg:order-1 reveal p-8 md:p-10 lg:p-12"
-          style={{ backgroundColor: "#FAF7F2" }}
+          style={{ backgroundColor: PANEL_BG, border: `1px solid ${CARD_BORDER}` }}
         >
           {/* Treatwell badge */}
           <div
             className="inline-flex items-center gap-2 mb-8 px-4 py-2"
-            style={{ border: "1px solid rgba(155,123,102,0.3)", backgroundColor: "rgba(155,123,102,0.06)" }}
+            style={{ border: `1px solid ${CARD_BORDER}`, backgroundColor: "#F7F4F0" }}
           >
             <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
             <span
               className="uppercase font-light"
-              style={{ fontSize: "0.58rem", letterSpacing: "0.3em", color: "#9B7B66" }}
+              style={{ fontSize: "0.58rem", letterSpacing: "0.3em", color: TAUPE }}
             >
               Treatwell Top Rated
             </span>
@@ -131,7 +133,7 @@ const Testimonials = () => (
           {/* Headline */}
           <h2
             className="leading-[1.04]"
-            style={{ ...serif, fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)", color: "#1C1611" }}
+            style={{ ...serif, fontSize: "clamp(2.2rem, 3.8vw, 3.8rem)", color: ESPRESSO }}
           >
             5 Jahre in Folge ausgezeichnet.
           </h2>
@@ -139,7 +141,7 @@ const Testimonials = () => (
           {/* Body text */}
           <p
             className="mt-6 font-light leading-[1.85]"
-            style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)", color: "#5F554D" }}
+            style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)", color: BODY }}
           >
             Über 400 verifizierte Bewertungen und unzählige zufriedene Kundinnen machen
             Monishine zu einer der beliebtesten Adressen für Brows, Lashes und Permanent
@@ -154,7 +156,7 @@ const Testimonials = () => (
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3 text-xs tracking-[0.22em] uppercase font-normal transition-opacity duration-300 hover:opacity-70"
-              style={{ border: "1px solid #1C1611", color: "#1C1611" }}
+              style={{ border: `1px solid ${ESPRESSO}`, color: ESPRESSO }}
             >
               Bewertungen ansehen
             </a>
@@ -163,16 +165,16 @@ const Testimonials = () => (
           {/* Stats strip */}
           <div
             className="mt-10 pt-8 grid grid-cols-2 lg:flex gap-y-6"
-            style={{ borderTop: "1px solid rgba(28,22,17,0.08)" }}
+            style={{ borderTop: `1px solid ${DIVIDER}` }}
           >
             {stats.map(({ value, stars, label }, i) => (
               <div
                 key={value}
                 className="lg:flex-1 px-4 lg:px-5 lg:first:pl-0"
-                style={i > 0 ? { borderLeft: "1px solid rgba(28,22,17,0.08)" } : {}}
+                style={i > 0 ? { borderLeft: `1px solid ${DIVIDER}` } : {}}
               >
                 <div className="flex items-baseline gap-1.5 flex-wrap">
-                  <p style={{ ...serif, fontSize: "clamp(1.4rem, 2vw, 1.9rem)", color: "#1C1611" }}>
+                  <p style={{ ...serif, fontSize: "clamp(1.4rem, 2vw, 1.9rem)", color: ESPRESSO }}>
                     {value}
                   </p>
                   {stars && (
@@ -185,7 +187,7 @@ const Testimonials = () => (
                 </div>
                 <p
                   className="mt-1 uppercase font-light"
-                  style={{ fontSize: "0.57rem", letterSpacing: "0.22em", color: "#9B7B66" }}
+                  style={{ fontSize: "0.57rem", letterSpacing: "0.22em", color: TAUPE }}
                 >
                   {label}
                 </p>
@@ -210,29 +212,38 @@ const Testimonials = () => (
       </div>
 
       {/* ── Featured review ── */}
-      <div className="py-14 md:py-20 border-y border-foreground/[0.07] reveal">
+      <div
+        className="py-14 md:py-20 reveal"
+        style={{ borderTop: `1px solid ${DIVIDER}`, borderBottom: `1px solid ${DIVIDER}` }}
+      >
         <div className="max-w-3xl mx-auto text-center">
           <p
             aria-hidden
             className="select-none leading-none mb-4"
-            style={{ ...serif, fontSize: "6rem", color: "hsl(var(--accent) / 0.15)", lineHeight: 0.7 }}
+            style={{ ...serif, fontSize: "6rem", color: "rgba(45,34,28,0.08)", lineHeight: 0.7 }}
           >
             "
           </p>
           <blockquote
-            style={{ ...serif, fontSize: "clamp(1.15rem, 2.2vw, 1.7rem)", lineHeight: 1.7, color: "hsl(var(--foreground) / 0.85)" }}
+            style={{ ...serif, fontSize: "clamp(1.15rem, 2.2vw, 1.7rem)", lineHeight: 1.7, color: BODY }}
           >
             {featured.quote}
           </blockquote>
           <div className="mt-10 flex flex-col items-center gap-2">
             <Stars size={12} />
-            <p className="mt-1" style={{ ...serif, fontSize: "0.92rem", color: "hsl(var(--foreground) / 0.6)" }}>
+            <p className="mt-1" style={{ ...serif, fontSize: "0.92rem", color: ESPRESSO }}>
               — {featured.name}
             </p>
-            <p className="eyebrow" style={{ color: "hsl(var(--accent) / 0.65)" }}>
+            <p
+              className="uppercase font-light"
+              style={{ fontSize: "0.57rem", letterSpacing: "0.22em", color: TAUPE }}
+            >
               {featured.treatment}
             </p>
-            <p className="text-[0.55rem] uppercase tracking-[0.2em] text-foreground/28 flex items-center gap-1.5 mt-1">
+            <p
+              className="flex items-center gap-1.5 font-light uppercase mt-1"
+              style={{ fontSize: "0.54rem", letterSpacing: "0.18em", color: TAUPE, opacity: 0.6 }}
+            >
               <span>✓</span> Verifizierte Bewertung
             </p>
           </div>
@@ -250,7 +261,7 @@ const Testimonials = () => (
       </div>
 
       {/* ── Review cards — 2-col grid ── */}
-      <div className="mt-8 md:mt-10 pb-14 md:pb-20 grid md:grid-cols-2 gap-3 md:gap-4 reveal reveal-delay-1">
+      <div className="mt-8 md:mt-10 pb-14 md:pb-20 grid md:grid-cols-2 gap-4 md:gap-5 reveal reveal-delay-1">
         {reviews.map((r) => (
           <ReviewCard key={r.name} r={r} />
         ))}
