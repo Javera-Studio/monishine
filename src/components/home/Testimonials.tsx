@@ -240,7 +240,7 @@ const Testimonials = () => (
           className="font-script shimmer-gold"
           style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.8rem)" }}
         >
-          Be your own kind of beautiful.
+          Beautiful words from beautiful souls.
         </p>
       </div>
 
