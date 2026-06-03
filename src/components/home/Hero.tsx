@@ -63,7 +63,7 @@ const Hero = () => (
           style={{ background: "linear-gradient(to right, hsl(var(--background) / 0.45) 0%, transparent 100%)" }}
         />
 
-        <div className="relative max-w-[520px] pt-3 pb-12 lg:py-36 reveal">
+        <div className="relative max-w-[440px] pt-3 pb-12 lg:py-28 lg:pb-36 reveal">
 
           <p className="mb-6 text-accent font-light" style={{ fontSize: "0.75rem", letterSpacing: "0.35em", textTransform: "uppercase" }}>
             Brows • Lashes • Glow
