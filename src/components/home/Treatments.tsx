@@ -253,7 +253,7 @@ const Treatments = () => {
             className="font-script shimmer-gold"
             style={{ fontSize: "clamp(2.1rem, 2.6vw, 2.6rem)" }}
           >
-            Be your own kind of beautiful.
+            Natürlich schön. Sichtbar selbstbewusst.
           </p>
         </div>
 

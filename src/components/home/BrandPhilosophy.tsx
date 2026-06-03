@@ -10,7 +10,7 @@ const BrandPhilosophy = () => (
         alt="Monishine Studio"
         loading="lazy"
         className="w-full object-contain"
-        style={{ maxHeight: "42vh" }}
+        style={{ maxHeight: "60vh" }}
       />
 
       {/* Top fade */}
