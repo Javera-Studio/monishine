@@ -83,7 +83,7 @@ const Booking = () => (
         alt="Monishine Studio"
         loading="lazy"
         className="w-full object-cover"
-        style={{ maxHeight: "340px", objectPosition: "center top" }}
+        style={{ maxHeight: "340px", objectPosition: "center 15%" }}
       />
     </div>
   </section>
