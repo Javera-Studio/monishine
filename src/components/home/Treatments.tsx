@@ -234,6 +234,16 @@ const Treatments = () => {
           </div>
         )}
 
+        {/* Script slogan — directly under the grid */}
+        <div className="mt-12 md:mt-16 text-center">
+          <p
+            className="font-script shimmer-gold"
+            style={{ fontSize: "clamp(2.1rem, 2.6vw, 2.6rem)" }}
+          >
+            Be your own kind of beautiful.
+          </p>
+        </div>
+
         {/* Bottom CTA */}
         <div className="mt-14 md:mt-20 pt-10 md:pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="font-serif text-2xl md:text-3xl max-w-md leading-snug">
@@ -286,14 +296,6 @@ const Treatments = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="container-editorial py-12 md:py-16 text-center">
-        <p
-          className="font-script shimmer-gold"
-          style={{ fontSize: "clamp(2.1rem, 2.6vw, 2.6rem)" }}
-        >
-          Be your own kind of beautiful.
-        </p>
       </div>
 
     </section>
