@@ -117,6 +117,14 @@ const Testimonials = () => (
             <Star size={9} fill={STAR_COLOR} strokeWidth={0} />
           </div>
 
+          {/* Script accent above headline */}
+          <p
+            className="font-script shimmer-gold mb-2"
+            style={{ fontSize: "clamp(1.8rem, 2.6vw, 2.6rem)" }}
+          >
+            Glow with Confidence.
+          </p>
+
           {/* Headline */}
           <h2
             className="text-foreground leading-[1.04]"
