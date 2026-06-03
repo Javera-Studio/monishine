@@ -9,12 +9,6 @@ import salon5Img from "@/assets/salon5.jpeg";
 import studioImg from "@/assets/IMG_0578.jpeg";
 import eingangImg from "@/assets/eingang.jpg";
 
-const badges = [
-  "Brows & Lashes Specialist",
-  "5 Jahre Top Rated",
-  "Zertifizierte Beauty Expertin",
-  "Lash Extension Schulungen",
-];
 
 const UeberMich = () => (
   <SiteLayout>
@@ -91,25 +85,13 @@ const UeberMich = () => (
             </div>
 
             {/* Editorial quote */}
-            <div className="mt-10">
+            <div className="mt-10 mb-6">
               <p
                 className="font-script shimmer-gold"
                 style={{ fontSize: "clamp(2.2rem, 3.2vw, 3.2rem)" }}
               >
                 Be your own kind of beautiful.
               </p>
-            </div>
-
-            {/* Badges */}
-            <div className="mt-10 flex flex-wrap gap-2">
-              {badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center px-3 py-1.5 border border-foreground/15 bg-background text-[0.6rem] uppercase tracking-[0.18em] text-muted-foreground"
-                >
-                  {badge}
-                </span>
-              ))}
             </div>
 
             {/* CTA */}
