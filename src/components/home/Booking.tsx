@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import kontaktImg from "@/assets/kontakt.png";
 
 const WA_URL = "https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren.";
 const TW_URL = "https://buchung.treatwell.de/ort/monishine/";
@@ -72,6 +73,17 @@ const Booking = () => (
           </div>
         </a>
 
+      </div>
+    </div>
+      {/* Studio image — below cards */}
+      <div className="mt-5 md:mt-6 overflow-hidden">
+        <img
+          src={kontaktImg}
+          alt="Monishine Studio"
+          loading="lazy"
+          className="w-full object-cover"
+          style={{ maxHeight: "340px", objectPosition: "center 25%" }}
+        />
       </div>
     </div>
   </section>

@@ -8,7 +8,6 @@ const links = [
   { to: "/preise", label: "Preise" },
   { to: "/ueber-mich", label: "Über Monishine" },
   { to: "/schulungen", label: "Schulungen" },
-  { to: "/kontakt", label: "Kontakt" },
 ];
 
 const SiteHeader = () => {
@@ -54,9 +53,14 @@ const SiteHeader = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Link to="/kontakt" className="btn-primary">
+          <a
+            href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
             Termin buchen
-          </Link>
+          </a>
         </div>
 
         <button
@@ -81,9 +85,15 @@ const SiteHeader = () => {
                 {l.label}
               </Link>
             ))}
-            <Link to="/kontakt" onClick={() => setOpen(false)} className="btn-primary mt-2">
+            <a
+              href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="btn-primary mt-2"
+            >
               Termin buchen
-            </Link>
+            </a>
           </div>
         </div>
       )}
