@@ -22,7 +22,7 @@ const SiteFooter = () => (
           title="Monishine Studio Hamburg"
           src="https://maps.google.com/maps?q=Bramfelder+Stra%C3%9Fe+77%2C+22305+Hamburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
           width="100%"
-          height="200"
+          height="240"
           style={{ border: 0, display: "block", filter: "grayscale(0.2) contrast(0.95)" }}
           allowFullScreen={false}
           loading="lazy"
