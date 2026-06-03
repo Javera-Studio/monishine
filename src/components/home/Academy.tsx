@@ -14,7 +14,7 @@ const features: { Icon: LucideIcon; text: string }[] = [
 ];
 
 const Academy = () => (
-  <section className="surface-taupe py-16 md:py-32">
+  <section className="surface-taupe pt-16 md:pt-32 pb-6 md:pb-10">
     <div className="container-editorial">
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
