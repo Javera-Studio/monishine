@@ -284,6 +284,7 @@ const Treatments = () => {
               </Link>
             </div>
           </div>
+          <div className="mt-10 md:mt-14 border-b border-foreground/10" />
         </div>
 
       </div>
