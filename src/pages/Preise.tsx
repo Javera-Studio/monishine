@@ -50,7 +50,7 @@ const trustItems = [
 
 const PriceTable = ({ category }: { category: ServiceCategory }) => (
   <div className="reveal">
-    <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-foreground/[0.12]">
+    <div className="flex items-baseline justify-between mb-4 pb-3 border-b border-foreground/[0.12]">
       <h3
         className="text-foreground leading-[1.1]"
         style={{ ...serif, fontSize: "clamp(1.4rem, 2vw, 1.9rem)" }}
@@ -63,7 +63,7 @@ const PriceTable = ({ category }: { category: ServiceCategory }) => (
     </div>
     <ul className="divide-y divide-foreground/[0.07]">
       {category.treatments.map((t, i) => (
-        <li key={i} className="py-5 flex items-start justify-between gap-6">
+        <li key={i} className="py-3 flex items-start justify-between gap-6">
           <div className="flex-1 min-w-0">
             <p
               className="text-foreground/90 mb-1"
@@ -192,16 +192,16 @@ const Preise = () => {
       </section>
 
       {/* ── Price Tables ── */}
-      <section className="py-16 md:py-28">
+      <section className="py-10 md:py-16">
         <div className="container-editorial">
-          <div className="flex flex-col gap-16 md:gap-24">
+          <div className="flex flex-col gap-10 md:gap-14">
             {PRICE_GROUPS.map((group) => {
               const cats = group.ids.map(findCat).filter(Boolean) as ServiceCategory[];
               if (cats.length === 0) return null;
               return (
                 <div key={group.label}>
-                  <p className="eyebrow mb-8 text-accent">{group.label}</p>
-                  <div className="flex flex-col gap-14">
+                  <p className="eyebrow mb-5 text-accent">{group.label}</p>
+                  <div className="flex flex-col gap-8">
                     {cats.map((c) => (
                       <PriceTable key={c.id} category={c} />
                     ))}
