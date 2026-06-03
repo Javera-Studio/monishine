@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
-import { Calendar, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+
+const WA_URL = "https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren.";
+const TW_URL = "https://buchung.treatwell.de/ort/monishine/";
 
 const WhatsAppIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
@@ -10,77 +12,70 @@ const WhatsAppIcon = () => (
 const Booking = () => (
   <section className="py-16 md:py-32 bg-foreground text-background">
     <div className="container-editorial">
-      <div className="max-w-2xl">
+
+      <div className="max-w-2xl mb-10 md:mb-14">
         <p className="eyebrow mb-5 text-background/60">Termin buchen</p>
         <h2 className="headline text-background">
           Dein Weg zu Brows, Lashes &amp; Beauty beginnt hier.
         </h2>
         <p className="lede mt-6 text-background/70">
-          Schreib mir einfach auf WhatsApp — ich antworte persönlich und finde
-          mit dir den passenden Termin.
+          Wähle den Weg, der am besten zu dir passt.
         </p>
       </div>
 
-      <div className="mt-10 md:mt-12 grid lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
-        {/* WhatsApp — primary */}
+      <div className="grid lg:grid-cols-[2fr_1fr] gap-4 md:gap-6 items-stretch">
+
+        {/* WhatsApp — primary, dominant */}
         <a
-          href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+          href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="lg:col-span-2 group bg-accent text-background p-7 md:p-12 flex flex-col justify-between min-h-[220px] md:min-h-[240px] hover:bg-[hsl(24,36%,50%)] transition-colors"
+          className="group bg-accent text-background p-9 md:p-12 flex flex-col justify-between min-h-[280px] hover:bg-[hsl(24,36%,50%)] transition-colors"
         >
           <div className="flex items-start justify-between">
-            <WhatsAppIcon />
-            <ArrowUpRight size={24} strokeWidth={1.3} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <div>
+              <p className="eyebrow text-background/60 mb-3">Empfohlen</p>
+              <WhatsAppIcon />
+            </div>
+            <ArrowUpRight size={22} strokeWidth={1.3} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-background/70" />
           </div>
-          <div className="mt-8 md:mt-10">
-            <p className="eyebrow text-background/70">Empfohlen</p>
-            <p className="font-serif text-2xl md:text-4xl mt-2 leading-tight">
+          <div className="mt-10">
+            <p className="font-serif text-2xl md:text-3xl leading-tight">
               Direkt auf WhatsApp schreiben
             </p>
-            <p className="mt-3 text-sm text-background/80 max-w-md">
-              Schnell, unkompliziert und persönlich — Moni antwortet direkt.
+            <p className="mt-4 text-sm text-background/75 leading-[1.8] max-w-sm">
+              Schnell, persönlich und unkompliziert — Moni berät dich direkt
+              und findet gemeinsam mit dir den passenden Termin.
             </p>
           </div>
         </a>
 
-        {/* Rechte Spalte — Kontaktformular + Treatwell */}
-        <div className="flex flex-col gap-4 md:gap-6">
-          <Link
-            to="/kontakt"
-            className="group flex-1 bg-background/5 border border-background/15 p-6 md:p-8 flex flex-col justify-between hover:bg-background/10 transition-colors"
-          >
-            <div className="flex items-start justify-between">
-              <Calendar size={20} strokeWidth={1.4} className="text-background/60" />
-              <ArrowUpRight size={18} className="text-background/60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </div>
-            <div className="mt-8">
-              <p className="eyebrow text-background/50 mb-1">Alternativ</p>
-              <p className="font-serif text-xl">Kontaktformular</p>
-              <p className="mt-1 text-xs text-background/60 leading-relaxed">
-                Anfrage schreiben, wir melden uns persönlich.
-              </p>
-            </div>
-          </Link>
+        {/* Treatwell — secondary */}
+        <a
+          href={TW_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group bg-background/5 border border-background/15 p-8 md:p-10 flex flex-col justify-between hover:bg-background/10 transition-colors"
+        >
+          <div className="flex items-start justify-between">
+            <p className="eyebrow text-background/50">Online Buchung</p>
+            <ArrowUpRight size={18} strokeWidth={1.3} className="text-background/50 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </div>
+          <div className="mt-10">
+            <p className="font-serif text-xl md:text-2xl text-background leading-tight">
+              Direkt über Treatwell buchen
+            </p>
+            <p className="mt-4 text-sm text-background/60 leading-[1.8]">
+              Freie Termine ansehen und rund um die Uhr online buchen.
+            </p>
+            <ul className="mt-5 space-y-1.5 text-xs text-background/50 font-light">
+              <li>✓ 24/7 verfügbar</li>
+              <li>✓ Freie Termine sofort sehen</li>
+              <li>✓ Sofortbestätigung</li>
+            </ul>
+          </div>
+        </a>
 
-          <a
-            href="https://buchung.treatwell.de/ort/monishine/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex-1 bg-background/5 border border-background/15 p-6 md:p-8 flex flex-col justify-between hover:bg-background/10 transition-colors"
-          >
-            <div className="flex items-start justify-between">
-              <p className="eyebrow text-background/50">Online-Buchung</p>
-              <ArrowUpRight size={18} className="text-background/60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </div>
-            <div className="mt-8">
-              <p className="font-serif text-xl">Über Treatwell</p>
-              <p className="mt-1 text-xs text-background/60 leading-relaxed">
-                Externer Buchungspartner, 24/7 verfügbar.
-              </p>
-            </div>
-          </a>
-        </div>
       </div>
     </div>
   </section>
