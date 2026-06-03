@@ -136,7 +136,7 @@ const UeberMich = () => (
     {/* ══════════════════════════════════════════
         Section 2 — Der Salon
     ══════════════════════════════════════════ */}
-    <section className="py-24 md:py-32 bg-secondary/25">
+    <section className="py-24 md:py-32 surface-taupe">
       <div className="container-editorial">
 
         {/* Eyebrow + headline — full width above grid */}
