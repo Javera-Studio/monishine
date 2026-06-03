@@ -55,6 +55,11 @@ const reviews = [
     name: "Julia",
     treatment: "Hydrating Facial",
   },
+  {
+    quote: "Ich hatte das Microneedeling Treatment und bin richtig zufrieden. Ich konnte mich entspannen und meiner Haut tat es total gut! Die Mädels vor Ort sind mega lieb und man fühlt sich direkt willkommen!",
+    name: "Jess",
+    treatment: "Micro-Needling",
+  },
 ];
 
 const stats = [
