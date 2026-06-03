@@ -258,18 +258,32 @@ const Treatments = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-14 md:mt-20 pt-10 md:pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <p className="font-serif text-2xl md:text-3xl max-w-md leading-snug">
-            <span
-              className="block text-foreground/70 font-light leading-[1.85]"
-              style={{ fontSize: "0.95rem", maxWidth: "460px" }}
+        <div className="mt-10 md:mt-14 pt-10 md:pt-14 border-t border-foreground/10 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h3
+              className="text-foreground leading-[1.12]"
+              style={{
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontWeight: 300,
+                fontSize: "clamp(1.75rem, 2.8vw, 2.9rem)",
+                letterSpacing: "-0.01em",
+              }}
             >
-              Persönliche Beratung für Ladies &amp; Gentlemen – individuell, entspannt und auf deine Wünsche abgestimmt.
-            </span>
-          </p>
-          <Link to="/kontakt" className="btn-primary shrink-0">
-            Kostenlose Beratung
-          </Link>
+              Du weißt noch nicht, welche Behandlung zu dir passt?
+            </h3>
+            <p
+              className="mt-5 text-foreground/65 font-light leading-[1.85]"
+              style={{ fontSize: "clamp(0.9rem, 1.1vw, 1rem)" }}
+            >
+              Ob Brows, Lashes, Laser oder Skin Treatment – wir beraten dich persönlich
+              und finden gemeinsam die passende Behandlung.
+            </p>
+            <div className="mt-8">
+              <Link to="/kontakt" className="btn-primary">
+                Kostenlose Beratung buchen
+              </Link>
+            </div>
+          </div>
         </div>
 
       </div>
