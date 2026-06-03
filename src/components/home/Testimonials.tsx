@@ -149,19 +149,6 @@ const Testimonials = () => (
             Wohlfühlen stehen seit dem ersten Tag im Mittelpunkt.
           </p>
 
-          {/* CTA */}
-          <div className="mt-8">
-            <a
-              href="https://buchung.treatwell.de/ort/monishine/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3 text-xs tracking-[0.22em] uppercase font-normal transition-opacity duration-300 hover:opacity-70"
-              style={{ border: `1px solid ${ESPRESSO}`, color: ESPRESSO }}
-            >
-              Bewertungen ansehen
-            </a>
-          </div>
-
           {/* Stats strip */}
           <div
             className="mt-10 pt-8 grid grid-cols-2 lg:flex gap-y-6"
