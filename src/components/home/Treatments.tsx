@@ -167,29 +167,39 @@ const Treatments = () => {
     <section className="pt-16 md:pt-32 pb-0 surface-taupe">
       <div className="container-editorial">
 
-        {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-20">
-          <div className="max-w-xl">
+        {/* Section header — 2-column editorial */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-12 md:mb-20 items-start">
+
+          {/* Left — slogan · eyebrow · headline · lede */}
+          <div className="lg:col-span-7">
             <p
               className="font-script shimmer-gold mb-2"
               style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.6rem)" }}
             >
               Brows. Lashes. Glow.
             </p>
-            <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>Treatments & Services</p>
+            <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>
+              Treatments & Services
+            </p>
             <h2 className="headline">Individuelle Treatments für Ladies &amp; Gentlemen.</h2>
-            <p className="lede mt-6 max-w-lg">
+            <p className="lede mt-6">
               Jede Behandlung wird persönlich auf dich abgestimmt — vom feinen Brow Styling
               bis zum modernen Skin Treatment.
             </p>
-            {/* Premium stats */}
-            <div className="mt-10 pt-7 border-t border-foreground/10 flex items-start gap-10 sm:gap-14">
+          </div>
+
+          {/* Right — stats stacked · link */}
+          <div className="lg:col-span-5 lg:pt-3 flex flex-col">
+            <div>
               {([
-                { value: "400+",        label: "Zufriedene\nKund:innen"  },
-                { value: "5 Jahre",     label: "Top Rated\nStudio"       },
-                { value: "Zertifiziert", label: "Beauty\nExpertin"       },
+                { value: "400+",         label: "Zufriedene Kund:innen" },
+                { value: "5 Jahre",      label: "Top Rated Studio"      },
+                { value: "Zertifiziert", label: "Beauty Expertin"       },
               ] as const).map(({ value, label }, i) => (
-                <div key={i} className="flex flex-col">
+                <div
+                  key={i}
+                  className="flex items-baseline justify-between py-5 border-b border-foreground/10"
+                >
                   <span
                     className="text-foreground leading-none"
                     style={{
@@ -202,18 +212,21 @@ const Treatments = () => {
                     {value}
                   </span>
                   <span
-                    className="mt-2 text-foreground/50 font-light uppercase"
-                    style={{ fontSize: "0.56rem", letterSpacing: "0.22em", lineHeight: 1.75, whiteSpace: "pre-line" }}
+                    className="text-foreground/50 font-light uppercase text-right"
+                    style={{ fontSize: "0.56rem", letterSpacing: "0.22em", lineHeight: 1.6 }}
                   >
                     {label}
                   </span>
                 </div>
               ))}
             </div>
+            <div className="mt-7">
+              <Link to="/leistungen" className="link-underline text-sm">
+                Alle Leistungen <ArrowUpRight size={16} />
+              </Link>
+            </div>
           </div>
-          <Link to="/leistungen" className="link-underline text-sm shrink-0">
-            Alle Leistungen <ArrowUpRight size={16} />
-          </Link>
+
         </div>
 
         {/* ── Tier 1: two large featured cards ── */}
