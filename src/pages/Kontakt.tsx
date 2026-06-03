@@ -36,6 +36,25 @@ const Kontakt = () => (
       </div>
     </section>
 
+    {/* ── Trust bar ── */}
+    <div className="border-t border-border/40 bg-secondary/25 py-4">
+      <div className="container-editorial">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+          {[
+            { icon: "⭐", text: "5 Jahre Top Rated" },
+            { icon: "⭐", text: "400+ Kundinnen"    },
+            { icon: "📍", text: "Bramfelder Straße 77, Hamburg" },
+          ].map(({ icon, text }, i) => (
+            <span key={text} className="flex items-center gap-2 text-foreground/55 font-light">
+              <span style={{ fontSize: "0.7rem" }}>{icon}</span>
+              <span className="text-[0.62rem] uppercase tracking-[0.22em]">{text}</span>
+              {i < 2 && <span className="hidden sm:inline text-foreground/20 ml-5" style={{ fontSize: "0.45rem" }}>✦</span>}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
     {/* ── Booking cards ── */}
     <section className="py-16 md:py-24 bg-background">
       <div className="container-editorial">
