@@ -27,18 +27,18 @@ const Booking = () => (
           href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
           target="_blank"
           rel="noopener noreferrer"
-          className="lg:col-span-2 group bg-primary text-primary-foreground p-7 md:p-12 flex flex-col justify-between min-h-[220px] md:min-h-[240px] hover:bg-primary-glow transition-colors"
+          className="lg:col-span-2 group bg-accent text-background p-7 md:p-12 flex flex-col justify-between min-h-[220px] md:min-h-[240px] hover:bg-[hsl(24,36%,50%)] transition-colors"
         >
           <div className="flex items-start justify-between">
             <WhatsAppIcon />
             <ArrowUpRight size={24} strokeWidth={1.3} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </div>
           <div className="mt-8 md:mt-10">
-            <p className="eyebrow text-primary-foreground/70">Empfohlen</p>
+            <p className="eyebrow text-background/70">Empfohlen</p>
             <p className="font-serif text-2xl md:text-4xl mt-2 leading-tight">
               Direkt auf WhatsApp schreiben
             </p>
-            <p className="mt-3 text-sm text-primary-foreground/80 max-w-md">
+            <p className="mt-3 text-sm text-background/80 max-w-md">
               Schnell, unkompliziert und persönlich — Moni antwortet direkt.
             </p>
           </div>
