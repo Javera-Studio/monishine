@@ -8,7 +8,16 @@ const SiteFooter = () => (
       {/* Left — Logo + tagline */}
       <div>
         <Link to="/" aria-label="Monishine — Startseite" className="inline-block">
-          <img src={logo.url} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
+          {logo.url.startsWith("http") ? (
+            <img src={logo.url} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
+          ) : (
+            <span
+              className="font-script"
+              style={{ fontSize: "clamp(2rem, 3vw, 3rem)", color: "hsl(var(--accent))" }}
+            >
+              Monishine
+            </span>
+          )}
         </Link>
         <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-[1.85] font-light">
           Premium Beauty &amp; Glow Studio — moderne Behandlungen, persönliche

@@ -32,7 +32,16 @@ const SiteHeader = () => {
     >
       <div className="container-editorial flex items-center justify-between h-16 md:h-28">
         <Link to="/" className="flex items-center" aria-label="Monishine — Startseite">
-          <img src={logo.url} alt="Monishine" className="h-11 md:h-[5.6rem] w-auto" />
+          {logo.url.startsWith("http") ? (
+            <img src={logo.url} alt="Monishine" className="h-11 md:h-[5.6rem] w-auto" />
+          ) : (
+            <span
+              className="font-script"
+              style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)", color: "hsl(var(--accent))" }}
+            >
+              Monishine
+            </span>
+          )}
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
