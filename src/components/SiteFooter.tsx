@@ -10,7 +10,7 @@ const SiteFooter = () => (
         <Link to="/" aria-label="Monishine — Startseite" className="inline-block">
           <img src={logo.url} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
         </Link>
-        <p className="mt-8 max-w-sm text-sm text-muted-foreground leading-[1.85] font-light">
+        <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-[1.85] font-light">
           Premium Beauty &amp; Glow Studio — moderne Behandlungen, persönliche
           Beratung und ein Ort zum Ankommen.
         </p>
