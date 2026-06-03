@@ -267,10 +267,10 @@ const Preise = () => {
 
       {/* ── Closing CTA ── */}
       <section className="py-20 md:py-32">
-        <div className="container-editorial text-center max-w-2xl mx-auto">
+        <div className="container-editorial text-center max-w-3xl mx-auto">
           <h2
-            className="text-foreground leading-[1.1] mb-6"
-            style={{ ...serif, fontSize: "clamp(2rem, 3.4vw, 3.2rem)" }}
+            className="text-foreground leading-none mb-6 whitespace-nowrap"
+            style={{ ...serif, fontSize: "clamp(1.6rem, 2.6vw, 2.6rem)" }}
           >
             Noch Fragen zu einer <span className="italic text-accent">Behandlung</span>?
           </h2>
