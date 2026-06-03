@@ -56,17 +56,16 @@ const Hero = () => (
         />
       </div>
 
-      {/* ── Content — full width, left-anchored via clamp padding ── */}
-      <div
-        className="relative z-10 w-full lg:min-h-screen lg:flex lg:items-end lg:pb-24"
-        style={{ paddingLeft: "clamp(1.5rem, 7vw, 10rem)", paddingRight: "1.5rem" }}
-      >
-        {/* Dark overlay behind text for readability */}
+      {/* ── Content — viewport-width shell, text aligned to container-editorial ── */}
+      <div className="relative z-10 w-full lg:min-h-screen lg:flex lg:items-end lg:pb-24">
+        {/* Dark overlay — spans full viewport width, not constrained to container */}
         <div
           className="hidden lg:block absolute inset-y-0 left-0 w-[48%] pointer-events-none"
           style={{ background: "linear-gradient(to right, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0) 100%)" }}
         />
 
+        {/* container-editorial aligns text to the same grid as all other sections */}
+        <div className="container-editorial w-full">
         <div className="relative max-w-[440px] pt-3 pb-12 lg:py-20 reveal">
 
           <p className="mb-6 text-accent font-light" style={{ fontSize: "0.75rem", letterSpacing: "0.35em", textTransform: "uppercase" }}>
@@ -152,6 +151,7 @@ const Hero = () => (
           </div>
 
         </div>
+        </div>{/* end container-editorial */}
       </div>
     </section>
 
