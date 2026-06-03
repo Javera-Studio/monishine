@@ -75,16 +75,16 @@ const Booking = () => (
 
       </div>
     </div>
-      {/* Studio image — below cards */}
-      <div className="mt-5 md:mt-6 overflow-hidden">
-        <img
-          src={kontaktImg}
-          alt="Monishine Studio"
-          loading="lazy"
-          className="w-full object-cover"
-          style={{ maxHeight: "340px", objectPosition: "center 25%" }}
-        />
-      </div>
+
+    {/* Studio image — full-width below cards */}
+    <div className="mt-5 md:mt-6 overflow-hidden">
+      <img
+        src={kontaktImg}
+        alt="Monishine Studio"
+        loading="lazy"
+        className="w-full object-cover"
+        style={{ maxHeight: "340px", objectPosition: "center 25%" }}
+      />
     </div>
   </section>
 );
