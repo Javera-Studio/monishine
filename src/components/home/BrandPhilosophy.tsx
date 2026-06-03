@@ -9,8 +9,8 @@ const BrandPhilosophy = () => (
         src={wallImg}
         alt="Monishine Studio"
         loading="lazy"
-        className="w-full object-cover"
-        style={{ maxHeight: "32vh", objectPosition: "center center" }}
+        className="w-full object-contain"
+        style={{ maxHeight: "32vh" }}
       />
 
       {/* Left fade */}
