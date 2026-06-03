@@ -25,7 +25,6 @@ const GRID_IDS = [
   "haarentfernung",
   "koerperbehandlungen",
   "fineline-tattoo",
-  "lash-schulungen",
 ];
 
 const FeaturedCard = ({ category, isDark }: { category: ServiceCategory; isDark: boolean }) => {
