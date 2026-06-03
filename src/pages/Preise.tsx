@@ -213,7 +213,7 @@ const Preise = () => {
       {/* ── Price Tables ── */}
       <section className="py-10 md:py-16">
         <div className="container-editorial">
-          <div className="flex flex-col gap-10 md:gap-14">
+          <div className="flex flex-col gap-10 md:gap-14 lg:pr-[calc(50%-2rem)]">
             {PRICE_GROUPS.map((group) => {
               const cats = group.ids.map(findCat).filter(Boolean) as ServiceCategory[];
               if (cats.length === 0) return null;
