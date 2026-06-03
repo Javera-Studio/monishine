@@ -27,58 +27,68 @@ const GRID_IDS = [
   "fineline-tattoo",
 ];
 
+/* ── card colour tokens — bypasses surface-taupe CSS-variable remap ── */
+const LIGHT = {
+  bg:     "#FAF7F2",
+  border: "1px solid #E5DDD3",
+  label:  "#B28F78",
+  title:  "#241E1A",
+  body:   "#5F554D",
+  link:   "#7A6657",
+  linkBorder: "#D0C3B5",
+};
+const DARK = {
+  bg:     "#3D2F26",
+  label:  "rgba(248,245,240,0.48)",
+  title:  "#F8F5F0",
+  body:   "rgba(248,245,240,0.64)",
+  link:   "rgba(248,245,240,0.58)",
+  linkBorder: "rgba(248,245,240,0.22)",
+};
+
 /* ── Tier 1 card ────────────────────────────────────────────── */
 const FeaturedCard = ({ category, isDark }: { category: ServiceCategory; isDark: boolean }) => {
   const href = category.href ?? `/leistungen/${category.slug}`;
+  const c = isDark ? DARK : LIGHT;
   return (
     <Link
       to={href}
-      className={`group flex flex-col overflow-hidden transition-all duration-500 ${
-        isDark
-          ? "bg-foreground hover:bg-primary-glow"
-          : "bg-card border border-border/60 hover:border-foreground/25"
-      }`}
+      className="group flex flex-col overflow-hidden transition-all duration-500"
+      style={{ backgroundColor: c.bg, border: isDark ? "none" : LIGHT.border }}
     >
-      {/* Tall image */}
+      {/* Tall image — full clarity, no overlay */}
       <div className="aspect-[4/3] md:aspect-[3/2] overflow-hidden shrink-0">
         <img
           src={category.image}
           alt={category.title}
           loading="eager"
-          className={`w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04] ${
-            isDark ? "opacity-70 group-hover:opacity-85" : ""
-          }`}
+          className="w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
         />
       </div>
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-8 md:p-10 lg:p-12">
         <p
-          className={`text-[0.58rem] uppercase tracking-[0.26em] mb-4 font-light ${
-            isDark ? "text-background/45" : "text-muted-foreground"
-          }`}
+          className="text-[0.58rem] uppercase tracking-[0.26em] mb-4 font-light"
+          style={{ color: c.label }}
         >
           {category.tagline}
         </p>
         <h3
-          className={`leading-[1.1] ${isDark ? "text-background" : "text-foreground"}`}
-          style={{ ...serif, fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
+          className="leading-[1.1]"
+          style={{ ...serif, fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)", color: c.title }}
         >
           {category.title}
         </h3>
         <p
-          className={`mt-4 text-sm leading-relaxed font-light ${
-            isDark ? "text-background/55" : "text-muted-foreground"
-          }`}
+          className="mt-4 text-sm leading-relaxed font-light"
+          style={{ color: c.body }}
         >
           {category.description}
         </p>
         <span
-          className={`mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3 ${
-            isDark
-              ? "text-background/60 border-background/25 group-hover:text-background group-hover:border-background"
-              : "text-foreground/70 border-foreground/25 group-hover:text-accent group-hover:border-accent"
-          }`}
+          className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3"
+          style={{ color: c.link, borderColor: c.linkBorder }}
         >
           Entdecken <ArrowUpRight size={14} />
         </span>
@@ -91,52 +101,44 @@ const FeaturedCard = ({ category, isDark }: { category: ServiceCategory; isDark:
 const GridCard = ({ category, index }: { category: ServiceCategory; index: number }) => {
   const isDark = index % 2 === 1;
   const href = category.href ?? `/leistungen/${category.slug}`;
+  const c = isDark ? DARK : LIGHT;
   return (
     <Link
       to={href}
-      className={`group flex flex-col overflow-hidden transition-all duration-500 ${
-        isDark
-          ? "bg-foreground hover:bg-primary-glow"
-          : "bg-card border border-border/60 hover:border-foreground/25"
-      }`}
+      className="group flex flex-col overflow-hidden transition-all duration-500"
+      style={{ backgroundColor: c.bg, border: isDark ? "none" : LIGHT.border }}
     >
+      {/* Image — full clarity, no overlay */}
       <div className="aspect-[4/3] overflow-hidden shrink-0">
         <img
           src={category.image}
           alt={category.title}
           loading="lazy"
-          className={`w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04] ${
-            isDark ? "opacity-65 group-hover:opacity-80" : ""
-          }`}
+          className="w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
         />
       </div>
       <div className="flex flex-col flex-1 p-7 md:p-8">
         <p
-          className={`text-[0.6rem] uppercase tracking-[0.24em] mb-3 font-light ${
-            isDark ? "text-background/45" : "text-muted-foreground"
-          }`}
+          className="text-[0.6rem] uppercase tracking-[0.24em] mb-3 font-light"
+          style={{ color: c.label }}
         >
           {category.tagline}
         </p>
         <h3
-          className={`leading-[1.12] flex-1 ${isDark ? "text-background" : "text-foreground"}`}
-          style={{ ...serif, fontSize: "clamp(1.2rem, 1.6vw, 1.5rem)" }}
+          className="leading-[1.12] flex-1"
+          style={{ ...serif, fontSize: "clamp(1.2rem, 1.6vw, 1.5rem)", color: c.title }}
         >
           {category.title}
         </h3>
         <p
-          className={`mt-3 text-sm leading-relaxed line-clamp-2 font-light ${
-            isDark ? "text-background/55" : "text-muted-foreground"
-          }`}
+          className="mt-3 text-sm leading-relaxed line-clamp-2 font-light"
+          style={{ color: c.body }}
         >
           {category.description}
         </p>
         <span
-          className={`mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3 ${
-            isDark
-              ? "text-background/60 border-background/25 group-hover:text-background group-hover:border-background"
-              : "text-foreground/70 border-foreground/25 group-hover:text-accent group-hover:border-accent"
-          }`}
+          className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] border-b pb-1 transition-all duration-300 group-hover:gap-3"
+          style={{ color: c.link, borderColor: c.linkBorder }}
         >
           Entdecken <ArrowUpRight size={13} />
         </span>
@@ -180,16 +182,32 @@ const Treatments = () => {
               Jede Behandlung wird persönlich auf dich abgestimmt — vom feinen Brow Styling
               bis zum modernen Skin Treatment.
             </p>
-            {/* Trust badges */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["400+ zufriedene Kund:innen", "5 Jahre Top Rated", "Zertifizierte Beauty Expertin"].map((b) => (
-                <span
-                  key={b}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-foreground/12 bg-secondary/40 text-[0.58rem] uppercase tracking-[0.18em] text-foreground/50 font-light"
-                >
-                  <span className="text-accent/60" style={{ fontSize: "0.38rem" }}>✦</span>
-                  {b}
-                </span>
+            {/* Premium stats */}
+            <div className="mt-10 pt-7 border-t border-foreground/10 flex items-start gap-10 sm:gap-14">
+              {([
+                { value: "400+",        label: "Zufriedene\nKund:innen"  },
+                { value: "5 Jahre",     label: "Top Rated\nStudio"       },
+                { value: "Zertifiziert", label: "Beauty\nExpertin"       },
+              ] as const).map(({ value, label }, i) => (
+                <div key={i} className="flex flex-col">
+                  <span
+                    className="text-foreground leading-none"
+                    style={{
+                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      fontWeight: 300,
+                      fontSize: "clamp(1.55rem, 2vw, 2rem)",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {value}
+                  </span>
+                  <span
+                    className="mt-2 text-foreground/50 font-light uppercase"
+                    style={{ fontSize: "0.56rem", letterSpacing: "0.22em", lineHeight: 1.75, whiteSpace: "pre-line" }}
+                  >
+                    {label}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
