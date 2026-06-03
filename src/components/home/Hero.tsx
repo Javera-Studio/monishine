@@ -180,19 +180,7 @@ const Hero = () => (
         </div>
       </div>
 
-      {/* Editorial signature quote */}
-      <div className="container-editorial pb-8 md:pb-10">
-        <p
-          className="font-script text-center"
-          style={{
-            fontSize: "clamp(1.6rem, 2vw, 2rem)",
-            color: "hsl(var(--accent))",
-            opacity: 0.5,
-          }}
-        >
-          Be your own kind of beautiful.
-        </p>
-      </div>
+      <div className="pb-8 md:pb-10" />
     </section>
   </>
 );

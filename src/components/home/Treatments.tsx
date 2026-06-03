@@ -269,7 +269,18 @@ const Treatments = () => {
           ))}
         </div>
       </div>
-      <div className="pb-16 md:pb-20" />
+      <div className="container-editorial py-12 md:py-16 text-center">
+        <p
+          className="font-script"
+          style={{
+            fontSize: "clamp(2.1rem, 2.6vw, 2.6rem)",
+            color: "hsl(var(--accent))",
+            opacity: 0.55,
+          }}
+        >
+          Be your own kind of beautiful.
+        </p>
+      </div>
 
     </section>
   );
