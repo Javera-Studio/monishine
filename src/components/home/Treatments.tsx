@@ -162,19 +162,19 @@ const Treatments = () => {
     .filter(Boolean) as ServiceCategory[];
 
   return (
-    <section className="pt-16 md:pt-32 pb-0 bg-taupe">
+    <section className="pt-16 md:pt-32 pb-0 surface-taupe">
       <div className="container-editorial">
 
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-20">
           <div className="max-w-xl">
             <p
-              className="font-script mb-2"
-              style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.6rem)", color: "hsl(var(--accent))", opacity: 0.6 }}
+              className="font-script shimmer-gold mb-2"
+              style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.6rem)" }}
             >
               Brows. Lashes. Glow.
             </p>
-            <p className="eyebrow mb-5">Treatments & Services</p>
+            <p className="eyebrow mb-5 text-accent" style={{ letterSpacing: "0.3em" }}>Treatments & Services</p>
             <h2 className="headline">Individuelle Treatments für Ladies &amp; Gentlemen.</h2>
             <p className="lede mt-6 max-w-lg">
               Jede Behandlung wird persönlich auf dich abgestimmt — vom feinen Brow Styling
@@ -240,13 +240,13 @@ const Treatments = () => {
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontWeight: 300,
             fontSize: "clamp(1.8rem, 3vw, 3rem)",
-            color: "hsl(var(--foreground) / 0.85)",
+            color: "hsl(var(--foreground))",
             letterSpacing: "-0.005em",
           }}
         >
           Natürlich. Präzise. Sichtbar.
         </h3>
-        <p className="mt-4 text-foreground/55 font-light text-sm md:text-base max-w-xl mx-auto leading-[1.85]">
+        <p className="mt-4 text-foreground/75 font-light text-sm md:text-base max-w-xl mx-auto leading-[1.85]">
           Jede Behandlung wird individuell auf dich abgestimmt. Hier siehst du echte Ergebnisse aus dem Studio.
         </p>
       </div>
@@ -271,12 +271,8 @@ const Treatments = () => {
       </div>
       <div className="container-editorial py-12 md:py-16 text-center">
         <p
-          className="font-script"
-          style={{
-            fontSize: "clamp(2.1rem, 2.6vw, 2.6rem)",
-            color: "hsl(var(--accent))",
-            opacity: 0.55,
-          }}
+          className="font-script shimmer-gold"
+          style={{ fontSize: "clamp(2.1rem, 2.6vw, 2.6rem)" }}
         >
           Be your own kind of beautiful.
         </p>

@@ -93,12 +93,8 @@ const UeberMich = () => (
             {/* Editorial quote */}
             <div className="mt-10">
               <p
-                className="font-script"
-                style={{
-                  fontSize: "clamp(2.2rem, 3.2vw, 3.2rem)",
-                  color: "hsl(var(--accent))",
-                  opacity: 0.6,
-                }}
+                className="font-script shimmer-gold"
+                style={{ fontSize: "clamp(2.2rem, 3.2vw, 3.2rem)" }}
               >
                 Be your own kind of beautiful.
               </p>

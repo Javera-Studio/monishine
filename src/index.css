@@ -119,6 +119,43 @@
     letter-spacing: 0.01em;
   }
 
+  /* Gold foil shimmer — applied to all script slogans */
+  @keyframes gold-shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      #A9824F 0%,
+      #C9A46E 20%,
+      #D8B98A 38%,
+      #F5E6C8 50%,
+      #D8B98A 62%,
+      #C9A46E 80%,
+      #A9824F 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gold-shimmer 6s linear infinite;
+    display: inline-block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer-gold {
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: unset;
+      color: #D8B98A;
+      animation: none;
+    }
+  }
+
   .link-underline {
     @apply relative inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent;
   }

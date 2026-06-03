@@ -76,11 +76,9 @@ const Hero = () => (
             Your Glow
             <br />
             <span
-              className="font-script block"
+              className="font-script shimmer-gold block"
               style={{
                 fontSize: "clamp(3.65rem, 6.4vw, 6.4rem)",
-                color: "hsl(var(--accent))",
-                opacity: 0.8,
                 letterSpacing: "0.01em",
                 lineHeight: 1.15,
               }}

@@ -128,7 +128,7 @@ const Schulungen = () => (
     {/* ══════════════════════════════════════
         Topics — editorial split layout
     ══════════════════════════════════════ */}
-    <section id="inhalte" className="py-24 md:py-32 bg-background">
+    <section id="inhalte" className="py-24 md:py-32 surface-taupe">
       <div className="container-editorial">
 
         {/* Section header */}
@@ -138,7 +138,7 @@ const Schulungen = () => (
           </p>
           <h2
             className="text-foreground leading-[1.06] max-w-xl"
-            style={{ ...serif, fontSize: "clamp(1.8rem, 3vw, 3rem)" }}
+            style={{ ...serif, fontSize: "clamp(1.8rem, 3vw, 3rem)", color: "hsl(var(--foreground))" }}
           >
             Was du in der Schulung lernst
           </h2>
@@ -205,7 +205,7 @@ const Schulungen = () => (
 
                   {/* Topic label */}
                   <span
-                    className="text-foreground/65 group-hover:text-foreground/90 transition-colors duration-400"
+                    className="text-foreground/85 group-hover:text-foreground transition-colors duration-400"
                     style={{
                       ...serif,
                       fontSize: "clamp(1.05rem, 1.7vw, 1.45rem)",
@@ -222,12 +222,8 @@ const Schulungen = () => (
             {/* Script closing accent */}
             <div className="pt-10 md:pt-12">
               <p
-                className="font-script text-right"
-                style={{
-                  fontSize: "clamp(1.4rem, 2vw, 1.9rem)",
-                  color: "hsl(var(--accent))",
-                  opacity: 0.38,
-                }}
+                className="font-script shimmer-gold text-right"
+                style={{ fontSize: "clamp(1.4rem, 2vw, 1.9rem)" }}
               >
                 Glow with Confidence.
               </p>

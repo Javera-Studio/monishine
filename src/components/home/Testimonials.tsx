@@ -224,8 +224,8 @@ const Testimonials = () => (
       {/* ── Script accent ── */}
       <div className="mt-14 md:mt-16 reveal">
         <p
-          className="font-script text-center"
-          style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.8rem)", color: "hsl(var(--accent))", opacity: 0.38 }}
+          className="font-script shimmer-gold text-center"
+          style={{ fontSize: "clamp(1.8rem, 2.8vw, 2.8rem)" }}
         >
           Be your own kind of beautiful.
         </p>

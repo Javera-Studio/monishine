@@ -1,5 +1,6 @@
 import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
+import kontaktImg from "@/assets/kontakt.png";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Calendar, ArrowUpRight } from "lucide-react";
 
@@ -64,6 +65,16 @@ const Kontakt = () => {
           </div>
 
           <aside className="lg:col-span-5 space-y-8">
+            {/* Studio image */}
+            <div className="overflow-hidden aspect-[4/3]">
+              <img
+                src={kontaktImg}
+                alt="Monishine Studio"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             {/* WhatsApp CTA */}
             <a
               href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
