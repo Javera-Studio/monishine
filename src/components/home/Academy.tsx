@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award, Sparkles, Wand2, Users } from "lucide-react";
 import schulung1 from "@/assets/schulung1.jpg";
 import schulung2 from "@/assets/schulung2.jpg";
 import schulung3 from "@/assets/schulung3.jpg";
 import schulung4 from "@/assets/schulung4.jpg";
+import type { LucideIcon } from "lucide-react";
 
-const badges = [
-  "Lash Extension Schulungen",
-  "Persönliche Betreuung",
-  "Praxisnahes Lernen",
-  "Für Anfänger & Fortgeschrittene",
+const features: { Icon: LucideIcon; text: string }[] = [
+  { Icon: Award,    text: "Zertifizierte\nSchulung"         },
+  { Icon: Sparkles, text: "Persönliche\nBetreuung"          },
+  { Icon: Wand2,    text: "Praxisnahes\nLernen"             },
+  { Icon: Users,    text: "Für Anfänger &\nFortgeschrittene" },
 ];
 
 const Academy = () => (
@@ -45,14 +46,21 @@ const Academy = () => (
             weiterentwickeln möchten.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-2">
-            {badges.map((badge) => (
-              <span
-                key={badge}
-                className="inline-flex items-center px-3 py-1.5 border border-foreground/15 bg-background/80 text-[0.6rem] uppercase tracking-[0.18em] text-muted-foreground"
-              >
-                {badge}
-              </span>
+          <div className="mt-10 pt-7 border-t border-foreground/10 grid grid-cols-2 sm:grid-cols-4 gap-y-7 gap-x-6">
+            {features.map(({ Icon, text }) => (
+              <div key={text} className="flex flex-col gap-2.5">
+                <Icon
+                  size={16}
+                  strokeWidth={1.3}
+                  style={{ color: "#D8B98A" }}
+                />
+                <span
+                  className="text-foreground/65 font-light uppercase leading-[1.75]"
+                  style={{ fontSize: "0.57rem", letterSpacing: "0.2em", whiteSpace: "pre-line" }}
+                >
+                  {text}
+                </span>
+              </div>
             ))}
           </div>
 
