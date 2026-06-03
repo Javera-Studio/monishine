@@ -257,36 +257,45 @@ const Treatments = () => {
           </p>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-10 md:mt-14 pt-10 md:pt-14 border-t border-foreground/10 text-center">
+      </div>
+
+      {/* Bottom CTA — full-width white */}
+      <div style={{ backgroundColor: "#fff" }}>
+        <div
+          className="container-editorial py-12 md:py-16 text-center"
+          style={{ borderTop: "1px solid rgba(0,0,0,0.07)", borderBottom: "1px solid rgba(0,0,0,0.07)" }}
+        >
           <div className="max-w-2xl mx-auto">
             <h3
-              className="text-foreground leading-[1.12]"
+              className="leading-[1.12]"
               style={{
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontWeight: 300,
                 fontSize: "clamp(1.75rem, 2.8vw, 2.9rem)",
                 letterSpacing: "-0.01em",
+                color: "#1C1611",
               }}
             >
               Du weißt noch nicht, welche Behandlung zu dir passt?
             </h3>
             <p
-              className="mt-5 text-foreground/65 font-light leading-[1.85]"
-              style={{ fontSize: "clamp(0.9rem, 1.1vw, 1rem)" }}
+              className="mt-5 font-light leading-[1.85]"
+              style={{ fontSize: "clamp(0.9rem, 1.1vw, 1rem)", color: "#5F554D" }}
             >
               Ob Brows, Lashes, Laser oder Skin Treatment – wir beraten dich persönlich
               und finden gemeinsam die passende Behandlung.
             </p>
             <div className="mt-8">
-              <Link to="/kontakt" className="btn-primary">
+              <Link
+                to="/kontakt"
+                className="inline-flex items-center gap-2 px-9 py-4 text-xs tracking-[0.22em] uppercase font-normal transition-opacity duration-300 hover:opacity-75"
+                style={{ backgroundColor: "#1C1611", color: "#fff" }}
+              >
                 Kostenlose Beratung buchen
               </Link>
             </div>
           </div>
-          <div className="mt-10 md:mt-14 border-b border-foreground/10" />
         </div>
-
       </div>
 
       {/* ── Vorher/Nachher headline ── */}
