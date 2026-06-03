@@ -56,14 +56,14 @@ const Hero = () => (
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-10 container-editorial w-full lg:min-h-screen lg:flex lg:items-center">
-        {/* Soft local overlay behind text — desktop only */}
+      <div className="relative z-10 container-editorial w-full lg:min-h-screen lg:flex lg:items-end lg:pb-24">
+        {/* Dark left-to-right gradient overlay behind text area */}
         <div
-          className="hidden lg:block absolute inset-y-0 left-0 w-[44%] pointer-events-none"
-          style={{ background: "linear-gradient(to right, hsl(var(--background) / 0.45) 0%, transparent 100%)" }}
+          className="hidden lg:block absolute inset-y-0 left-0 w-[52%] pointer-events-none"
+          style={{ background: "linear-gradient(to right, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.12) 45%, rgba(0,0,0,0) 100%)" }}
         />
 
-        <div className="relative max-w-[440px] pt-3 pb-12 lg:py-28 lg:pb-36 reveal">
+        <div className="relative max-w-[440px] pt-3 pb-12 lg:py-20 reveal">
 
           <p className="mb-6 text-accent font-light" style={{ fontSize: "0.75rem", letterSpacing: "0.35em", textTransform: "uppercase" }}>
             Brows • Lashes • Glow
@@ -76,7 +76,7 @@ const Hero = () => (
               fontSize: "clamp(3.1rem, 5.5vw, 5.5rem)",
               fontWeight: 300,
               letterSpacing: "-0.01em",
-              textShadow: "0 1px 12px rgba(255,251,245,0.18)",
+              textShadow: "0 1px 8px rgba(0,0,0,0.18), 0 2px 20px rgba(0,0,0,0.10)",
             }}
           >
             Your Glow
@@ -94,7 +94,7 @@ const Hero = () => (
             Signature.
           </h1>
 
-          <div className="mt-8 space-y-3" style={{ maxWidth: "460px" }}>
+          <div className="mt-12 space-y-4" style={{ maxWidth: "420px" }}>
             {[
               "Moderne Beauty Treatments für Ladies & Gentlemen.",
               "Spezialisiert auf Brows & Lashes, persönliche Beratung und präzise Arbeit.",
@@ -102,11 +102,11 @@ const Hero = () => (
             ].map((line) => (
               <p
                 key={line}
-                className="text-muted-foreground font-light"
+                className="text-foreground/80 font-light"
                 style={{
                   fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)",
-                  lineHeight: 1.8,
-                  textShadow: "0 1px 8px rgba(255,251,245,0.12)",
+                  lineHeight: 1.85,
+                  textShadow: "0 1px 6px rgba(0,0,0,0.20)",
                 }}
               >
                 {line}
