@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/monishine-logo.png.asset.json";
+import logoImg from "@/assets/IMG_4261.png";
 
 const links = [
   { to: "/leistungen", label: "Treatments" },
@@ -32,16 +32,7 @@ const SiteHeader = () => {
     >
       <div className="container-editorial flex items-center justify-between h-16 md:h-28">
         <Link to="/" className="flex items-center" aria-label="Monishine — Startseite">
-          {logo.url.startsWith("http") ? (
-            <img src={logo.url} alt="Monishine" className="h-11 md:h-[5.6rem] w-auto" />
-          ) : (
-            <span
-              className="font-script"
-              style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)", color: "hsl(var(--accent))" }}
-            >
-              Monishine
-            </span>
-          )}
+          <img src={logoImg} alt="Monishine" className="h-11 md:h-[5.6rem] w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">

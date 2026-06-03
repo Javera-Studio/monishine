@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/monishine-logo.png.asset.json";
+import logoImg from "@/assets/IMG_4261.png";
 
 const SiteFooter = () => (
   <footer className="bg-secondary/50 border-t border-border/60 mt-32">
@@ -8,16 +8,7 @@ const SiteFooter = () => (
       {/* Left — Logo + tagline */}
       <div>
         <Link to="/" aria-label="Monishine — Startseite" className="inline-block">
-          {logo.url.startsWith("http") ? (
-            <img src={logo.url} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
-          ) : (
-            <span
-              className="font-script"
-              style={{ fontSize: "clamp(2rem, 3vw, 3rem)", color: "hsl(var(--accent))" }}
-            >
-              Monishine
-            </span>
-          )}
+          <img src={logoImg} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
         </Link>
         <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-[1.85] font-light">
           Premium Beauty &amp; Glow Studio — moderne Behandlungen, persönliche
