@@ -37,30 +37,34 @@ const Hero = () => (
         />
       </div>
 
-      {/* ── Desktop image — absolute, right 80%, object-contain ── */}
-      <div className="hidden lg:block absolute inset-y-0 right-0 w-[80%] pointer-events-none select-none">
+      {/* ── Desktop image — full section width, subject on right ── */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none select-none">
         <img
           src={heroImg}
           alt="Monishine Beauty Studio Wien — Brows & Lashes"
-          className="w-full h-full"
-          style={{ objectFit: "contain", objectPosition: "right center" }}
+          className="w-full h-full object-cover"
+          style={{ objectPosition: "right center" }}
           loading="eager"
         />
+        {/* Background-colour fade from left → blends image into page bg */}
         <div
-          className="absolute inset-y-0 left-0 w-[52%]"
+          className="absolute inset-y-0 left-0 w-[55%]"
           style={{
             background:
-              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.88) 28%, hsl(var(--background) / 0.35) 58%, transparent 100%)",
+              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.80) 25%, hsl(var(--background) / 0.30) 60%, transparent 100%)",
           }}
         />
       </div>
 
-      {/* ── Content ── */}
-      <div className="relative z-10 container-editorial w-full lg:min-h-screen lg:flex lg:items-end lg:pb-24">
-        {/* Dark left-to-right gradient overlay behind text area */}
+      {/* ── Content — full width, left-anchored via clamp padding ── */}
+      <div
+        className="relative z-10 w-full lg:min-h-screen lg:flex lg:items-end lg:pb-24"
+        style={{ paddingLeft: "clamp(1.5rem, 7vw, 10rem)", paddingRight: "1.5rem" }}
+      >
+        {/* Dark overlay behind text for readability */}
         <div
-          className="hidden lg:block absolute inset-y-0 left-0 w-[52%] pointer-events-none"
-          style={{ background: "linear-gradient(to right, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.12) 45%, rgba(0,0,0,0) 100%)" }}
+          className="hidden lg:block absolute inset-y-0 left-0 w-[48%] pointer-events-none"
+          style={{ background: "linear-gradient(to right, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0) 100%)" }}
         />
 
         <div className="relative max-w-[440px] pt-3 pb-12 lg:py-20 reveal">
