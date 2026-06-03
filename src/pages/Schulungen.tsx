@@ -1,10 +1,13 @@
 import SiteLayout from "@/components/SiteLayout";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles, Wand2, RefreshCcw, TrendingUp, Users, Heart, BookOpen, Award, Star, Eye } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import schulung1 from "@/assets/schulung1.jpg";
 import schulung2 from "@/assets/schulung2.jpg";
 import schulung3 from "@/assets/schulung3.jpg";
 import schulung4 from "@/assets/schulung4.jpg";
+
+const GOLD = "#D8B98A";
 
 const topics = [
   "Grundlagen der Lash Extensions",
@@ -19,21 +22,21 @@ const topics = [
   "Tipps für deinen Start als Lash Artist",
 ];
 
-const targetBadges = [
-  "Anfängerinnen",
-  "Beauty Artists",
-  "Wiedereinsteigerinnen",
-  "Technik auffrischen",
-  "Angebot erweitern",
+const targetFeatures: { Icon: LucideIcon; text: string }[] = [
+  { Icon: Sparkles,    text: "Anfängerinnen"          },
+  { Icon: Wand2,       text: "Beauty Artists"          },
+  { Icon: RefreshCcw,  text: "Wiedereinsteigerinnen"   },
+  { Icon: TrendingUp,  text: "Technik auffrischen"     },
+  { Icon: Users,       text: "Angebot erweitern"       },
 ];
 
-const trustBadges = [
-  "Persönliche Betreuung",
-  "Praxisorientiertes Lernen",
-  "Moderne Lash Techniken",
-  "Erfahrung aus dem Studioalltag",
-  "Zertifizierte Beauty Expertin",
-  "Brows & Lashes Specialist",
+const trustFeatures: { Icon: LucideIcon; text: string }[] = [
+  { Icon: Heart,    text: "Persönliche Betreuung"         },
+  { Icon: BookOpen, text: "Praxisorientiertes Lernen"     },
+  { Icon: Wand2,    text: "Moderne Lash Techniken"        },
+  { Icon: Award,    text: "Erfahrung aus dem Studioalltag"},
+  { Icon: Star,     text: "Zertifizierte Beauty Expertin" },
+  { Icon: Eye,      text: "Brows & Lashes Specialist"     },
 ];
 
 const serif: React.CSSProperties = {
@@ -47,37 +50,70 @@ const Schulungen = () => (
     {/* ══════════════════════════════════════
         Hero
     ══════════════════════════════════════ */}
-    <section className="py-24 md:py-36 bg-gradient-warm">
+    <section className="py-20 md:py-28 bg-gradient-warm">
       <div className="container-editorial">
-        <div className="max-w-3xl reveal">
-          <p className="eyebrow mb-6 text-accent" style={{ letterSpacing: "0.3em" }}>
-            Monishine Academy
-          </p>
-          <h1
-            className="text-foreground leading-[1.02]"
-            style={{ ...serif, fontSize: "clamp(2.2rem, 4.8vw, 4.4rem)" }}
-          >
-            Werde Lash Artist mit{" "}
-            <em className="italic">Technik, Gefühl &amp; Selbstvertrauen.</em>
-          </h1>
-          <p className="lede mt-8 max-w-2xl">
-            Professionelle Lash Extension Schulungen in persönlicher
-            Studioatmosphäre — praxisnah, verständlich und mit viel Liebe zum
-            Detail.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 items-start">
-            <Link to="/kontakt" className="btn-primary group">
-              Jetzt Schulung anfragen
-              <ArrowRight
-                size={14}
-                strokeWidth={1.5}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </Link>
-            <a href="#inhalte" className="btn-outline">
-              Inhalte ansehen
-            </a>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          {/* Left — text */}
+          <div className="reveal">
+            <p className="eyebrow mb-6 text-accent" style={{ letterSpacing: "0.3em" }}>
+              Monishine Academy
+            </p>
+            <h1
+              className="text-foreground leading-[1.02]"
+              style={{ ...serif, fontSize: "clamp(2.2rem, 4.2vw, 4rem)" }}
+            >
+              Werde Lash Artist mit{" "}
+              <em className="italic">Technik, Gefühl &amp; Selbstvertrauen.</em>
+            </h1>
+            <p className="lede mt-8">
+              Professionelle Lash Extension Schulungen in persönlicher
+              Studioatmosphäre — praxisnah, verständlich und mit viel Liebe zum
+              Detail.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-3 items-start">
+              <Link to="/kontakt" className="btn-primary group">
+                Jetzt Schulung anfragen
+                <ArrowRight
+                  size={14}
+                  strokeWidth={1.5}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+              <a href="#inhalte" className="btn-outline">
+                Inhalte ansehen
+              </a>
+            </div>
           </div>
+
+          {/* Right — editorial image composition */}
+          <div className="reveal reveal-delay-1 grid grid-cols-2 gap-3 lg:gap-4">
+            <div className="col-span-2 aspect-[16/9] lg:aspect-[3/2] overflow-hidden shadow-elegant">
+              <img
+                src={schulung1}
+                alt="Monishine Lash Extension Schulung"
+                loading="eager"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden shadow-soft">
+              <img
+                src={schulung2}
+                alt="Monishine Academy Training"
+                loading="eager"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden shadow-soft">
+              <img
+                src={schulung3}
+                alt="Monishine Lash Artist Ausbildung"
+                loading="eager"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -263,14 +299,17 @@ const Schulungen = () => (
               die Schulung wird persönlich begleitet und verständlich aufgebaut.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {targetBadges.map((badge) => (
-              <span
-                key={badge}
-                className="inline-flex items-center px-3 py-1.5 border border-foreground/15 bg-background text-[0.6rem] uppercase tracking-[0.18em] text-muted-foreground"
-              >
-                {badge}
-              </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+            {targetFeatures.map(({ Icon, text }) => (
+              <div key={text} className="flex items-center gap-3">
+                <Icon size={14} strokeWidth={1.4} style={{ color: GOLD, flexShrink: 0 }} />
+                <span
+                  className="text-foreground/75 font-light"
+                  style={{ fontSize: "0.88rem", letterSpacing: "0.01em" }}
+                >
+                  {text}
+                </span>
+              </div>
             ))}
           </div>
         </div>
@@ -299,14 +338,17 @@ const Schulungen = () => (
               zählen.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {trustBadges.map((badge) => (
-              <span
-                key={badge}
-                className="inline-flex items-center px-3 py-1.5 border border-foreground/15 bg-background text-[0.6rem] uppercase tracking-[0.18em] text-muted-foreground"
-              >
-                {badge}
-              </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+            {trustFeatures.map(({ Icon, text }) => (
+              <div key={text} className="flex items-center gap-3">
+                <Icon size={14} strokeWidth={1.4} style={{ color: GOLD, flexShrink: 0 }} />
+                <span
+                  className="text-foreground/75 font-light"
+                  style={{ fontSize: "0.88rem", letterSpacing: "0.01em" }}
+                >
+                  {text}
+                </span>
+              </div>
             ))}
           </div>
         </div>
