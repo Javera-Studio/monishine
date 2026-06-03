@@ -4,6 +4,7 @@ import { Plus, Minus } from "lucide-react";
 import SiteLayout from "@/components/SiteLayout";
 import { cms } from "@/lib/cms/provider";
 import type { ServiceCategory } from "@/content/types";
+import preiseImg from "@/assets/preise.jpg";
 
 const serif = {
   fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -150,22 +151,40 @@ const Preise = () => {
       <section>
 
         <div className="container-editorial pt-16 md:pt-24 pb-16 md:pb-24">
-          <p className="eyebrow mb-6">Alle Preise auf einen Blick</p>
-          <h1
-            className="display max-w-4xl"
-            style={{ fontSize: "clamp(2.2rem, 4.8vw, 4.4rem)" }}
-          >
-            Preise &amp; <span className="italic text-accent">Behandlungen</span>
-          </h1>
-          <p className="lede mt-7 max-w-2xl">
-            Bei Monishine erwarten dich hochwertige Beauty Treatments mit transparenter
-            Preisgestaltung. Alle Leistungen werden individuell auf dich abgestimmt und in
-            persönlicher Atmosphäre durchgeführt.
-          </p>
-          <div className="mt-10">
-            <Link to="/kontakt" className="btn-primary">
-              Termin buchen
-            </Link>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            {/* Left — text */}
+            <div>
+              <p className="eyebrow mb-6">Monishine Beauty Studio</p>
+              <h1
+                className="display"
+                style={{ fontSize: "clamp(2.2rem, 4.8vw, 4.4rem)" }}
+              >
+                Alle Preise auf einen Blick
+              </h1>
+              <p className="lede mt-7">
+                Bei Monishine erwarten dich hochwertige Beauty Treatments mit transparenter
+                Preisgestaltung. Alle Leistungen werden individuell auf dich abgestimmt und in
+                persönlicher Atmosphäre durchgeführt.
+              </p>
+              <div className="mt-10">
+                <Link to="/kontakt" className="btn-primary">
+                  Termin buchen
+                </Link>
+              </div>
+            </div>
+
+            {/* Right — image */}
+            <div className="overflow-hidden shadow-elegant">
+              <img
+                src={preiseImg}
+                alt="Monishine Preise"
+                loading="eager"
+                className="w-full h-full object-cover"
+                style={{ maxHeight: "520px" }}
+              />
+            </div>
+
           </div>
         </div>
       </section>
