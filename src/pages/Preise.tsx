@@ -168,9 +168,14 @@ const Preise = () => {
                 persönlicher Atmosphäre durchgeführt.
               </p>
               <div className="mt-10">
-                <Link to="/kontakt" className="btn-primary">
+                <a
+                  href="https://wa.me/4917634050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
                   Termin buchen
-                </Link>
+                </a>
               </div>
             </div>
 
