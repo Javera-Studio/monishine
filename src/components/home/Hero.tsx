@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Star, Heart, Sparkles, GraduationCap } from "lucide-react";
 import heroImg from "@/assets/IMG_0578.jpeg";
+import type { LucideIcon } from "lucide-react";
 
 const TREATWELL = "https://buchung.treatwell.de/ort/monishine/";
 
-const badges = [
-  { label: "5 Jahre Top Rated" },
-  { label: "Zertifizierte Beauty Expertin" },
-  { label: "Brows & Lashes Specialist" },
-  { label: "Lash Extension Schulungen" },
-  { label: "Persönliche Beratung" },
-  { label: "Ladies & Gentlemen" },
+const facts: { Icon: LucideIcon; text: string }[] = [
+  { Icon: Star,          text: "5 Jahre Treatwell Top Rated"    },
+  { Icon: Heart,         text: "Über 400 zufriedene Kundinnen"  },
+  { Icon: Sparkles,      text: "Zertifizierte Beauty Expertin"  },
+  { Icon: GraduationCap, text: "Academy & Schulungen"           },
 ];
 
 const Hero = () => (
@@ -138,47 +137,40 @@ const Hero = () => (
     </section>
 
     {/* ══════════════════════════════════════
-        Trust strip — infinite marquee
+        Trust facts — elegant static row
     ══════════════════════════════════════ */}
     <section
-      className="border-t border-border/40"
+      className="border-t border-border/40 py-8 md:py-10"
       style={{ background: "linear-gradient(to bottom, hsl(var(--secondary) / 0.25), hsl(var(--background)))" }}
     >
-      {/* Marquee ticker */}
-      <div className="marquee-outer overflow-hidden py-8 md:py-10">
-        <div
-          className="marquee-track flex whitespace-nowrap"
-          style={{ animation: "marquee 42s linear infinite" }}
-        >
-          {/* Two identical sets — second copy makes the loop seamless */}
-          {[...badges, ...badges].map(({ label }, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-2.5 shrink-0 px-5 md:px-7"
-            >
-              <span
-                className="text-accent shrink-0"
-                style={{ fontSize: "0.38rem", opacity: 0.65 }}
-                aria-hidden
-              >
-                ✦
+      <div className="container-editorial">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-0">
+          {facts.map(({ Icon, text }, i) => (
+            <div key={text} className="flex items-center">
+              <span className="flex items-center gap-2 text-foreground/55 font-light">
+                <Icon
+                  size={12}
+                  strokeWidth={1.4}
+                  className="text-accent shrink-0"
+                  style={{ opacity: 0.7 }}
+                />
+                <span className="text-[0.62rem] uppercase tracking-[0.24em]">
+                  {text}
+                </span>
               </span>
-              <span className="text-[0.62rem] uppercase tracking-[0.26em] text-foreground/55 font-light shrink-0">
-                {label}
-              </span>
-              <span
-                className="ml-3 text-foreground/20 shrink-0"
-                style={{ fontSize: "0.55rem" }}
-                aria-hidden
-              >
-                ·
-              </span>
-            </span>
+              {i < facts.length - 1 && (
+                <span
+                  className="hidden sm:block mx-7 text-foreground/18"
+                  style={{ fontSize: "0.45rem" }}
+                  aria-hidden
+                >
+                  ✦
+                </span>
+              )}
+            </div>
           ))}
         </div>
       </div>
-
-      <div className="pb-8 md:pb-10" />
     </section>
   </>
 );
