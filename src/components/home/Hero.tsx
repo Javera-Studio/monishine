@@ -46,24 +46,23 @@ const Hero = () => (
           style={{ objectPosition: "right center" }}
           loading="eager"
         />
-        {/* Background-colour fade from left → blends image into page bg */}
+        {/* Cream overlay — solid left zone, then fades to reveal image */}
         <div
-          className="absolute inset-y-0 left-0 w-[55%]"
+          className="absolute inset-y-0 left-0 w-[68%]"
           style={{
             background:
-              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.80) 25%, hsl(var(--background) / 0.30) 60%, transparent 100%)",
+              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 32%, hsl(var(--background) / 0.82) 50%, hsl(var(--background) / 0.28) 68%, transparent 100%)",
           }}
         />
       </div>
 
-      {/* ── Content — container-editorial as direct wrapper (matches all other sections) ── */}
-      {/* Dark overlay spans full viewport, sits behind the container */}
+      {/* Dark overlay — additional contrast for text readability */}
       <div
-        className="hidden lg:block absolute inset-y-0 left-0 w-[48%] z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to right, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0) 100%)" }}
+        className="hidden lg:block absolute inset-y-0 left-0 w-[55%] z-10 pointer-events-none"
+        style={{ background: "linear-gradient(to right, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.07) 55%, rgba(0,0,0,0) 100%)" }}
       />
       <div className="relative z-20 container-editorial lg:min-h-screen lg:flex lg:flex-col lg:justify-end lg:pb-24">
-        <div className="relative max-w-[440px] pt-3 pb-12 lg:py-20 reveal">
+        <div className="relative max-w-[460px] pt-3 pb-12 lg:py-20 reveal">
 
           <p className="mb-6 text-accent font-light" style={{ fontSize: "0.75rem", letterSpacing: "0.35em", textTransform: "uppercase" }}>
             Brows • Lashes • Glow
