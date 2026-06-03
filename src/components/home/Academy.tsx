@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Sparkles, Wand2, Users } from "lucide-react";
+import { ArrowRight, Users, Heart, Award, Sparkles } from "lucide-react";
 import schulung1 from "@/assets/schulung1.jpg";
 import schulung2 from "@/assets/schulung2.jpg";
 import schulung3 from "@/assets/schulung3.jpg";
 import schulung4 from "@/assets/schulung4.jpg";
 import type { LucideIcon } from "lucide-react";
 
-const features: { Icon: LucideIcon; text: string }[] = [
-  { Icon: Award,    text: "Zertifizierte\nSchulung"         },
-  { Icon: Sparkles, text: "Persönliche\nBetreuung"          },
-  { Icon: Wand2,    text: "Praxisnahes\nLernen"             },
-  { Icon: Users,    text: "Für Anfänger &\nFortgeschrittene" },
+const features: { Icon: LucideIcon; title: string; description: string }[] = [
+  { Icon: Users,    title: "Kleine Gruppen",                  description: "Mehr Zeit für jede Teilnehmerin"                          },
+  { Icon: Heart,    title: "Persönliche Betreuung",           description: "Direkte Unterstützung während der gesamten Schulung"      },
+  { Icon: Award,    title: "Zertifizierter Abschluss",        description: "Offizielles Zertifikat nach erfolgreichem Abschluss"      },
+  { Icon: Sparkles, title: "Dein Start in die Beauty-Branche", description: "Ideal für Anfängerinnen und Quereinsteigerinnen"         },
 ];
 
 const Academy = () => (
@@ -46,20 +46,26 @@ const Academy = () => (
             weiterentwickeln möchten.
           </p>
 
-          <div className="mt-10 pt-7 border-t border-foreground/10 grid grid-cols-2 sm:grid-cols-4 gap-y-7 gap-x-6">
-            {features.map(({ Icon, text }) => (
-              <div key={text} className="flex flex-col gap-2.5">
+          <div className="mt-10 pt-7 border-t border-foreground/10 grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-6">
+            {features.map(({ Icon, title, description }) => (
+              <div key={title} className="flex flex-col gap-2">
                 <Icon
                   size={16}
                   strokeWidth={1.3}
                   style={{ color: "#D8B98A" }}
                 />
-                <span
-                  className="text-foreground/65 font-light uppercase leading-[1.75]"
-                  style={{ fontSize: "0.57rem", letterSpacing: "0.2em", whiteSpace: "pre-line" }}
+                <p
+                  className="text-foreground font-light leading-snug"
+                  style={{ fontSize: "0.78rem", letterSpacing: "0.01em" }}
                 >
-                  {text}
-                </span>
+                  {title}
+                </p>
+                <p
+                  className="text-foreground/55 font-light leading-[1.6]"
+                  style={{ fontSize: "0.68rem" }}
+                >
+                  {description}
+                </p>
               </div>
             ))}
           </div>
