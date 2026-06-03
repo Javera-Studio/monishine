@@ -72,6 +72,7 @@ const Kontakt = () => {
                 alt="Monishine Studio"
                 loading="lazy"
                 className="w-full h-full object-cover"
+                style={{ objectPosition: "center 25%" }}
               />
             </div>
 
