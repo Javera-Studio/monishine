@@ -23,49 +23,44 @@ const Booking = () => (
             </p>
           </div>
 
-          {/* Cards — side by side */}
-          <div className="grid grid-cols-2 gap-3">
+          {/* Cards — stacked, WhatsApp larger */}
+          <div className="flex flex-col gap-3">
 
-            {/* WhatsApp */}
+            {/* WhatsApp — primary, larger */}
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-accent text-background p-5 flex flex-col justify-between hover:bg-[hsl(24,36%,50%)] transition-colors"
+              className="group bg-accent text-background p-6 md:p-7 flex flex-col justify-between hover:bg-[hsl(24,36%,50%)] transition-colors"
             >
-              <div className="flex items-start justify-between mb-6">
-                <p className="eyebrow text-background/60 text-[0.55rem]">Empfohlen</p>
-                <ArrowUpRight size={14} strokeWidth={1.3} className="text-background/60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <div className="flex items-start justify-between mb-5">
+                <p className="eyebrow text-background/60">Empfohlen</p>
+                <ArrowUpRight size={16} strokeWidth={1.3} className="text-background/60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
               <div>
-                <p className="font-serif text-base leading-tight">
+                <p className="font-serif text-lg md:text-xl leading-tight">
                   WhatsApp schreiben
                 </p>
-                <p className="mt-1.5 text-[0.7rem] text-background/70 leading-[1.7]">
+                <p className="mt-2 text-xs text-background/70 leading-[1.75]">
                   Schnell &amp; persönlich — Moni antwortet direkt.
                 </p>
               </div>
             </a>
 
-            {/* Treatwell */}
+            {/* Treatwell — secondary, smaller */}
             <a
               href={TW_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-background/5 border border-background/15 p-5 flex flex-col justify-between hover:bg-background/10 transition-colors"
+              className="group bg-background/5 border border-background/15 p-4 md:p-5 flex items-center justify-between hover:bg-background/10 transition-colors"
             >
-              <div className="flex items-start justify-between mb-6">
-                <p className="eyebrow text-background/50 text-[0.55rem]">Online</p>
-                <ArrowUpRight size={14} strokeWidth={1.3} className="text-background/50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
               <div>
+                <p className="eyebrow text-background/50 mb-1">Online Buchung</p>
                 <p className="font-serif text-base text-background leading-tight">
-                  Über Treatwell
-                </p>
-                <p className="mt-1.5 text-[0.7rem] text-background/60 leading-[1.7]">
-                  Freie Termine 24/7 online buchen.
+                  Über Treatwell buchen
                 </p>
               </div>
+              <ArrowUpRight size={15} strokeWidth={1.3} className="text-background/50 shrink-0 ml-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
 
           </div>
