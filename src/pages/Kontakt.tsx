@@ -93,38 +93,42 @@ const Kontakt = () => {
               <ArrowUpRight size={20} className="text-primary-foreground/70 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
 
-            <div className="bg-secondary/60 p-7 space-y-4">
-              <p className="eyebrow">Studio</p>
-              <div className="flex gap-3 text-sm text-foreground/85">
-                <MapPin size={16} className="text-primary mt-0.5" /> Bramfelder Straße 77, 22305 Hamburg
+            <div className="grid grid-cols-2 gap-4">
+              {/* Studio info — left */}
+              <div className="bg-secondary/60 p-6 space-y-4">
+                <p className="eyebrow">Studio</p>
+                <div className="flex gap-3 text-sm text-foreground/85">
+                  <MapPin size={15} className="text-primary mt-0.5 shrink-0" /> Bramfelder Straße 77, 22305 Hamburg
+                </div>
+                <div className="flex gap-3 text-sm text-foreground/85">
+                  <Phone size={15} className="text-primary mt-0.5 shrink-0" />
+                  <a href="tel:+4917634050812">+49 176 340 50 812</a>
+                </div>
+                <div className="flex gap-3 text-sm text-foreground/85">
+                  <Mail size={15} className="text-primary mt-0.5 shrink-0" />
+                  <a href="mailto:monishine@outlook.de">monishine@outlook.de</a>
+                </div>
               </div>
-              <div className="flex gap-3 text-sm text-foreground/85">
-                <Phone size={16} className="text-primary mt-0.5" />
-                <a href="tel:+4917634050812">+49 176 340 50 812</a>
-              </div>
-              <div className="flex gap-3 text-sm text-foreground/85">
-                <Mail size={16} className="text-primary mt-0.5" />
-                <a href="mailto:monishine@outlook.de">monishine@outlook.de</a>
-              </div>
-            </div>
 
-            <div className="bg-secondary/60 p-7 space-y-4">
-              <p className="eyebrow">Öffnungszeiten</p>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-                {[
-                  ["Montag",    "11:00 – 16:00"],
-                  ["Dienstag",  "11:00 – 19:00"],
-                  ["Mittwoch",  "11:00 – 19:00"],
-                  ["Donnerstag","11:00 – 18:00"],
-                  ["Freitag",   "11:00 – 16:00"],
-                  ["Samstag",   "Geschlossen"],
-                  ["Sonntag",   "Geschlossen"],
-                ].map(([day, hours]) => (
-                  <>
-                    <span key={day} className="text-foreground/85">{day}</span>
-                    <span key={hours} className={hours === "Geschlossen" ? "text-foreground/40" : "text-foreground/85"}>{hours}</span>
-                  </>
-                ))}
+              {/* Öffnungszeiten — right */}
+              <div className="bg-secondary/60 p-6 space-y-4">
+                <p className="eyebrow">Öffnungszeiten</p>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                  {[
+                    ["Montag",     "11:00 – 16:00"],
+                    ["Dienstag",   "11:00 – 19:00"],
+                    ["Mittwoch",   "11:00 – 19:00"],
+                    ["Donnerstag", "11:00 – 18:00"],
+                    ["Freitag",    "11:00 – 16:00"],
+                    ["Samstag",    "Geschlossen"],
+                    ["Sonntag",    "Geschlossen"],
+                  ].map(([day, hours]) => (
+                    <>
+                      <span key={day} className="text-foreground/85">{day}</span>
+                      <span key={hours} className={hours === "Geschlossen" ? "text-foreground/40" : "text-foreground/85"}>{hours}</span>
+                    </>
+                  ))}
+                </div>
               </div>
             </div>
 
