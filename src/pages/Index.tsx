@@ -15,6 +15,14 @@ const Index = () => (
     <BrandPhilosophy />
     <About />
     <Academy />
+    <div className="surface-taupe py-12 md:py-16 text-center">
+      <p
+        className="font-script shimmer-gold"
+        style={{ fontSize: "clamp(2.34rem, 3.38vw, 3.38rem)" }}
+      >
+        Glow with Confidence.
+      </p>
+    </div>
     <Testimonials />
     <Faq />
     <Booking />

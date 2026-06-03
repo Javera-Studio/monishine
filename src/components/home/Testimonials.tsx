@@ -99,18 +99,8 @@ const ReviewCard = ({ r }: { r: Review }) => (
 );
 
 const Testimonials = () => (
-  <section className="surface-taupe pt-16 md:pt-36 pb-0">
+  <section className="surface-taupe pt-10 md:pt-20 pb-0">
     <div className="container-editorial">
-
-      {/* ── Script accent — centred above entire section ── */}
-      <div className="text-center mb-8 md:mb-10">
-        <p
-          className="font-script shimmer-gold"
-          style={{ fontSize: "clamp(1.8rem, 2.6vw, 2.6rem)" }}
-        >
-          Glow with Confidence.
-        </p>
-      </div>
 
       {/* ── Header: two-column editorial layout ── */}
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 md:mb-28">
