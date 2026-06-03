@@ -223,7 +223,7 @@ const Schulungen = () => (
             <div className="pt-10 md:pt-12">
               <p
                 className="font-script shimmer-gold text-right"
-                style={{ fontSize: "clamp(1.4rem, 2vw, 1.9rem)" }}
+                style={{ fontSize: "clamp(1.82rem, 2.6vw, 2.47rem)" }}
               >
                 Glow with Confidence.
               </p>
