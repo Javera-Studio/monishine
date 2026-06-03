@@ -93,7 +93,7 @@ const Kontakt = () => {
               <ArrowUpRight size={20} className="text-primary-foreground/70 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Studio info — left */}
               <div className="bg-secondary/60 p-6 space-y-4">
                 <p className="eyebrow">Studio</p>
