@@ -198,10 +198,10 @@ const UeberMich = () => (
         {/* ── Editorial gallery — 5 images, varied sizes ── */}
         <div className="space-y-3 lg:space-y-4 reveal reveal-delay-1">
 
-          {/* Row 1: wide feature · medium · small */}
-          <div className="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4">
-            {/* salon1 — dominant wide image */}
-            <div className="col-span-2 lg:col-span-6 aspect-[4/3] lg:aspect-[3/2] overflow-hidden shadow-soft">
+          {/* Row 1: dominant left · two stacked right */}
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_4fr] gap-3 lg:gap-4 lg:h-[540px]">
+            {/* salon1 — large dominant image, fills full height */}
+            <div className="aspect-[3/2] lg:aspect-auto lg:h-full overflow-hidden shadow-soft">
               <img
                 src={salon1Img}
                 alt="Monishine Studio Wien — Behandlungsraum"
@@ -209,23 +209,24 @@ const UeberMich = () => (
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
             </div>
-            {/* salon5 — same size as salon2 */}
-            <div className="lg:col-span-3 aspect-[4/3] overflow-hidden shadow-soft">
-              <img
-                src={salon5Img}
-                alt="Monishine Studio Wien — Studio Detail"
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-              />
-            </div>
-            {/* salon2 — same size as salon5 */}
-            <div className="lg:col-span-3 aspect-[4/3] overflow-hidden shadow-soft">
-              <img
-                src={salon2Img}
-                alt="Monishine Studio Wien — Atmosphäre"
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-              />
+            {/* Right column — salon5 + salon2 stacked equally */}
+            <div className="grid grid-cols-2 lg:grid-cols-1 lg:grid-rows-2 gap-3 lg:gap-4 lg:h-full">
+              <div className="aspect-[4/3] lg:aspect-auto overflow-hidden shadow-soft">
+                <img
+                  src={salon5Img}
+                  alt="Monishine Studio Wien — Studio Detail"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                />
+              </div>
+              <div className="aspect-[4/3] lg:aspect-auto overflow-hidden shadow-soft">
+                <img
+                  src={salon2Img}
+                  alt="Monishine Studio Wien — Atmosphäre"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                />
+              </div>
             </div>
           </div>
 
