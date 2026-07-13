@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import kontaktImg from "@/assets/kontakt.png";
 
 const WA_URL = "https://wa.me/4917624050812?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren.";
 const TW_URL = "https://buchung.treatwell.de/ort/monishine/";
@@ -67,13 +67,14 @@ const Booking = () => (
         </div>
 
         {/* Right — full image fills column height */}
-        <div className="hidden lg:block overflow-hidden">
-          <img
-            src={kontaktImg}
+        <div className="hidden lg:block relative overflow-hidden">
+          <Image
+            src="/images/kontakt.png"
             alt="Monishine Studio"
-            loading="lazy"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
             style={{ objectPosition: "center 35%" }}
+            sizes="50vw"
           />
         </div>
 

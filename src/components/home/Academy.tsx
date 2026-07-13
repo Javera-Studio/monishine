@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Users, Heart, Award, Sparkles } from "lucide-react";
-import schulung1 from "@/assets/schulung1.jpg";
-import schulung2 from "@/assets/schulung2.jpg";
-import schulung3 from "@/assets/schulung3.jpg";
-import schulung4 from "@/assets/schulung4.jpg";
 import type { LucideIcon } from "lucide-react";
 
 const features: { Icon: LucideIcon; title: string; description: string }[] = [
@@ -26,7 +23,7 @@ const Academy = () => (
           <h2
             className="text-foreground leading-[1.05]"
             style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: "var(--font-cormorant), Georgia, serif",
               fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
               fontWeight: 300,
             }}
@@ -71,7 +68,7 @@ const Academy = () => (
           </div>
 
           <div className="mt-10">
-            <Link to="/schulungen" className="btn-primary group">
+            <Link href="/schulungen" className="btn-primary group">
               Mehr über die Schulungen erfahren
               <ArrowRight
                 size={14}
@@ -86,38 +83,43 @@ const Academy = () => (
         <div className="lg:col-span-7 reveal reveal-delay-1">
           <div className="grid grid-cols-2 gap-3 lg:gap-4">
             <div className="space-y-3 lg:space-y-4">
-              <div className="aspect-[4/5] overflow-hidden shadow-soft">
-                <img
-                  src={schulung1}
+              <div className="hover-sweep relative aspect-[4/5] overflow-hidden shadow-soft">
+                <Image
+                  src="/images/schulung1.jpg"
                   alt="Monishine Lash Extension Schulung"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  style={{ objectPosition: "center 35%" }}
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                 />
               </div>
-              <div className="aspect-[4/5] overflow-hidden shadow-soft">
-                <img
-                  src={schulung3}
+              <div className="hover-sweep relative aspect-[4/5] overflow-hidden shadow-soft">
+                <Image
+                  src="/images/schulung3.jpg"
                   alt="Lash Extension Training bei Monishine"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                 />
               </div>
             </div>
             <div className="space-y-3 lg:space-y-4 mt-10 lg:mt-14">
-              <div className="aspect-[4/5] overflow-hidden shadow-soft">
-                <img
-                  src={schulung2}
+              <div className="hover-sweep relative aspect-[4/5] overflow-hidden shadow-soft">
+                <Image
+                  src="/images/schulung2.jpg"
                   alt="Monishine Lash Artist Ausbildung"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                 />
               </div>
-              <div className="aspect-[4/5] overflow-hidden shadow-soft">
-                <img
-                  src={schulung4}
+              <div className="hover-sweep relative aspect-[4/5] overflow-hidden shadow-soft">
+                <Image
+                  src="/images/schulung4.jpg"
                   alt="Lash Extension Workshop"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                 />
               </div>
             </div>

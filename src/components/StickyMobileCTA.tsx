@@ -1,5 +1,3 @@
-
-
 const StickyMobileCTA = () => (
   <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-background/90 backdrop-blur border-t border-border/50">
     <div className="px-5 py-3 flex items-center justify-between gap-4 max-w-[1400px] mx-auto">

@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Monishine — warm cream, beige, taupe, soft brown, black accents */
+    --background: 36 38% 95%;            /* warm cream #F6EFE4 */
+    --foreground: 24 14% 11%;            /* near-black ink #1F1A16 */
+
+    --card: 36 38% 96%;
+    --card-foreground: 24 14% 11%;
+
+    --popover: 36 38% 97%;
+    --popover-foreground: 24 14% 11%;
+
+    /* Primary: deep espresso/black for elegant CTAs */
+    --primary: 24 14% 11%;               /* #1F1A16 */
+    --primary-foreground: 36 38% 96%;    /* cream */
+    --primary-soft: 30 28% 90%;          /* soft beige */
+    --primary-glow: 22 18% 22%;          /* warm hover */
+
+    /* Accent: warm brown/copper from Monishine logo */
+    --accent: 24 36% 58%;                /* #B98869 warm brown */
+    --accent-foreground: 36 38% 96%;
+    --accent-soft: 28 40% 86%;           /* soft warm tan */
+
+    /* Premium taupe — Monishine print/highlight palette */
+    --taupe: 30 19% 65%;                 /* #B7A796 */
+    --taupe-foreground: 36 38% 97%;      /* warm cream */
+
+    --secondary: 32 28% 88%;             /* soft beige */
+    --secondary-foreground: 24 14% 11%;
+
+    --muted: 32 22% 91%;
+    --muted-foreground: 24 10% 38%;
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 36 38% 96%;
+
+    --border: 30 18% 84%;
+    --input: 30 18% 84%;
+    --ring: 24 14% 11%;
+
+    --radius: 0.125rem;
+
+    --gradient-warm: linear-gradient(180deg, hsl(36 38% 96%) 0%, hsl(32 30% 90%) 100%);
+    --gradient-taupe: linear-gradient(135deg, hsl(28 22% 82%), hsl(24 26% 68%));
+    --shadow-soft: 0 1px 2px hsl(24 14% 11% / 0.04), 0 18px 50px -20px hsl(24 14% 11% / 0.10);
+    --shadow-elegant: 0 30px 80px -30px hsl(24 14% 11% / 0.18);
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 36 38% 96%;
+    --sidebar-foreground: 24 14% 11%;
+    --sidebar-primary: 24 14% 11%;
+    --sidebar-primary-foreground: 36 38% 96%;
+    --sidebar-accent: 32 28% 90%;
+    --sidebar-accent-foreground: 24 14% 11%;
+    --sidebar-border: 30 18% 84%;
+    --sidebar-ring: 24 14% 11%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+    font-weight: 300;
+  }
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+  .font-display {
+    font-family: var(--font-italiana), var(--font-cormorant), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+  }
+}
+
+@layer components {
+  .container-editorial {
+    @apply mx-auto px-6 md:px-12 lg:px-20;
+    max-width: 1400px;
+  }
+  .eyebrow {
+    @apply text-[0.68rem] uppercase tracking-[0.28em] text-muted-foreground font-normal;
+  }
+  .display {
+    @apply font-serif leading-[1.05] text-foreground;
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
+    font-weight: 300;
+  }
+  .headline {
+    @apply font-serif leading-[1.08] text-foreground;
+    font-size: clamp(2rem, 3.8vw, 3.5rem);
+    font-weight: 300;
+  }
+  .lede {
+    @apply text-base md:text-lg text-muted-foreground leading-[1.75];
+    font-weight: 300;
+  }
+  /* Brand script — Great Vibes for slogans, editorial quotes, emotional accents */
+  .font-script {
+    font-family: var(--font-great-vibes), cursive;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+  }
+
+  /* Gold foil shimmer — applied to all script slogans */
+  @keyframes gold-shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      #A9824F 0%,
+      #C9A46E 20%,
+      #D8B98A 38%,
+      #F5E6C8 50%,
+      #D8B98A 62%,
+      #C9A46E 80%,
+      #A9824F 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gold-shimmer 6s linear infinite;
+    display: inline-block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer-gold {
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: unset;
+      color: #D8B98A;
+      animation: none;
+    }
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent;
+  }
+
+  /* Elegant CTA buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-9 py-4 bg-foreground text-background text-xs tracking-[0.22em] uppercase font-normal transition-all duration-500 hover:bg-accent;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-9 py-4 border border-foreground/30 text-foreground text-xs tracking-[0.22em] uppercase font-normal transition-all duration-500 hover:border-foreground hover:bg-foreground hover:text-background;
+  }
+
+  /* Premium taupe surface — Monishine print look.
+     Re-maps semantic tokens locally so descendants automatically
+     render with cream text, soft cream borders, and a deeper taupe
+     accent without changing component code. */
+  .surface-taupe {
+    background-color: hsl(var(--taupe));
+    --background: 30 19% 65%;
+    --foreground: 36 38% 97%;
+    --muted: 30 14% 58%;
+    --muted-foreground: 36 30% 90%;
+    --border: 36 30% 88%;
+    --card: 30 19% 65%;
+    --card-foreground: 36 38% 97%;
+    --secondary: 30 14% 56%;
+    --secondary-foreground: 36 38% 97%;
+    --accent: 36 38% 97%;
+    --accent-foreground: 24 14% 18%;
+    --primary: 36 38% 97%;
+    --primary-foreground: 24 14% 18%;
+    --ring: 36 38% 97%;
+    color: hsl(var(--foreground));
+  }
+  .surface-taupe .bg-gradient-warm,
+  .surface-taupe.bg-gradient-warm {
+    background: transparent !important;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: reveal 0.9s var(--transition-smooth) forwards;
+  }
+  .reveal-delay-1 { animation-delay: 0.12s; }
+  .reveal-delay-2 { animation-delay: 0.24s; }
+  .reveal-delay-3 { animation-delay: 0.36s; }
+
+  /* Hover light sweep — diagonal shine passing over an image on hover */
+  .hover-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+  .hover-sweep::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -75%;
+    width: 50%;
+    background: linear-gradient(115deg, transparent 0%, hsl(0 0% 100% / 0.55) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    transition: left 0.9s var(--transition-smooth);
+  }
+  .hover-sweep:hover::after {
+    left: 125%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hover-sweep::after {
+      display: none;
+    }
+  }
+
+  /* Price list — editorial reveal-on-scroll (Preise page) */
+  .price-group-divider {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s var(--transition-smooth);
+  }
+  .price-group.is-visible .price-group-divider {
+    transform: scaleX(1);
+  }
+
+  .price-row-main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.85s var(--transition-smooth), transform 0.85s var(--transition-smooth);
+  }
+  .price-group.is-visible .price-row-main {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .price-row-price {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.7s var(--transition-smooth), transform 0.7s var(--transition-smooth);
+  }
+  .price-group.is-visible .price-row-price {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .price-row-indicator {
+    position: absolute;
+    left: -1rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: hsl(var(--accent));
+    opacity: 0;
+    transform: scaleY(0.5);
+    transition: opacity 0.4s var(--transition-smooth), transform 0.4s var(--transition-smooth);
+    pointer-events: none;
+  }
+  .price-row:hover .price-row-indicator {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .price-group-divider,
+    .price-row-main,
+    .price-row-price {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-outer:hover .marquee-track {
+  animation-play-state: paused;
+}

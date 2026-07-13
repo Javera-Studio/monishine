@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { cms } from "@/lib/cms/provider";
 import type { ServiceCategory } from "@/content/types";
-import vn1 from "@/assets/vorhernachher1.jpg";
-import vn2 from "@/assets/vorhernachher2.jpg";
-import vn3 from "@/assets/vorhernachher3.jpg";
-import vn4 from "@/assets/vorhernachher4.jpg";
 
-const vnImages = [vn1, vn2, vn3, vn4];
+const vnImages = [
+  { src: "/images/vorhernachher1.jpg", w: 720, h: 593 },
+  { src: "/images/vorhernachher2.jpg", w: 715, h: 565 },
+  { src: "/images/vorhernachher3.jpg", w: 1774, h: 887 },
+  { src: "/images/vorhernachher4.jpg", w: 1623, h: 969 },
+];
 
 const serif = {
-  fontFamily: "'Cormorant Garamond', Georgia, serif",
+  fontFamily: "var(--font-cormorant), Georgia, serif",
   fontWeight: 300,
 } as const;
 
@@ -52,17 +53,18 @@ const FeaturedCard = ({ category, isDark }: { category: ServiceCategory; isDark:
   const c = isDark ? DARK : LIGHT;
   return (
     <Link
-      to={href}
+      href={href}
       className="group flex flex-col overflow-hidden transition-all duration-500"
       style={{ backgroundColor: c.bg, border: isDark ? "none" : LIGHT.border }}
     >
       {/* Tall image — full clarity, no overlay */}
-      <div className="aspect-[4/3] md:aspect-[3/2] overflow-hidden shrink-0">
-        <img
+      <div className="relative aspect-[4/3] md:aspect-[3/2] overflow-hidden shrink-0">
+        <Image
           src={category.image}
           alt={category.title}
-          loading="eager"
-          className="w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+          fill
+          className="object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+          sizes="(min-width: 768px) 50vw, 100vw"
         />
       </div>
 
@@ -104,17 +106,18 @@ const GridCard = ({ category, index }: { category: ServiceCategory; index: numbe
   const c = isDark ? DARK : LIGHT;
   return (
     <Link
-      to={href}
+      href={href}
       className="group flex flex-col overflow-hidden transition-all duration-500"
       style={{ backgroundColor: c.bg, border: isDark ? "none" : LIGHT.border }}
     >
       {/* Image — full clarity, no overlay */}
-      <div className="aspect-[4/3] overflow-hidden shrink-0">
-        <img
+      <div className="relative aspect-[4/3] overflow-hidden shrink-0">
+        <Image
           src={category.image}
           alt={category.title}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+          fill
+          className="object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         />
       </div>
       <div className="flex flex-col flex-1 p-7 md:p-8">
@@ -148,12 +151,8 @@ const GridCard = ({ category, index }: { category: ServiceCategory; index: numbe
 };
 
 /* ── Section ────────────────────────────────────────────────── */
-const Treatments = () => {
-  const [categories, setCategories] = useState<ServiceCategory[]>([]);
-
-  useEffect(() => {
-    cms.categories().then(setCategories);
-  }, []);
+const Treatments = async () => {
+  const categories = await cms.categories();
 
   const featured = FEATURED_IDS
     .map(id => categories.find(c => c.id === id))
@@ -203,7 +202,7 @@ const Treatments = () => {
                   <span
                     className="text-foreground leading-none"
                     style={{
-                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      fontFamily: "var(--font-cormorant), Georgia, serif",
                       fontWeight: 300,
                       fontSize: "clamp(1.55rem, 2vw, 2rem)",
                       letterSpacing: "-0.01em",
@@ -221,7 +220,7 @@ const Treatments = () => {
               ))}
             </div>
             <div className="mt-7">
-              <Link to="/leistungen" className="link-underline text-sm">
+              <Link href="/leistungen" className="link-underline text-sm">
                 Alle Leistungen <ArrowUpRight size={16} />
               </Link>
             </div>
@@ -269,7 +268,7 @@ const Treatments = () => {
             <h3
               className="leading-[1.12]"
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontFamily: "var(--font-cormorant), Georgia, serif",
                 fontWeight: 300,
                 fontSize: "clamp(1.75rem, 2.8vw, 2.9rem)",
                 letterSpacing: "-0.01em",
@@ -287,7 +286,7 @@ const Treatments = () => {
             </p>
             <div className="mt-8">
               <Link
-                to="/kontakt"
+                href="/kontakt"
                 className="inline-flex items-center gap-2 px-9 py-4 text-xs tracking-[0.22em] uppercase font-normal transition-opacity duration-300 hover:opacity-75"
                 style={{ backgroundColor: "#1C1611", color: "#fff" }}
               >
@@ -302,7 +301,7 @@ const Treatments = () => {
       <div className="container-editorial mt-16 md:mt-20 mb-8 md:mb-10 text-center">
         <h3
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: "var(--font-cormorant), Georgia, serif",
             fontWeight: 300,
             fontSize: "clamp(1.8rem, 3vw, 3rem)",
             color: "hsl(var(--foreground))",
@@ -320,12 +319,14 @@ const Treatments = () => {
       <div className="marquee-outer overflow-hidden">
         <div
           className="marquee-track flex gap-3 md:gap-4"
-          style={{ animation: "marquee 50s linear infinite" }}
+          style={{ animation: "marquee 42.5s linear infinite" }}
         >
-          {[...vnImages, ...vnImages].map((src, i) => (
+          {[...vnImages, ...vnImages].map((img, i) => (
             <div key={i} className="shrink-0 overflow-hidden shadow-soft">
-              <img
-                src={src}
+              <Image
+                src={img.src}
+                width={img.w}
+                height={img.h}
                 alt={`Vorher Nachher ${(i % 4) + 1}`}
                 loading="lazy"
                 className="h-[240px] md:h-[320px] w-auto object-cover"

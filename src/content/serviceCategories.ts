@@ -1,13 +1,14 @@
 import type { ServiceCategory } from "./types";
-import imgBrows from "@/assets/browslashes.jpg";
-import imgLashExt from "@/assets/lashes.jpg";
-import imgPmu from "@/assets/treatment-pmu.jpg";
-import imgPmuRemoval from "@/assets/pmuremove.jpg";
-import imgFacial from "@/assets/gesichtsbehandlung.jpg";
-import imgLaser from "@/assets/haarentfernung.jpg";
-import imgBody from "@/assets/bodytreatment.jpg";
-import imgFineline from "@/assets/fineline.jpg";
-import imgSchulung from "@/assets/schulung3.jpg";
+
+const imgBrows = "/images/browslashes.jpg";
+const imgLashExt = "/images/lashes.jpg";
+const imgPmu = "/images/treatment-pmu.jpg";
+const imgPmuRemoval = "/images/pmuremove.jpg";
+const imgFacial = "/images/gesichtsbehandlung.jpg";
+const imgLaser = "/images/haarentfernung.jpg";
+const imgBody = "/images/bodytreatment.jpg";
+const imgFineline = "/images/fineline.jpg";
+const imgSchulung = "/images/schulung3.jpg";
 
 export const serviceCategories: ServiceCategory[] = [
   {

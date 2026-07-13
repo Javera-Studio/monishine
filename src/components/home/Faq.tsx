@@ -1,8 +1,10 @@
+"use client";
+
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
 const serif = {
-  fontFamily: "'Cormorant Garamond', Georgia, serif",
+  fontFamily: "var(--font-cormorant), Georgia, serif",
   fontWeight: 300,
 } as const;
 

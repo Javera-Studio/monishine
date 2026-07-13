@@ -1,16 +1,18 @@
-import wallImg from "@/assets/monishinewall.jpeg";
+import Image from "next/image";
 
 const BrandPhilosophy = () => (
   <section className="relative bg-background overflow-hidden">
 
     {/* Full-width wall image with soft edge fades */}
     <div className="relative w-full">
-      <img
-        src={wallImg}
+      <Image
+        src="/images/monishinewall.jpeg"
         alt="Monishine Studio"
-        loading="lazy"
+        width={7008}
+        height={4672}
         className="w-full object-contain"
         style={{ maxHeight: "60vh" }}
+        sizes="100vw"
       />
 
       {/* Top fade */}

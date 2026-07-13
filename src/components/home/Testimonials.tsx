@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { Star } from "lucide-react";
-import moni2 from "@/assets/moni2.jpg";
 
 const serif = {
-  fontFamily: "'Cormorant Garamond', Georgia, serif",
+  fontFamily: "var(--font-cormorant), Georgia, serif",
   fontWeight: 300,
 } as const;
 
@@ -182,13 +182,17 @@ const Testimonials = () => (
 
         {/* Right — portrait */}
         <div className="order-1 lg:order-2 reveal reveal-delay-1 lg:-mb-24">
-          <div className="overflow-hidden shadow-elegant w-full" style={{ borderRadius: "10px" }}>
-            <img
-              src={moni2}
+          <div
+            className="hover-sweep relative overflow-hidden shadow-elegant w-full"
+            style={{ borderRadius: "10px", aspectRatio: "478 / 631", maxHeight: "720px" }}
+          >
+            <Image
+              src="/images/moni2.jpg"
               alt="Moni — Monishine Beauty Studio"
-              loading="eager"
-              className="w-full object-cover object-top"
-              style={{ maxHeight: "720px" }}
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
         </div>

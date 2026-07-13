@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import portrait from "@/assets/moni.jpeg";
 
 const About = () => (
   <section className="py-16 md:py-32 bg-secondary/40">
@@ -8,12 +8,13 @@ const About = () => (
 
       {/* Portrait */}
       <div className="lg:col-span-5 reveal">
-        <div className="aspect-[4/5] overflow-hidden shadow-elegant">
-          <img
-            src={portrait}
+        <div className="hover-sweep relative aspect-[4/5] overflow-hidden shadow-elegant">
+          <Image
+            src="/images/moni.jpeg"
             alt="Moni — Monishine Beauty Studio"
-            loading="lazy"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>
       </div>
@@ -27,7 +28,7 @@ const About = () => (
         <h2
           className="text-foreground leading-[1.05]"
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: "var(--font-cormorant), Georgia, serif",
             fontSize: "clamp(1.7rem, 3vw, 3rem)",
             fontWeight: 300,
           }}
@@ -59,7 +60,7 @@ const About = () => (
         <p
           className="mt-7 text-foreground/60"
           style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontFamily: "var(--font-cormorant), Georgia, serif",
             fontSize: "1.1rem",
             fontWeight: 300,
             lineHeight: 1.7,
@@ -71,7 +72,7 @@ const About = () => (
 
         {/* CTA */}
         <div className="mt-10 pt-8 border-t border-foreground/10">
-          <Link to="/ueber-mich" className="btn-primary group">
+          <Link href="/ueber-mich" className="btn-primary group">
             Mehr über Monishine
             <ArrowRight
               size={14}

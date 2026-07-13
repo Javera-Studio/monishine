@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -12,10 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        display: ['Italiana', '"Cormorant Garamond"', 'Georgia', 'serif'],
-        script: ['"Great Vibes"', 'cursive'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        display: ["var(--font-italiana)", "var(--font-cormorant)", "Georgia", "serif"],
+        script: ["var(--font-great-vibes)", "cursive"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -70,12 +70,12 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-warm': 'var(--gradient-warm)',
-        'gradient-taupe': 'var(--gradient-taupe)',
+        "gradient-warm": "var(--gradient-warm)",
+        "gradient-taupe": "var(--gradient-taupe)",
       },
       boxShadow: {
-        soft: 'var(--shadow-soft)',
-        elegant: 'var(--shadow-elegant)',
+        soft: "var(--shadow-soft)",
+        elegant: "var(--shadow-elegant)",
       },
       borderRadius: {
         lg: "var(--radius)",

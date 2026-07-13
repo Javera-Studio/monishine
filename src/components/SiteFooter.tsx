@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
-import logoImg from "@/assets/IMG_4261.png";
+import Link from "next/link";
+import Image from "next/image";
 
 const SiteFooter = () => (
   <footer className="bg-secondary/50 border-t border-border/60 mt-32">
-    <div className="container-editorial py-20 grid gap-10 md:grid-cols-3 md:items-start">
+    <div className="container-editorial py-14 grid gap-10 md:grid-cols-3 md:items-start">
 
       {/* Left — Logo + tagline */}
       <div>
-        <Link to="/" aria-label="Monishine — Startseite" className="inline-block">
-          <img src={logoImg} alt="Monishine" className="h-[5.6rem] md:h-[7rem] w-auto" />
+        <Link href="/" aria-label="Monishine — Startseite" className="inline-block">
+          <span className="relative h-[5.6rem] md:h-[7rem] w-[199px] md:w-[249px] inline-block">
+            <Image src="/images/IMG_4261.png" alt="Monishine" fill className="object-contain object-left" />
+          </span>
         </Link>
         <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-[1.85] font-light">
           Premium Beauty &amp; Glow Studio — moderne Behandlungen, persönliche
@@ -31,7 +33,7 @@ const SiteFooter = () => (
       </div>
 
       {/* Right — Address, right-aligned */}
-      <div className="text-right">
+      <div className="text-right mt-10 md:mt-14">
         <ul className="space-y-3 text-sm text-foreground/75 font-light">
           <li>Bramfelder Straße 77</li>
           <li>22305 Hamburg</li>

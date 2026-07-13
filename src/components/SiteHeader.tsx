@@ -1,7 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoImg from "@/assets/IMG_4261.png";
 
 const links = [
   { to: "/leistungen", label: "Treatments" },
@@ -13,7 +16,7 @@ const links = [
 const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -31,8 +34,10 @@ const SiteHeader = () => {
       }`}
     >
       <div className="container-editorial flex items-center justify-between h-16 md:h-28">
-        <Link to="/" className="flex items-center" aria-label="Monishine — Startseite">
-          <img src={logoImg} alt="Monishine" className="h-11 md:h-[5.6rem] w-auto" />
+        <Link href="/" className="flex items-center" aria-label="Monishine — Startseite">
+          <span className="relative h-11 md:h-[5.6rem] w-[78px] md:w-[199px] inline-block">
+            <Image src="/images/IMG_4261.png" alt="Monishine" fill className="object-contain object-left" priority />
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
@@ -41,7 +46,7 @@ const SiteHeader = () => {
             return (
               <Link
                 key={l.to}
-                to={l.to}
+                href={l.to}
                 className={`text-[0.7rem] uppercase tracking-[0.22em] transition-colors ${
                   isActive ? "text-accent" : "text-foreground/75 hover:text-accent"
                 }`}
@@ -78,7 +83,7 @@ const SiteHeader = () => {
             {links.map((l) => (
               <Link
                 key={l.to}
-                to={l.to}
+                href={l.to}
                 onClick={() => setOpen(false)}
                 className="text-sm uppercase tracking-[0.2em] text-foreground/85"
               >

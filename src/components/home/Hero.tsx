@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ChevronRight, Star, Heart, Sparkles, GraduationCap } from "lucide-react";
-import heroImg from "@/assets/IMG_0578.jpeg";
 import type { LucideIcon } from "lucide-react";
 
 const TREATWELL = "https://buchung.treatwell.de/ort/monishine/";
@@ -21,12 +21,14 @@ const Hero = () => (
 
       {/* ── Mobile image ── */}
       <div className="lg:hidden relative h-[80vw] min-h-[320px] max-h-[540px]">
-        <img
-          src={heroImg}
+        <Image
+          src="/images/IMG_0578.jpeg"
           alt="Monishine Beauty Studio Wien — Brows & Lashes"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
           style={{ objectPosition: "center 30%" }}
-          loading="eager"
+          sizes="100vw"
         />
         <div
           className="absolute inset-0"
@@ -39,12 +41,14 @@ const Hero = () => (
 
       {/* ── Desktop image — full section width, subject on right ── */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none select-none">
-        <img
-          src={heroImg}
+        <Image
+          src="/images/IMG_0578.jpeg"
           alt="Monishine Beauty Studio Wien — Brows & Lashes"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
           style={{ objectPosition: "right center" }}
-          loading="eager"
+          sizes="100vw"
         />
         {/* Cream overlay — solid left zone, then fades to reveal image */}
         <div
@@ -71,7 +75,7 @@ const Hero = () => (
           <h1
             className="text-foreground leading-[1.0]"
             style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontFamily: "var(--font-cormorant), Georgia, serif",
               fontSize: "clamp(3.1rem, 5.5vw, 5.5rem)",
               fontWeight: 300,
               letterSpacing: "-0.01em",
@@ -129,7 +133,7 @@ const Hero = () => (
               />
             </a>
             <Link
-              to="/leistungen"
+              href="/leistungen"
               className="inline-flex items-center justify-center gap-2 px-9 py-4 text-xs tracking-[0.22em] uppercase font-normal transition-all duration-500 hover:bg-foreground/5"
               style={{ backgroundColor: "#fff", color: "#1C1611", border: "1px solid rgba(28,22,17,0.2)" }}
             >
@@ -139,7 +143,7 @@ const Hero = () => (
 
           <div className="mt-5">
             <Link
-              to="/kontakt"
+              href="/kontakt"
               className="inline-flex items-center gap-1.5 text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground hover:text-accent transition-colors"
             >
               Kostenlose Beratung <ChevronRight size={11} />
