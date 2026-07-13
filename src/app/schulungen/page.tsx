@@ -100,6 +100,7 @@ const Schulungen = () => (
                 fill
                 priority
                 className="object-cover"
+                style={{ objectPosition: "center 20%" }}
                 sizes="(min-width: 1024px) 50vw, 100vw"
               />
             </div>
@@ -139,6 +140,7 @@ const Schulungen = () => (
               alt="Lash Extension Schulung bei Monishine"
               fill
               className="object-cover"
+              style={{ objectPosition: "center 20%" }}
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>
@@ -355,6 +357,7 @@ const Schulungen = () => (
                 alt={`Monishine Lash Extension Schulung — Einblick ${i + 1}`}
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                style={img === "/images/schulung1.jpg" ? { objectPosition: "center 20%" } : undefined}
                 sizes="50vw"
               />
             </div>

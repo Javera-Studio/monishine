@@ -292,9 +292,11 @@
     display: none;
   }
 
-  /* Fine-line pampas grass motif — reveal-once fade + slight rise, then static */
+  /* Fine-line pampas grass motif — reveal-once fade + slight rise, then static.
+     Color is a fixed ink tone (not var(--foreground)) because .surface-taupe
+     remaps --foreground to near-white, which made the motif invisible there. */
   .pampas-motif {
-    color: hsl(var(--foreground));
+    color: #1F1A16;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 1.3s var(--transition-smooth), transform 1.3s var(--transition-smooth);

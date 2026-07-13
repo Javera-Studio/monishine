@@ -89,7 +89,7 @@ const Academy = () => (
                   alt="Monishine Lash Extension Schulung"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-[1.03]"
-                  style={{ objectPosition: "center 35%" }}
+                  style={{ objectPosition: "center 20%" }}
                   sizes="(min-width: 1024px) 25vw, 50vw"
                 />
               </div>
