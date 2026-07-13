@@ -141,12 +141,16 @@ export default async function Preise() {
       <section className="relative overflow-hidden py-10 md:py-16">
         <PampasMotif position="top-right" />
         <div className="container-editorial">
-          <div className="flex flex-col gap-16 md:gap-24 lg:pr-[calc(50%-2rem)]">
-            {PRICE_GROUPS.map((group) => {
+          <div className="flex flex-col gap-16 md:gap-24">
+            {PRICE_GROUPS.map((group, i) => {
               const cats = group.ids.map(findCat).filter(Boolean) as ServiceCategory[];
               if (cats.length === 0) return null;
+              const isRight = i % 2 === 1;
               return (
-                <div key={group.label}>
+                <div
+                  key={group.label}
+                  className={`w-full lg:max-w-[54%] ${isRight ? "lg:ml-auto" : "lg:mr-auto"}`}
+                >
                   <p className="eyebrow mb-6 text-accent">{group.label}</p>
                   <div className="flex flex-col gap-12 md:gap-16">
                     {cats.map((c) => (
