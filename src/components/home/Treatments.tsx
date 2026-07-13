@@ -3,13 +3,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { cms } from "@/lib/cms/provider";
 import type { ServiceCategory } from "@/content/types";
-
-const vnImages = [
-  { src: "/images/vorhernachher1.jpg", w: 720, h: 593 },
-  { src: "/images/vorhernachher2.jpg", w: 715, h: 565 },
-  { src: "/images/vorhernachher3.jpg", w: 1774, h: 887 },
-  { src: "/images/vorhernachher4.jpg", w: 1623, h: 969 },
-];
+import VorherNachherMarquee from "./VorherNachherMarquee";
 
 const serif = {
   fontFamily: "var(--font-cormorant), Georgia, serif",
@@ -316,25 +310,7 @@ const Treatments = async () => {
       </div>
 
       {/* ── Vorher/Nachher image marquee ── */}
-      <div className="marquee-outer overflow-hidden">
-        <div
-          className="marquee-track flex gap-3 md:gap-4"
-          style={{ animation: "marquee 42.5s linear infinite" }}
-        >
-          {[...vnImages, ...vnImages].map((img, i) => (
-            <div key={i} className="shrink-0 overflow-hidden shadow-soft">
-              <Image
-                src={img.src}
-                width={img.w}
-                height={img.h}
-                alt={`Vorher Nachher ${(i % 4) + 1}`}
-                loading="lazy"
-                className="h-[240px] md:h-[320px] w-auto object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <VorherNachherMarquee />
 
     </section>
   );

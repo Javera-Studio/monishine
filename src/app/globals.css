@@ -282,6 +282,52 @@
       transform: none !important;
     }
   }
+
+  /* Hide native scrollbar on manually/auto-scrollable strips (arrows control scroll instead) */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Fine-line pampas grass motif — reveal-once fade + slight rise, then static */
+  .pampas-motif {
+    color: hsl(var(--foreground));
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1.3s var(--transition-smooth), transform 1.3s var(--transition-smooth);
+  }
+  .pampas-motif.is-visible {
+    opacity: 0.055;
+    transform: translateY(0);
+  }
+
+  /* Organic hand-drawn divider — draws itself in once */
+  .organic-divider {
+    color: hsl(var(--accent) / 0.55);
+  }
+  .organic-divider svg path {
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    transition: stroke-dashoffset 1.5s var(--transition-smooth);
+  }
+  .organic-divider.is-visible svg path {
+    stroke-dashoffset: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pampas-motif {
+      transition: none !important;
+      opacity: 0.055 !important;
+      transform: none !important;
+    }
+    .organic-divider svg path {
+      transition: none !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
 }
 
 @keyframes reveal {

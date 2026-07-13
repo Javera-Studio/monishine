@@ -13,7 +13,7 @@ const features: { Icon: LucideIcon; title: string; description: string }[] = [
 const Academy = () => (
   <section className="surface-taupe pt-16 md:pt-32 pb-6 md:pb-10">
     <div className="container-editorial">
-      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center lg:pr-[5%]">
 
         {/* ── Text ── */}
         <div className="lg:col-span-5 lg:pr-6 reveal">

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import PampasMotif from "./PampasMotif";
 
 const About = () => (
-  <section className="py-16 md:py-32 bg-secondary/40">
-    <div className="container-editorial grid lg:grid-cols-12 gap-10 lg:gap-20 items-center">
+  <section className="relative overflow-hidden py-16 md:py-32 bg-secondary/40">
+    <PampasMotif position="top-right" />
+    <div className="container-editorial grid lg:grid-cols-12 gap-10 lg:gap-20 items-center lg:pl-[5%]">
 
       {/* Portrait */}
       <div className="lg:col-span-5 reveal">
