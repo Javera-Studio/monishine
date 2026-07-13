@@ -1,11 +1,9 @@
 import Image from "next/image";
-import PampasMotif from "./PampasMotif";
-import OrganicDivider from "./OrganicDivider";
 
 const BrandPhilosophy = () => (
   <section className="relative bg-background overflow-hidden">
 
-    {/* Full-width wall image with soft edge fades — the studio's own window/mirror wall */}
+    {/* Full-width wall image with soft edge fades */}
     <div className="relative w-full">
       <Image
         src="/images/monishinewall.jpeg"
@@ -13,7 +11,7 @@ const BrandPhilosophy = () => (
         width={7008}
         height={4672}
         className="w-full object-contain"
-        style={{ maxHeight: "72vh" }}
+        style={{ maxHeight: "60vh" }}
         sizes="100vw"
       />
 
@@ -39,27 +37,28 @@ const BrandPhilosophy = () => (
       />
     </div>
 
-    <PampasMotif position="bottom-left" />
+    {/* Slogan + divider */}
+    <div className="relative z-10 flex flex-col items-center -mt-10 md:-mt-14 pb-4">
+      <p
+        className="font-script shimmer-gold text-center px-6"
+        style={{
+          fontSize: "clamp(2.2rem, 4.5vw, 4rem)",
+          lineHeight: 1.2,
+        }}
+      >
+        Be your own kind of beautiful.
+      </p>
 
-    {/* Slogan — icon + text as one composition, shifted left, compact */}
-    <div className="container-editorial relative z-10 flex flex-col items-center md:items-start -mt-10 md:-mt-14 pb-4 md:pb-6">
-      <div className="flex items-center gap-4 max-w-md md:max-w-xl lg:max-w-2xl text-center md:text-left">
-        <span className="hidden md:inline-block shrink-0 text-accent/40" style={{ fontSize: "0.55rem" }}>
-          ✦
-        </span>
-        <p
-          className="font-script shimmer-gold"
-          style={{
-            fontSize: "clamp(2.3rem, 4.8vw, 4.4rem)",
-            lineHeight: 1.2,
-          }}
-        >
-          Be your own kind of beautiful.
-        </p>
+      {/* Elegant divider */}
+      <div className="mt-10 flex items-center gap-4">
+        <span className="block h-px w-16 md:w-24 bg-foreground/15" />
+        <span className="text-accent/40" style={{ fontSize: "0.45rem" }}>✦</span>
+        <span className="block h-px w-16 md:w-24 bg-foreground/15" />
       </div>
-
-      <OrganicDivider className="mt-5 md:mt-6 md:ml-[2.3rem]" />
     </div>
+
+    {/* Generous whitespace before next section */}
+    <div className="pb-6 md:pb-10" />
 
   </section>
 );

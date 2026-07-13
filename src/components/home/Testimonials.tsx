@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
-import PampasMotif from "./PampasMotif";
 
 const serif = {
   fontFamily: "var(--font-cormorant), Georgia, serif",
@@ -105,12 +104,11 @@ const ReviewCard = ({ r }: { r: Review }) => (
 );
 
 const Testimonials = () => (
-  <section className="relative overflow-hidden pt-6 md:pt-10 pb-0" style={{ backgroundColor: BG }}>
-    <PampasMotif position="bottom-left" />
+  <section className="pt-6 md:pt-10 pb-0" style={{ backgroundColor: BG }}>
     <div className="container-editorial">
 
       {/* ── Header: two-column editorial layout ── */}
-      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 md:mb-28 lg:pl-[5%]">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 md:mb-28">
 
         {/* Left — text on section background */}
         <div className="order-2 lg:order-1 reveal lg:pt-6">
@@ -206,7 +204,7 @@ const Testimonials = () => (
         className="py-14 md:py-20 reveal"
         style={{ borderTop: `1px solid ${DIVIDER}`, borderBottom: `1px solid ${DIVIDER}` }}
       >
-        <div className="max-w-3xl md:ml-auto md:mr-[6%] text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <p
             aria-hidden
             className="select-none leading-none mb-4"

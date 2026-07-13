@@ -4,6 +4,7 @@ import Image from "next/image";
 import SiteLayout from "@/components/SiteLayout";
 import PriceFaqAccordion from "@/components/PriceFaqAccordion";
 import PriceTable from "@/components/PriceTable";
+import PampasMotif from "@/components/PampasMotif";
 import { cms } from "@/lib/cms/provider";
 import type { ServiceCategory } from "@/content/types";
 
@@ -137,7 +138,8 @@ export default async function Preise() {
       </section>
 
       {/* ── Price Tables ── */}
-      <section className="py-10 md:py-16">
+      <section className="relative overflow-hidden py-10 md:py-16">
+        <PampasMotif position="top-right" />
         <div className="container-editorial">
           <div className="flex flex-col gap-16 md:gap-24 lg:pr-[calc(50%-2rem)]">
             {PRICE_GROUPS.map((group) => {
@@ -159,9 +161,10 @@ export default async function Preise() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-16 md:py-28 border-t border-border/40">
+      <section className="relative overflow-hidden py-16 md:py-28 border-t border-border/40">
+        <PampasMotif position="bottom-left" />
         <div className="container-editorial">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start lg:pl-[5%]">
             <div className="lg:col-span-4">
               <p className="eyebrow mb-5 text-accent">FAQ</p>
               <h2
@@ -183,7 +186,7 @@ export default async function Preise() {
 
       {/* ── Closing CTA ── */}
       <section className="py-20 md:py-32">
-        <div className="container-editorial text-center max-w-3xl mx-auto">
+        <div className="container-editorial text-center max-w-3xl md:mr-auto md:ml-[6%]">
           <h2
             className="text-foreground leading-none mb-6 whitespace-nowrap"
             style={{ ...serif, fontSize: "clamp(1.6rem, 2.6vw, 2.6rem)" }}

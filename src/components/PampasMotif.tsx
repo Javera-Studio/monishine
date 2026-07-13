@@ -11,7 +11,7 @@ const POSITION_CLASSES: Record<Position, string> = {
 
 /**
  * Fine-line pampas grass motif — a nod to the real pampas grass in the studio.
- * Purely decorative, kept extremely subtle (opacity set in CSS, 3–7%) and
+ * Purely decorative, kept extremely subtle (opacity set in CSS, ~5.5%) and
  * hidden below md so it never competes with content on small screens.
  */
 const PampasMotif = ({ position }: { position: Position }) => {
