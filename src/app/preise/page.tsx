@@ -68,9 +68,9 @@ export default async function Preise() {
      />
      <div className="surface-taupe">
       {/* ── Hero ── */}
-      <section>
-
-        <div className="container-editorial pt-16 md:pt-24 pb-16 md:pb-24">
+      <section className="overflow-hidden">
+        <div className="container-editorial relative pt-16 md:pt-24 pb-16 md:pb-24">
+          <PampasMotif position="top-left" />
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             {/* Left — text */}
@@ -117,8 +117,9 @@ export default async function Preise() {
       </section>
 
       {/* ── Trust Strip ── */}
-      <section className="py-12 md:py-16 border-b border-border/60">
-        <div className="container-editorial">
+      <section className="overflow-hidden py-12 md:py-16 border-b border-border/60">
+        <div className="container-editorial relative">
+          <PampasMotif position="bottom-right" />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6">
             {trustItems.map((t, i) => (
               <div key={i} className="text-center md:text-left">
@@ -138,9 +139,10 @@ export default async function Preise() {
       </section>
 
       {/* ── Price Tables ── */}
-      <section className="relative overflow-hidden py-10 md:py-16">
-        <PampasMotif position="top-right" />
-        <div className="container-editorial">
+      <section className="overflow-hidden py-10 md:py-16">
+        <div className="container-editorial relative">
+          <PampasMotif position="top-right" />
+          <PampasMotif position="bottom-left" />
           <div className="flex flex-col gap-16 md:gap-24">
             {PRICE_GROUPS.map((group, i) => {
               const cats = group.ids.map(findCat).filter(Boolean) as ServiceCategory[];
@@ -165,9 +167,9 @@ export default async function Preise() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative overflow-hidden py-16 md:py-28 border-t border-border/40">
-        <PampasMotif position="bottom-left" />
-        <div className="container-editorial">
+      <section className="overflow-hidden py-16 md:py-28 border-t border-border/40">
+        <div className="container-editorial relative">
+          <PampasMotif position="bottom-left" />
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start lg:pl-[5%]">
             <div className="lg:col-span-4">
               <p className="eyebrow mb-5 text-accent">FAQ</p>
@@ -189,8 +191,10 @@ export default async function Preise() {
       </section>
 
       {/* ── Closing CTA ── */}
-      <section className="py-20 md:py-32">
-        <div className="container-editorial text-center max-w-3xl md:mr-auto md:ml-[6%]">
+      <section className="overflow-hidden py-20 md:py-32">
+        <div className="container-editorial relative">
+          <PampasMotif position="top-right" />
+          <div className="text-center max-w-3xl md:mr-auto md:ml-[6%]">
           <h2
             className="text-foreground leading-none mb-6 whitespace-nowrap"
             style={{ ...serif, fontSize: "clamp(1.6rem, 2.6vw, 2.6rem)" }}
@@ -204,6 +208,7 @@ export default async function Preise() {
           <Link href="/kontakt" className="btn-primary">
             Kostenlose Beratung
           </Link>
+          </div>
         </div>
       </section>
      </div>

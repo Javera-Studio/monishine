@@ -2,20 +2,27 @@
 
 import { useRevealOnce } from "@/hooks/use-reveal-once";
 
-type Position = "bottom-left" | "top-right";
+type Position = "bottom-left" | "top-right" | "top-left" | "bottom-right";
 
 const POSITION_CLASSES: Record<Position, string> = {
-  "bottom-left": "-left-8 md:-left-14 -bottom-6 md:-bottom-10",
-  "top-right": "-right-8 md:-right-14 -top-6 md:-top-10",
+  "bottom-left": "left-2 md:left-6 bottom-2 md:bottom-6",
+  "top-right": "right-2 md:right-6 top-2 md:top-6",
+  "top-left": "left-2 md:left-6 top-2 md:top-6",
+  "bottom-right": "right-2 md:right-6 bottom-2 md:bottom-6",
 };
 
 /**
  * Fine-line pampas grass motif — a nod to the real pampas grass in the studio.
- * Purely decorative, kept extremely subtle (opacity set in CSS, ~5.5%) and
- * hidden below md so it never competes with content on small screens.
+ * Purely decorative, kept subtle (opacity set in CSS) and hidden below md so
+ * it never competes with content on small screens.
+ *
+ * Positioned fully inside its section (not bled off the edge) because the
+ * parent sections use overflow-hidden — IntersectionObserver measures the
+ * clipped visible area, so a mostly-off-canvas icon could stay under the
+ * reveal threshold forever and never fade in.
  */
 const PampasMotif = ({ position }: { position: Position }) => {
-  const { ref, revealed } = useRevealOnce<HTMLDivElement>(0.2);
+  const { ref, revealed } = useRevealOnce<HTMLDivElement>(0.01);
 
   return (
     <div

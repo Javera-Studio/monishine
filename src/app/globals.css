@@ -302,14 +302,14 @@
     transition: opacity 1.3s var(--transition-smooth), transform 1.3s var(--transition-smooth);
   }
   .pampas-motif.is-visible {
-    opacity: 0.07;
+    opacity: 0.16;
     transform: translateY(0);
   }
 
   @media (prefers-reduced-motion: reduce) {
     .pampas-motif {
       transition: none !important;
-      opacity: 0.07 !important;
+      opacity: 0.16 !important;
       transform: none !important;
     }
   }
